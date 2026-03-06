@@ -118,38 +118,55 @@ export default function ContactSection() {
             className="space-y-4"
           >
             <div>
-              <label
-                htmlFor="nome"
-                className="block text-sm font-medium text-slate-700"
-              >
-                {contact.nome}
-              </label>
-              <input
-                type="text"
-                id="nome"
-                name="name"
-                required
-                disabled={status === "loading"}
-                className="mt-1 block w-full rounded-md border border-slate-300 bg-white p-2 text-slate-800 shadow-sm focus:border-brand-navy focus:ring-brand-navy disabled:opacity-60"
-              />
-            </div>
+  <label
+    htmlFor="nome"
+    className="block text-sm font-medium text-slate-700"
+  >
+    {contact.nome}
+  </label>
+  <input
+    type="text"
+    id="nome"
+    name="from_name"
+    required
+    disabled={status === "loading"}
+    className="mt-1 block w-full rounded-md border border-slate-300 bg-white p-2 text-slate-800 shadow-sm focus:border-brand-navy focus:ring-brand-navy disabled:opacity-60"
+  />
+</div>
 
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-slate-700"
-              >
-                {contact.email}
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                disabled={status === "loading"}
-                className="mt-1 block w-full rounded-md border border-slate-300 bg-white p-2 text-slate-800 shadow-sm focus:border-brand-navy focus:ring-brand-navy disabled:opacity-60"
-              />
-            </div>
+<div>
+  <label
+    htmlFor="email"
+    className="block text-sm font-medium text-slate-700"
+  >
+    {contact.email}
+  </label>
+  <input
+    type="email"
+    id="email"
+    name="from_email"
+    required
+    disabled={status === "loading"}
+    className="mt-1 block w-full rounded-md border border-slate-300 bg-white p-2 text-slate-800 shadow-sm focus:border-brand-navy focus:ring-brand-navy disabled:opacity-60"
+  />
+</div>
+
+<div>
+  <label
+    htmlFor="mensagem"
+    className="block text-sm font-medium text-slate-700"
+  >
+    {contact.mensagem}
+  </label>
+  <textarea
+    id="mensagem"
+    name="message"
+    rows={5}
+    required
+    disabled={status === "loading"}
+    className="mt-1 block w-full rounded-md border border-slate-300 bg-white p-2 text-slate-800 shadow-sm focus:border-brand-navy focus:ring-brand-navy disabled:opacity-60"
+  />
+</div>
 
             <div>
               <label
