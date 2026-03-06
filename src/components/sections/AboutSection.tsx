@@ -24,24 +24,16 @@ export default function AboutSection() {
   const { t } = useTranslation();
 
   const aboutText = t("sobre.texto");
-  const { paragraphs } = useMemo(() => {
-    const raw = String(aboutText ?? "").trim();
+const { paragraphs } = useMemo(() => {
+  const raw = String(aboutText ?? "").trim();
 
-    const lines = raw
-      .split("\n")
-      .map((l) => l.trim())
-      .filter(Boolean);
+  const paragraphs = raw
+    .split(/\n\s*\n/g)
+    .map((p) => p.replace(/\n/g, " ").trim())
+    .filter(Boolean);
 
-    // Remove 2 primeiras linhas (intro) e usa só parágrafos
-    const afterIntro = lines.slice(2).join("\n");
-
-    const paragraphs = afterIntro
-      .split(/\n\s*\n/g)
-      .map((p) => p.replace(/\n/g, " ").trim())
-      .filter(Boolean);
-
-    return { paragraphs };
-  }, [aboutText]);
+  return { paragraphs };
+}, [aboutText]);
 
   return (
     <section id="sobre" className="relative scroll-mt-24 overflow-hidden bg-white">
