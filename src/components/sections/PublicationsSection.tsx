@@ -21,7 +21,6 @@ function ArticleCard({
   bookFooterText: string;
 }) {
   const isBook = article?.id === "livro";
-  const isValveClub = article?.publisher === "the-valve-club";
 
   return (
     <motion.div
@@ -90,6 +89,7 @@ function ArticleModal({
 }) {
   const { t } = useTranslation();
   const isBook = article?.id === "livro";
+  const isValveClub = article?.publisher === "the-valve-club"; 
 
   const downloadHref =
     article?.downloadLink ||
