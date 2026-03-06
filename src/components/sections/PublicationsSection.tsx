@@ -13,10 +13,12 @@ function ArticleCard({
   article,
   onClick,
   valveClubText,
+  bookFooterText,
 }: {
   article: any;
   onClick: () => void;
   valveClubText: string;
+  bookFooterText: string;
 }) {
   const isBook = article?.id === "livro";
   const isValveClub = article?.publisher === "the-valve-club";
@@ -57,29 +59,20 @@ function ArticleCard({
           {article.resumo}
         </p>
 
-        {!isBook && isValveClub && (
-          <div className="mb-4 flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50/90 px-3 py-3">
-            <img
-              src="/images/logo-the-valve.png"
-              alt="The Valve Club"
-              className="h-8 w-auto object-contain shrink-0"
-            />
-            <p className="text-xs sm:text-sm leading-relaxed text-slate-600">
-              {valveClubText}
-            </p>
-          </div>
-        )}
+<div className="pt-4 border-t border-slate-200">
+  <div className="flex items-center justify-between gap-4">
+    <p className="text-xs sm:text-sm text-slate-600">
+      {isBook ? bookFooterText : valveClubText}
+    </p>
 
-        <div className="flex items-center justify-between pt-4 border-t border-slate-200">
-          <span className="text-xs text-slate-500">Por Dra. Leiza Hollas</span>
-
-          <span className="inline-flex items-center gap-1 text-sm font-medium text-brand-navy hover:text-brand-teal transition">
-            Leia mais
-            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-navy/10">
-              →
-            </span>
-          </span>
-        </div>
+    <span className="shrink-0 inline-flex items-center gap-1 text-sm font-medium text-brand-navy hover:text-brand-teal transition">
+      Leia mais
+      <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-navy/10">
+        →
+      </span>
+    </span>
+  </div>
+</div>
       </div>
     </motion.div>
   );
@@ -320,6 +313,7 @@ export default function PublicationsSection() {
 
   const titulo = t("publicacoes.titulo");
   const valveClubText = t("publicacoes.theValveClub.curto");
+  const bookFooterText = t("publicacoes.livroCard.rodape");
 
   const artigos =
     (t("publicacoes.artigos", {
@@ -391,6 +385,7 @@ export default function PublicationsSection() {
                 article={art}
                 onClick={() => setSelectedArticle(art)}
                 valveClubText={valveClubText}
+                bookFooterText={bookFooterText}
               />
             </motion.div>
           ))}

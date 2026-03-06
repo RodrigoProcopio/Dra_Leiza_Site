@@ -124,6 +124,9 @@
   "titulo": "Publicações e Artigos Científicos",
   "downloadLivro": "Download do Livro",
   "informacoesTecnicas": "Informações Técnicas",
+  "livroCard": {
+  "rodape": "Livro publicado por Dra. Leiza Hollas."
+},
   "theValveClub": {
     "curto": "Artigo publicado por Dra. Leiza Hollas no The Valve Club.",
     "titulo": "Publicado no The Valve Club",
