@@ -90,7 +90,6 @@ function ArticleModal({
 }) {
   const { t } = useTranslation();
   const isBook = article?.id === "livro";
-  const isValveClub = article?.publisher === "the-valve-club";
 
   const downloadHref =
     article?.downloadLink ||

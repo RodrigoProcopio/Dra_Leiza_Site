@@ -1,34 +1,52 @@
-// Import hooks and utilities only as needed. Note: React import is unnecessary for the new JSX transform.
 import { useTranslation } from "react-i18next";
 import Container from "../layout/Container";
 import { motion } from "framer-motion";
-import { useState } from "react";
-
-// Import icons from lucide-react
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Phone, Hospital, MapPin } from "lucide-react";
 
-/**
- * ContactSection renders a contact form alongside contact details. The form
- * posts to Netlify using the built-in form handling (`data-netlify="true"`).
- * When the user submits the form, a simple success message is displayed
- * without preventing the default behaviour, allowing Netlify to process the
- * submission. The contact details are pulled from the translation file via
- * `useTranslation` with `returnObjects: true`.
- */
+type SubmitStatus = "idle" | "loading" | "success" | "error";
+
 export default function ContactSection() {
   const { t } = useTranslation();
-  // Retrieve all fields for the contact section from the translation file.
   const contact = t("contato", { returnObjects: true }) as Record<string, any>;
-  // Track whether the form has been submitted locally so we can show a
-  // confirmation message. This does not interfere with Netlify form submission.
-  const [submitted, setSubmitted] = useState(false);
+
+  const formRef = useRef<HTMLFormElement | null>(null);
+  const [status, setStatus] = useState<SubmitStatus>("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    if (!formRef.current) return;
+
+    try {
+      setStatus("loading");
+
+      await emailjs.sendForm(
+        "service_zy1sbxp",   // troque pelo seu service ID
+        "template_fgfvkyr",  // troque pelo seu template ID
+        formRef.current,
+        "yfd2dXCxN8p1I_B5o"  // troque pela sua public key
+      );
+
+      setStatus("success");
+      formRef.current.reset();
+
+      // opcional: limpar a mensagem depois de alguns segundos
+      setTimeout(() => {
+        setStatus("idle");
+      }, 5000);
+    } catch (error) {
+      console.error("Erro ao enviar formulário:", error);
+      setStatus("error");
+    }
+  }
 
   return (
     <section
       id="contato"
       className="relative scroll-mt-24 overflow-hidden bg-white"
     >
-      {/* Background layers to match the premium aesthetic used throughout the site */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-[#F6F8FC] to-[#EEF3FF]" />
       <div className="pointer-events-none absolute -left-40 -top-32 h-[520px] w-[520px] rounded-full bg-brand-navy/10 blur-3xl" />
       <div className="pointer-events-none absolute -right-44 -top-20 h-[520px] w-[520px] rounded-full bg-[#7AA6FF]/12 blur-3xl" />
@@ -40,7 +58,6 @@ export default function ContactSection() {
       <div className="pointer-events-none absolute inset-0 opacity-[0.05] mix-blend-multiply bg-[url('/images/grain.png')] bg-repeat" />
 
       <Container className="relative py-16 md:py-24">
-        {/* Section heading */}
         <motion.h2
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +68,6 @@ export default function ContactSection() {
           {contact.titulo}
         </motion.h2>
 
-        {/* Description */}
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -62,9 +78,7 @@ export default function ContactSection() {
           {contact.descricao}
         </motion.p>
 
-        {/* Grid containing contact details (left) and form (right) */}
         <div className="mt-12 grid gap-10 md:grid-cols-2">
-          {/* ✅ Contact details LEFT */}
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -94,29 +108,15 @@ export default function ContactSection() {
             </div>
           </motion.div>
 
-          {/* ✅ Contact form RIGHT */}
           <motion.form
+            ref={formRef}
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-15%" }}
             transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1] }}
-            name="contato"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            onSubmit={() => setSubmitted(true)}
+            onSubmit={handleSubmit}
             className="space-y-4"
           >
-            {/* Hidden input to identify the form to Netlify */}
-            <input type="hidden" name="form-name" value="contato" />
-
-            {/* Honeypot field for spam bots; hidden from users */}
-            <p className="hidden">
-              <label>
-                Don’t fill this out: <input name="bot-field" />
-              </label>
-            </p>
-
             <div>
               <label
                 htmlFor="nome"
@@ -127,9 +127,10 @@ export default function ContactSection() {
               <input
                 type="text"
                 id="nome"
-                name="nome"
+                name="name"
                 required
-                className="mt-1 block w-full rounded-md border border-slate-300 bg-white p-2 text-slate-800 shadow-sm focus:border-brand-navy focus:ring-brand-navy"
+                disabled={status === "loading"}
+                className="mt-1 block w-full rounded-md border border-slate-300 bg-white p-2 text-slate-800 shadow-sm focus:border-brand-navy focus:ring-brand-navy disabled:opacity-60"
               />
             </div>
 
@@ -145,7 +146,8 @@ export default function ContactSection() {
                 id="email"
                 name="email"
                 required
-                className="mt-1 block w-full rounded-md border border-slate-300 bg-white p-2 text-slate-800 shadow-sm focus:border-brand-navy focus:ring-brand-navy"
+                disabled={status === "loading"}
+                className="mt-1 block w-full rounded-md border border-slate-300 bg-white p-2 text-slate-800 shadow-sm focus:border-brand-navy focus:ring-brand-navy disabled:opacity-60"
               />
             </div>
 
@@ -158,27 +160,34 @@ export default function ContactSection() {
               </label>
               <textarea
                 id="mensagem"
-                name="mensagem"
+                name="message"
                 rows={5}
                 required
-                className="mt-1 block w-full rounded-md border border-slate-300 bg-white p-2 text-slate-800 shadow-sm focus:border-brand-navy focus:ring-brand-navy"
-              ></textarea>
+                disabled={status === "loading"}
+                className="mt-1 block w-full rounded-md border border-slate-300 bg-white p-2 text-slate-800 shadow-sm focus:border-brand-navy focus:ring-brand-navy disabled:opacity-60"
+              />
             </div>
 
             <button
               type="submit"
-              className="inline-flex items-center justify-center rounded-md bg-gray-800/80 px-6 py-3 text-sm font-medium text-white shadow transition-colors duration-200 hover:bg-gray-800"
+              disabled={status === "loading"}
+              className="inline-flex items-center justify-center rounded-md bg-gray-800/80 px-6 py-3 text-sm font-medium text-white shadow transition-colors duration-200 hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-70"
             >
-              {contact.enviar}
+              {status === "loading" ? "Enviando..." : contact.enviar}
             </button>
 
-            {submitted && (
+            {status === "success" && (
               <p className="text-sm text-green-600">{contact.sucesso}</p>
+            )}
+
+            {status === "error" && (
+              <p className="text-sm text-red-600">
+                Ocorreu um erro ao enviar sua mensagem. Tente novamente.
+              </p>
             )}
           </motion.form>
         </div>
 
-        {/* Divider line at bottom */}
         <div className="mt-12 h-px w-2/3 bg-gradient-to-r from-brand-navy/20 via-brand-navy/10 to-transparent" />
       </Container>
     </section>
