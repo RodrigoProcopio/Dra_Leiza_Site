@@ -1,0 +1,201 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre",
+    "services": "Servicios",
+    "publications": "Publicaciones",
+    "testimonials": "Testimonios",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "nome": "Dra. Leiza Loiane Hollas",
+    "especialidade": "Especialista en Cirugía Cardiovascular",
+    "crm": "CRM-PR 40485",
+    "rqe": "RQE 38188"
+  },
+"sobre": {
+  "titulo": "Sobre la Dra. Leiza",
+  "texto": "Cirujana cardiovascular y miembro de la Sociedad Brasileña de Cirugía Cardiovascular (SBCCV), dedica su práctica al tratamiento quirúrgico de las enfermedades del corazón, con enfoque en la seguridad, la precisión técnica y la atención individualizada.\n\nConcluyó su residencia médica en Cirugía Cardiovascular en el Hospital de la Cruz Roja Brasileña – Paraná (2024), consolidando una formación especializada en procedimientos de alta complejidad y en el manejo integral del paciente cardiovascular.\n\nGraduada en Medicina por la Pontificia Universidad Católica de Paraná (2018), orienta su práctica principalmente hacia la cirugía cardiovascular, la cirugía valvular y la simulación quirúrgica, buscando constantemente integrar innovación, evidencia científica y excelencia asistencial.\n\nAdemás de su actividad clínica y quirúrgica, desarrolla una actividad científica continua, con artículos publicados en revistas y periódicos nacionales e internacionales. Integra The Valve Club, iniciativa dedicada a la difusión del conocimiento médico mediante la discusión de estudios relacionados con las valvulopatías y la cardiopatía estructural — áreas en constante evolución en la cardiología moderna.\n\nCree que la cirugía cardiovascular exige no solo dominio técnico, sino también escucha atenta y responsabilidad en cada decisión. Por ello, su trabajo se basa en la construcción de una relación de confianza con el paciente, ofreciendo atención individualizada en todas las etapas del tratamiento.",
+  "altImagem": "Foto de la Dra. Leiza Loiane Hollas"
+},
+  "servicos": {
+    "titulo": "Especialidades",
+    "cirurgia": "Cirugía Cardíaca",
+    "avaliacao": "Evaluación Preoperatoria"
+  },
+  "publicacoes": {
+    "titulo": "Artículos y Publicaciones",
+    "botao": "Leer más",
+      "downloadLivro": "Descargar Libro",
+  "informacoesTecnicas": "Información Técnica",
+    "livro": {
+  "titulo": "Manual básico de cirugía torácica y cardiovascular de la LACTCV",
+  "data": "Publicado el 24 de octubre de 2023",
+  "resumo": "El Manual Básico de Cirugía Torácica y Cardiovascular de la LACTCV presenta los fundamentos esenciales de la especialidad —desde la anatomía hasta las patologías más frecuentes— con un enfoque didáctico y accesible.",
+  "conteudo": "El Manual Básico de Cirugía Torácica y Cardiovascular de la LACTCV fue desarrollado para introducir al lector en los fundamentos esenciales de la cirugía torácica y cardiovascular, abarcando desde conceptos anatómicos hasta las patologías más frecuentes de la especialidad.\n\nEl propósito de la obra es ofrecer un contenido didáctico, objetivo y accesible, especialmente orientado a estudiantes de medicina y profesionales en formación, proporcionando una base sólida para comprender los principios fundamentales del área.\n\nA lo largo de sus páginas, el lector recorre una trayectoria de aprendizaje que busca unir conocimiento técnico, claridad conceptual y aplicación práctica, sirviendo como punto de partida para un perfeccionamiento continuo en una especialidad que exige precisión, dedicación y evolución constante.\n\nEste libro representa una invitación al estudio y a la construcción de una trayectoria profesional basada en la excelencia y en el compromiso con el cuidado de la salud.",
+  "doi": "10.22533/at.ed.389232310",
+  "isbn": "978-65-258-1938-9",
+  "palavrasChave": "1. Corazón - Cirugía. I. Hollas, Leiza Loiane (Organizadora). II. Manoel, Agnes Zanotto (Organizadora). III. Iwamoto, Aiko (Organizadora). IV. Título.",
+  "ano": "2023",
+  "paginas": "144",
+  "downloadLink": "https://atenaeditora.com.br/catalogo/download-file/6577"
+},
+    "artigos": [
+      {
+        "id": "manual-basico",
+        "titulo": "Manual básico de cirugía torácica y cardiovascular de LACTCV",
+        "data": "Publicado el 24 de octubre de 2023",
+        "resumo": "La propuesta es aportar conocimientos básicos de cirugía torácica y cardiovascular principalmente para estudiantes de medicina de forma didáctica.",
+        "conteudo": "Estimado lector, al haber encontrado este libro digital, debe estar ansioso por comenzar su viaje a través de los fundamentos básicos de la cirugía torácica y cardiovascular, aprendiendo y revisando desde la anatomía hasta las patologías más comunes.\n\nComprender la propuesta del 'Manual Básico de Cirugía Torácica y Cardiovascular de LACTCV' le ayudará a aprovechar al máximo esta obra. Nuestro objetivo es proporcionar conocimientos básicos de cirugía torácica y cardiovascular principalmente para estudiantes de medicina de manera didáctica.\n\nEn las siguientes páginas, comenzará un viaje de profundización en los principios básicos y esenciales de la cirugía torácica y cardiovascular. Esperamos que disfrute de esta lectura y considere este libro como uno de los primeros pasos en la búsqueda continua de la excelencia que la cirugía exige a través de la precisión y dedicación.\n\nEl manual contiene capítulos sobre: Anatomía del tórax y corazón, Arterias coronarias, Enfermedad arterial coronaria y revascularización miocárdica, Valvulopatías aórticas y abordaje quirúrgico, Valvulopatías mitrales, Enfermedades de la aorta, Cateterismo cardíaco, Angiotomografía y resonancia cardíaca.",
+        "link": "https://atenaeditora.com.br/catalogo/ebook/manual-basico-de-cirurgia-toracica-e-cardiovascular-da-lactcv"
+      },
+      {
+        "id": "mitraclip-falha",
+        "titulo": "Abordaje quirúrgico convencional tras fallo de MitraClip",
+        "data": "Agosto de 2023",
+        "resumo": "El aumento de la incidencia de cardiopatías estructurales valvulares acompaña el progresivo envejecimiento de la población. En los últimos años, las tecnologías transcatéter han ganado prominencia en el tratamiento de la insuficiencia mitral sintomática.",
+        "conteudo": "El aumento de la incidencia de cardiopatías estructurales valvulares acompaña el progresivo envejecimiento de la población y, dada la alta prevalencia, actualmente existe un gran interés médico en buscar estrategias intervencionistas – tanto quirúrgicas convencionales como mínimamente invasivas (transcatéter) – que pueden indicarse para pacientes con valvulopatía cardíaca.\n\nEn los últimos años, las tecnologías transcatéter han ganado prominencia en el tratamiento de la insuficiencia mitral sintomática. Según la última Directriz Brasileña de Valvulopatías (2020), el método percutáneo debe reservarse para pacientes con insuficiencia mitral moderada a severa o severa, de etiologías tanto primaria como secundaria, con síntomas refractarios y con riesgo quirúrgico elevado o prohibitivo.\n\nMitraClip® utiliza un enfoque similar al procedimiento quirúrgico de Alfieri, creado en 1991, pero de manera mínimamente invasiva. Durante el procedimiento, el dispositivo se inserta a través de catéteres en la vena femoral y se guía hasta la válvula mitral mediante una punción transeptal.\n\nUtilizando datos del Registro CUTTING-EDGE, el estudio comparó el resultado de la cirugía valvular mitral tras el fallo del tratamiento percutáneo con MitraClip® en pacientes con IM primaria versus secundaria. Se analizaron 330 pacientes de julio de 2009 a julio de 2020. La mortalidad al año después de la cirugía fue del 31,3% en general, siendo mayor en pacientes con IM secundaria (38,3% vs 23,2%).\n\nEstos datos nos muestran que debemos buscar resultados satisfactorios después de TEER, con el objetivo de evitar complicaciones futuras y garantizar la mejor calidad de vida para el paciente. La comprensión de los riesgos involucrados destaca la importancia de un enfoque multidisciplinario del Heart Team.",
+        "link": "https://thevalveclub.com.br/intervencao-na-cardiopatia-estrutural/"
+      },
+      {
+        "id": "valva-mitral",
+        "titulo": "Publicaciones relevantes sobre cirugía de válvula mitral",
+        "data": "Diciembre de 2023",
+        "resumo": "La válvula mitral siempre ha despertado fascinación en la cirugía cardíaca. Su funcionalidad precisa y anatomía compleja la convierten en un área de interés significativo en la investigación médica y la práctica clínica.",
+        "conteudo": "La válvula mitral siempre ha despertado fascinación en la cirugía cardíaca. Su funcionalidad precisa y anatomía compleja la convierten en un área de interés significativo en la investigación médica y la práctica clínica.\n\nLa historia del tratamiento de las patologías valvulares comenzó en 1923 en el Peter Bent Brigham Hospital, donde el cirujano Elliott Carr Cutler realizó la primera intervención quirúrgica en la válvula mitral. La paciente, de solo 12 años, se encontraba en estado crítico por insuficiencia cardíaca instalada debido a estenosis mitral reumática y fue sometida a una incisión en el ápice del ventrículo izquierdo asociada a comisurotomía digital. La cirugía fue exitosa y representó un hito en la historia de la cirugía cardíaca.\n\nEs importante mencionar tres artículos rectores de las técnicas actuales: Carpentier con su técnica de 'corrección francesa' de la válvula mitral (1983), Mohr y colaboradores mostrando la viabilidad de la cirugía de válvula mitral por técnica robótica (2001), y Webb y colaboradores comprobando la seguridad del tratamiento transcatéter de válvula mitral (2010).\n\nUna revisión bibliográfica reciente realizada por Allen y colaboradores seleccionó los 100 artículos más citados específicos para cirugía de válvula mitral. Los países con mayor número de publicaciones son Estados Unidos, Canadá y Francia. Entre las instituciones, destacan Mayo Clinic, Toronto General Hospital y Cleveland Clinic.\n\nLo que todo lo expuesto nos muestra es: saber dónde está la mina de oro de nuestra investigación, dónde se están discutiendo y publicando los artículos de alto impacto. Considerando el boom de publicaciones a partir de los años 2000, cuando hablamos de válvula mitral aún estábamos dando pasos cortos, y 100 años después de la primera comisurotomía este tema sigue siendo un diamante en bruto para ser pulido por nosotros cirujanos y cardiólogos.",
+        "link": "https://thevalveclub.com.br/valva-mitral/"
+      },
+      {
+        "id": "bioproteses",
+        "titulo": "La perspectiva del cirujano sobre la disfunción de bioprótesis",
+        "data": "Junio de 2023",
+        "resumo": "El aumento de la incidencia de cardiopatías estructurales valvulares acompaña el progresivo envejecimiento de la población. Ante la necesidad de reemplazo valvular, debemos estar atentos a la ocurrencia de degeneración estructural de las bioprótesis.",
+        "conteudo": "El aumento de la incidencia de cardiopatías estructurales valvulares acompaña el progresivo envejecimiento de la población y, dada la alta prevalencia de fiebre reumática, con el consiguiente compromiso de pacientes jóvenes, la demanda de intervención valvular se ve directamente impactada.\n\nAnte la necesidad de reemplazo valvular, especialmente al elegir una bioprótesis, debemos estar atentos a la ocurrencia de su degeneración estructural, un diagnóstico a menudo realizado tarde, que puede llevar al deterioro clínico y compromiso de la función ventricular.\n\nSegún las directrices del American College of Cardiology (ACC), se sugiere control ecocardiográfico transtorácico después del reemplazo valvular a 1, 3 y 12 meses después del procedimiento, y luego anualmente. Durante este seguimiento debe realizarse búsqueda activa de cambios en la clase funcional y nuevos síntomas que puedan indicar disfunción de la bioprótesis.\n\nEstas disfunciones pueden clasificarse en etapas, inicialmente con identificación de disfunción valvular sin cambios hemodinámicos, hasta etapas más avanzadas, donde hay disfunción protésica asociada a cambios hemodinámicos más graves. También pueden clasificarse en categorías: disfunción estructural (calcificación o ruptura de valvas) o no estructural (fuga paraprotésica, pannus, trombos, endocarditis y mismatch).\n\nDe los exámenes diagnósticos disponibles, la ecocardiografía (transtorácica o transesofágica) es el principal aliado. En casos de duda o para mejorar el análisis de posible trombosis de bioprótesis aórtica, se puede recurrir a la angiotomografía computarizada.\n\nEl objetivo de las intervenciones estructurales valvulares es optimizar la carga hemodinámica, disminuir los síntomas, mejorar la calidad de vida y, posiblemente, prolongar la supervivencia. No toda disfunción de bioprótesis tendrá como tratamiento final la reintervención, correspondiendo, muchas veces, el manejo medicamentoso y cambios en el estilo de vida.",
+        "link": "https://thevalveclub.com.br/when-the-goats-go-wrong/"
+      },
+      {
+        "id": "valve-sparing",
+        "titulo": "Técnicas de preservación valvular en aneurisma de aorta",
+        "data": "Octubre de 2023",
+        "resumo": "En 1900, el Dr. William Osler ya señalaba: 'no hay enfermedad más propicia a la humildad clínica que los aneurismas de aorta'. Hasta hoy, las enfermedades de la aorta son un desafío clínico-quirúrgico.",
+        "conteudo": "En 1900, el Dr. William Osler ya señalaba una verdad médica: 'no hay enfermedad más propicia a la humildad clínica que los aneurismas de aorta'. La afirmación de Osler es verídica, ya que hasta hoy, las enfermedades de la aorta son un desafío clínico-quirúrgico para el campo médico.\n\nCabe recordar que, en promedio, el diámetro normal de la aorta ascendente es de aproximadamente 30 mm y las dilataciones superiores al 50% de este valor ya se consideran fuera del patrón normal. Existen varios factores predisponentes: tabaquismo, hipertensión, trastornos genéticos (síndrome de Marfan y Ehlers-Danlos), infecciosos (sífilis) y congénitos.\n\nLa válvula aórtica bicúspide es la alteración congénita más común, presente en el 1 a 2% de la población mundial y está relacionada con los aneurismas de aorta torácica en el 50% de los casos. El riesgo de desarrollar un aneurisma es de hasta 0,1% por año y corresponde a una patología con alta mortalidad.\n\nEstá establecido que los pacientes con aneurisma de aorta ascendente con diámetro ≥ 55mm requieren intervención quirúrgica. La cirugía más practicada es Bentall y De-Bono, que consiste en el reemplazo combinado de la válvula, raíz aórtica y aorta ascendente. Sin embargo, los pacientes siempre estarán sujetos a anticoagulación o deterioro de bioprótesis.\n\nComo alternativa quirúrgica, existen dos técnicas que involucran el concepto de 'preservación valvular': la técnica de Yacoub, creada en 1982, en la que se confeccionan nuevos senos de Valsalva utilizando tubo de Dacron, y la técnica de David, idealizada en 1992, en la que el tubo se implanta directamente en el anillo valvular aórtico con reimplantación de los ostia de las arterias coronarias.\n\nUna revisión sistemática reciente comparó la durabilidad y seguridad de los procedimientos de David y Yacoub en pacientes con válvula aórtica bicúspide. Se incluyeron 1159 pacientes (87,4% masculinos, edad media 44,9 años). La mortalidad media fue del 1,7% a los treinta días. La estimación de supervivencia de Kaplan-Meier a 5, 10 y 15 años fue de 96%, 90% y 87%, mientras que la estimación de pacientes libres de reoperación en el mismo período fue de 96%, 91% y 88%.\n\nIncluso en pacientes con válvula aórtica bicúspide, la preservación de la válvula aórtica nativa se muestra claramente más ventajosa sobre el reemplazo, ya que presenta hemodinámica más fisiológica, alivio de la necesidad de anticoagulación y mayor durabilidad. Parece haber una tendencia a favorecer el enfoque de 'reimplantación' de David en comparación con el enfoque de 'remodelación' de Yacoub, probablemente debido a la estabilización anular proporcionada por la anastomosis proximal.",
+        "link": "https://thevalveclub.com.br/david-e-yacoub/"
+      },
+      {
+        "id": "valvopatia-tricuspide",
+        "titulo": "La perspectiva del cirujano sobre la valvulopatía tricúspide",
+        "data": "Abril de 2023",
+        "resumo": "La intervención en valvulopatía tricúspide tiene indicación clara cuando ocurre concomitantemente con la intervención de valvulopatías mitral y aórtica. Cuando se presenta de forma aislada, todavía es motivo de controversia.",
+        "conteudo": "La intervención en valvulopatía tricúspide tiene indicación clara cuando ocurre concomitantemente con la intervención de valvulopatías mitral y aórtica. Cuando se presenta de forma aislada, la indicación de intervención todavía es motivo de controversia entre cirujanos y cardiólogos, con más prevalencia en presencia de estenosis valvular.\n\nEs de conocimiento común que las enfermedades de la válvula tricúspide llevan a cambios hemodinámicos en el ciclo cardíaco que, dependiendo de su gravedad, pueden llevar a insuficiencia cardíaca derecha, un cuadro clínico grave con alta morbilidad y mortalidad. Según la más reciente directriz de la Sociedad Europea de Cardiología, en presencia de valvulopatía tricúspide primaria grave aislada, incluso pacientes oligosintomáticos con dilatación ventricular o declive de la función ventricular derecha, debe considerarse la intervención.\n\nEn comparación con el tratamiento quirúrgico aislado de las válvulas aórtica y mitral, la intervención aislada de la válvula tricúspide presenta mortalidad operatoria de 2 a 3 veces mayor, alrededor del 8 al 9%. Esta diferencia de resultado puede explicarse por las patologías que llevan a la valvulopatía tricúspide aislada, como fibrilación auricular, hipertensión pulmonar y endocarditis infecciosa, patologías conocidas por tener alta morbilidad y mortalidad.\n\nCuestiones relevantes sobre la técnica quirúrgica hacen que la intervención valvular tricúspide sea aún más compleja, como su relación anatómica con el nodo auriculoventricular y el posicionamiento de su anillo fibroso, aproximadamente 2 mm por debajo de la inserción de sus valvas, lugar donde deben fijarse los puntos durante la anuloplastia o reemplazo valvular.\n\nUn metaanálisis reciente con 15.069 pacientes sometidos a cirugía aislada de válvula tricúspide comparó la reparación valvular con el reemplazo valvular. Los resultados favorecieron la reparación valvular en cuanto a resultados postoperatorios, como bloqueos auriculoventriculares, necesidad de implante de marcapasos definitivo, mortalidad y menor incidencia de insuficiencia renal.\n\nSe están explorando otras estrategias de tratamiento. La intervención transcatéter ha sido estudiada como un enfoque menos invasivo para tratar la regurgitación tricúspide funcional. En un metaanálisis reciente, el grupo de pacientes que fue sometido a intervención mostró mejores resultados y menor tasa de reingreso por insuficiencia cardíaca.\n\nPor lo tanto, conocer la fisiopatología de la valvulopatía tricúspide y la correcta indicación de intervenciones transcatéter o quirúrgicas siguen siendo temas de amplio debate e importancia. Solo así el apodo 'válvula olvidada' quedará resignado al pasado.",
+        "link": "https://thevalveclub.com.br/the-forgotten-valve/"
+      }
+    ]
+  },
+  "contato": {
+    "titulo": "Contacto",
+    "descricao": "Póngase en contacto para agendar una consulta o resolver dudas.",
+    "agendamento": "Agendamiento de Consultas",
+    "nome": "Nombre",
+    "email": "Correo electrónico",
+    "mensagem": "Mensaje",
+    "enviar": "Enviar Mensaje",
+    "telefone": "Teléfono: (41) 3016-6622",
+    "hospital": "Hospital de la Cruz Roja Brasileña - Paraná",
+    "endereco": "Dirección: Av. Vicente Machado, 1280, R. Cap. Souza Franco, 50 - Batel, Curitiba - PR, 80420-011",
+    "sucesso": "¡Mensaje enviado con éxito! ✅",
+    "erro": "Error al enviar. Inténtalo de nuevo. ❌"
+  },
+  "paciente": {
+    "titulo": "Área del Paciente",
+    "preop": {
+      "titulo": "Instrucciones Preoperatorias",
+      "card1": {
+        "titulo": "Ayuno",
+        "texto": "Mantenga ayuno absoluto durante 8 horas antes de la cirugía, incluyendo agua."
+      },
+      "card2": {
+        "titulo": "Medicamentos",
+        "texto": "Informe al médico sobre todos los medicamentos que utiliza y alergias conocidas."
+      },
+      "card3": {
+        "titulo": "Documentos Necesarios",
+        "texto": "Lleve documento con foto, exámenes recientes y autorización del seguro si corresponde."
+      },
+      "card4": {
+        "titulo": "Higiene Personal",
+        "texto": "Dúchese con jabón antiséptico la noche anterior y el día de la cirugía."
+      }
+    },
+    "seguranca": {
+      "titulo": "Seguridad del Paciente",
+      "card1": {
+        "titulo": "Identificación Correcta",
+        "texto": "Confirme su nombre completo antes de exámenes o procedimientos. Mantenga la pulsera de identificación hasta el alta."
+      },
+      "card2": {
+        "titulo": "Pagos y Seguridad",
+        "texto": "No proporcione datos ni realice pagos por teléfono. Consulte a la tesorería del hospital en caso de dudas."
+      }
+    },
+    "quedas": {
+      "titulo": "Prevención de Caídas",
+      "card1": {
+        "titulo": "Evite Caminar Solo",
+        "texto": "Aunque se sienta bien, llame al equipo de enfermería antes de levantarse."
+      },
+      "card2": {
+        "titulo": "Objetos al Alcance",
+        "texto": "Mantenga los objetos personales cerca y el timbre de llamada accesible."
+      }
+    },
+    "higiene": {
+      "titulo": "Higiene de Manos",
+      "card1": {
+        "titulo": "Lávese Siempre las Manos",
+        "texto": "Después del baño, antes de las comidas, al llegar o salir del hospital. Use alcohol al 70% si no hay suciedad visible."
+      },
+      "card2": {
+        "titulo": "Oriente a los Acompañantes",
+        "texto": "Pida a los acompañantes y visitantes que se higienicen las manos con frecuencia."
+      }
+    },
+    "internacaoMed": {
+      "titulo": "Internación y Medicamentos",
+      "card1": {
+        "titulo": "Suspensión de Anticoagulantes",
+        "texto": "AAS, Clopidogrel, Marevan, Marcoumar, Eliquis deben suspenderse 5 días antes de la cirugía. Rivaroxabana, 2 días antes. ¡Siga siempre la orientación médica!"
+      },
+      "card2": {
+        "titulo": "Horario de Internación",
+        "texto": "Ingresar el día anterior a la cirugía a las 14h. Llevar documentos, exámenes, autorización y objetos personales."
+      },
+      "card3": {
+        "titulo": "Remoción de Accesorios",
+        "texto": "Retire pestañas postizas, uñas de gel, piercings, expansores, extensiones de cabello y objetos de valor."
+      },
+      "card4": {
+        "titulo": "Centro de Internación",
+        "texto": "Después de la autorización del seguro de salud, se debe programar la evaluación preanestésica con anticipación."
+      }
+    },
+    "duvidas": {
+      "titulo": "Preguntas Frecuentes",
+      "card1": {
+        "titulo": "¿Puedo tener un acompañante?",
+        "texto": "Sí, se permite un acompañante mayor de 18 años durante la internación."
+      },
+      "card2": {
+        "titulo": "¿Puedo llevar comida?",
+        "texto": "No se permite traer alimentos del exterior sin autorización del equipo de nutrición."
+      },
+      "card3": {
+        "titulo": "Horarios de Visita",
+        "texto": "Las visitas están permitidas de 14:00 a 20:00. Menores de 16 años no pueden ingresar a UCI."
+      },
+      "card4": {
+        "titulo": "¿Cómo hablar con el equipo médico?",
+        "texto": "La información clínica será proporcionada por el médico responsable al representante legal."
+      }
+    }
+  }
+}

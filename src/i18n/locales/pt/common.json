@@ -1,0 +1,287 @@
+{
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "pacient": "Área do Paciente",
+    "publications": "Publicações",
+    "testimonials": "Depoimentos",
+    "contact": "Contato"
+  },
+  "hero": {
+    "nome": "Dra. Leiza Loiane Hollas",
+    "especialidade": "Cirurgia Cardiovascular",
+    "crm": "CRM-PR 40485",
+    "rqe": "RQE 38188"
+  },
+"sobre": {
+  "titulo": "Sobre a Dra. Leiza",
+  "texto": "Cirurgiã Cardiovascular e membro da Sociedade Brasileira de Cirurgia Cardiovascular (SBCCV), dedica sua atuação ao tratamento cirúrgico das doenças do coração com foco em segurança, precisão técnica e cuidado individualizado.\n\nConcluiu residência médica em Cirurgia Cardiovascular no Hospital da Cruz Vermelha Brasileira – Paraná (2024), consolidando formação especializada em procedimentos de alta complexidade e no manejo integrado do paciente cardiovascular.\n\nGraduada em Medicina pela Pontifícia Universidade Católica do Paraná (2018), direciona sua prática principalmente para cirurgia cardiovascular, cirurgia valvar e simulação cirúrgica, buscando constantemente aliar inovação, evidência científica e excelência assistencial.\n\nAlém da atuação clínica e cirúrgica, desenvolve atividade científica contínua, com artigos publicados em periódicos e revistas nacionais e internacionais. Integra o The Valve Club, iniciativa voltada à disseminação de conhecimento médico por meio da discussão de estudos relacionados às valvopatias e à cardiopatia estrutural — áreas em constante evolução na cardiologia moderna.\n\nAcredita que a cirurgia cardiovascular exige não apenas domínio técnico, mas também escuta atenta e responsabilidade em cada decisão. Por isso, seu trabalho é pautado na construção de uma relação de confiança com o paciente, oferecendo cuidado individualizado em todas as etapas do tratamento.",
+  "altImagem": "Foto da Dra. Leiza Loiane Hollas"
+},
+  "servicos": {
+    "titulo": "Especialidades",
+    "cirurgia": "Cirurgia Cardíaca",
+    "avaliacao": "Avaliação Pré-operatória"
+  },
+  "paciente": {
+    "titulo": "Área do Paciente",
+    "descricao": "Nesta área você encontrará informações úteis, orientações pré e pós-operatórias, e poderá acessar documentos importantes.",
+    "pre": "Instruções pré-operatórias",
+    "pos": "Cuidados pós-cirúrgicos",
+    "documentos": "Documentos para download (em breve)",
+    "preop": {
+      "titulo": "Instruções Pré-Operatórias",
+      "card1": {
+        "titulo": "Jejum",
+        "texto": "Mantenha jejum absoluto de 8 horas antes da cirurgia, incluindo água."
+      },
+      "card2": {
+        "titulo": "Medicamentos",
+        "texto": "Informe ao médico sobre todos os medicamentos em uso e alergias conhecidas."
+      },
+      "card3": {
+        "titulo": "Documentos Necessários",
+        "texto": "Leve documento com foto, exames recentes e autorização do convênio, se aplicável."
+      },
+      "card4": {
+        "titulo": "Higiene Pessoal",
+        "texto": "Tome banho com sabonete antisséptico na noite anterior e no dia da cirurgia."
+      }
+    },
+    "seguranca": {
+      "titulo": "Segurança do Paciente",
+      "card1": {
+        "titulo": "Identificação Correta",
+        "texto": "Confirme seu nome completo antes de exames ou procedimentos. Mantenha a pulseira de identificação até a alta."
+      },
+      "card2": {
+        "titulo": "Pagamentos e Segurança",
+        "texto": "Não forneça dados ou realize pagamentos por telefone. Dúvidas devem ser tratadas com a tesouraria do hospital."
+      }
+    },
+    "quedas": {
+      "titulo": "Prevenção de Quedas",
+      "card1": {
+        "titulo": "Evite Caminhar Sozinho",
+        "texto": "Mesmo se sentir bem, chame a equipe de enfermagem antes de levantar-se."
+      },
+      "card2": {
+        "titulo": "Objetos ao Alcance",
+        "texto": "Deixe objetos pessoais próximos e mantenha a campainha acessível."
+      }
+    },
+    "higiene": {
+      "titulo": "Higienização das Mãos",
+      "card1": {
+        "titulo": "Lave Sempre as Mãos",
+        "texto": "Após o banheiro, antes das refeições, ao chegar ou sair do hospital. Use álcool 70% se não houver sujidade visível."
+      },
+      "card2": {
+        "titulo": "Oriente Acompanhantes",
+        "texto": "Peça para que acompanhantes e visitantes também higienizem as mãos com frequência."
+      }
+    },
+    "internacaoMed": {
+      "titulo": "Internação e Medicações",
+      "card1": {
+        "titulo": "Suspensão de Anticoagulantes",
+        "texto": "AAS, Clopidogrel, Marevan, Marcoumar, Eliquis devem ser suspensos 5 dias antes da cirurgia. Rivaroxabana, 2 dias antes. Sempre siga orientação médica!"
+      },
+      "card2": {
+        "titulo": "Horário da Internação",
+        "texto": "Internar no dia anterior à cirurgia, às 14h. Levar documentos, exames, autorização e objetos de uso pessoal."
+      },
+      "card3": {
+        "titulo": "Remoção de Acessórios",
+        "texto": "Remova cílios postiços, unhas em gel, piercings, alargadores, extensões de cabelo e objetos de valor."
+      },
+      "card4": {
+        "titulo": "Central de Internação",
+        "texto": "Após autorização do plano de saúde, é necessário agendar avaliação pré-anestésica com antecedência."
+      }
+    },
+    "duvidas": {
+      "titulo": "Dúvidas Frequentes",
+      "card1": {
+        "titulo": "Posso ter um acompanhante?",
+        "texto": "Sim, é permitido um acompanhante maior de 18 anos durante a internação."
+      },
+      "card2": {
+        "titulo": "Posso levar alimentos?",
+        "texto": "Não é permitido trazer alimentos de fora sem autorização da equipe de nutrição."
+      },
+      "card3": {
+        "titulo": "Horários de visita",
+        "texto": "As visitas são permitidas das 14h às 20h. Menores de 16 anos não podem visitar UTIs."
+      },
+      "card4": {
+        "titulo": "Como falar com a equipe médica?",
+        "texto": "Informações clínicas são passadas pelo médico responsável ao responsável legal."
+      }
+    }
+  },
+  "publicacoes": {
+    "titulo": "Publicações e Artigos Científicos",
+    "downloadLivro": "Download do Livro",
+  "informacoesTecnicas": "Informações Técnicas",
+    "livro": {
+    "titulo": "Manual básico de cirurgia torácica e cardiovascular da LACTCV",
+  "data": "Publicado em 24 de outubro de 2023",
+  "resumo": "O Manual Básico de Cirurgia Torácica e Cardiovascular da LACTCV introduz o leitor aos fundamentos essenciais da especialidade, da anatomia às patologias mais frequentes, com uma abordagem didática e acessível.",
+  "conteudo": "O Manual Básico de Cirurgia Torácica e Cardiovascular da LACTCV foi desenvolvido para introduzir o leitor aos fundamentos essenciais da cirurgia torácica e cardiovascular, abordando desde conceitos anatômicos até as patologias mais frequentes da especialidade.\n\nA proposta da obra é oferecer um conteúdo didático, objetivo e acessível, especialmente voltado para acadêmicos de medicina e profissionais em formação, proporcionando uma base sólida para o entendimento dos princípios fundamentais da área.\n\nAo longo das páginas, o leitor é conduzido por uma jornada de aprendizado que busca unir conhecimento técnico, clareza conceitual e aplicação prática, servindo como ponto de partida para o aprofundamento contínuo em uma especialidade que exige precisão, dedicação e constante evolução.\n\nEste livro representa um convite ao estudo e à construção de uma trajetória profissional pautada na excelência e no compromisso com o cuidado em saúde.",
+  "doi": "10.22533/at.ed.389232310",
+  "isbn": "978-65-258-1938-9",
+  "palavrasChave": "1. Coração - Cirurgia. I. Hollas, Leiza Loiane (Organizadora). II. Manoel, Agnes Zanotto (Organizadora). III. Iwamoto, Aiko (Organizadora). IV. Título.",
+  "ano": "2023",
+  "paginas": "144",
+  "downloadLink": "https://atenaeditora.com.br/catalogo/download-file/6577"
+  
+},
+    "artigos": [
+      {
+        "id": "mitraclip",
+        "titulo": "Intervenção na Cardiopatia Estrutural",
+        "subtitulo": "De gênio e de louco todo procedimento tem um pouco?",
+        "resumo": "O aumento da incidência de cardiopatias estruturais valvares acompanha o progressivo envelhecimento da população e, dada a alta prevalência, hoje há grande anseio do meio médico pela busca de estratégias intervencionistas.",
+        "conteudo": "O aumento da incidência de cardiopatias estruturais valvares acompanha o progressivo envelhecimento da população e, dada a alta prevalência, hoje há grande anseio do meio médico pela busca de estratégias intervencionistas – tanto cirúrgicas convencionais quanto às minimamente invasivas (transcateter) – que podem ser indicadas para pacientes portadores de valvopatia cardíaca, objetivando a redução da morbimortalidade associada a esta doença.\n\nNos últimos anos, as tecnologias transcateter têm ganhado destaque no tratamento da doença sintomática da valva mitral insuficiente, no entanto, é importante ressaltar que nem todos os pacientes com essa patologia são candidatos a essas intervenções consideradas 'menos invasivas'.\n\nSegundo a última Diretriz Brasileira de Valvopatias (2020) o método percutâneo deve ser reservado para pacientes portadores de insuficiência mitral (IM) moderada para grave ou grave, de etiologias tanto primária como secundária, com sintomas refratários e com elevado ou proibitivo risco cirúrgico.\n\nMas o que seria o MitralClip®? A correção de valva mitral transcateter, também conhecida como TEER (Transcatheter Edge-to-Edge Repair) utiliza esse dispositivo percutâneo para realizar uma abordagem semelhante ao procedimento cirúrgico de 'Alfieri', antigamente chamado de reparo 'edge-to-edge', criado em 1991 pelo italiano Ottavio Alfieri, mas de forma minimamente invasiva.\n\nCom essa técnica, faz-se uma correção funcional, não anatômica, da valva mitral, com a realização de fixação de A2 em P2 por meio de pontos cirúrgicos, que leva a formação de uma valva mitral com duplo orifício. Tal técnica se torna efetiva em situações de duplo prolapso (dos folhetos anterior e posterior da valva mitral) e na doença de Barlow (na qual os folhetos se encontram espessados e redundantes).\n\nUtilizando os dados do CUTTING-EDGE Registry (registro retrospectivo internacional de pacientes submetidos à cirurgia valvar mitral após falha do TEER) o estudo comparou o resultado da cirurgia valvar mitral após a falha do tratamento percutâneo com MitraClip® em pacientes com IM primária versus secundária.\n\nForam 330 pacientes analisados, de julho de 2009 a julho de 2020, destes 47% tinham IM primária e 53% IM secundária. A mortalidade um ano após a cirurgia foi de 31,3% geral, sendo maior nos pacientes com IM secundária (38,3% vs 23,2%).\n\nEsses dados nos mostram que devemos buscar resultados satisfatórios após a TEER, com o objetivo de evitar complicações futuras e garantir a melhor qualidade de vida para o paciente. A compreensão dos riscos envolvidos na cirurgia valvar mitral após a falha do TEER destaca a importância de uma abordagem multidisciplinar do Heart Team para realizar a avaliação criteriosa dos pacientes que podem se beneficiar ou não com a terapia percutânea.",
+        "link": "https://thevalveclub.com.br/intervencao-na-cardiopatia-estrutural/"
+      },
+      {
+        "id": "bioproteses",
+        "titulo": "When the GOATs go wrong",
+        "subtitulo": "Identificando disfunção de biopróteses",
+        "resumo": "O aumento da incidência de cardiopatias estruturais valvares acompanha o progressivo envelhecimento da população. Diante da necessidade de substituição valvar, devemos estar atentos à ocorrência de degeneração estrutural das biopróteses.",
+        "conteudo": "O aumento da incidência de cardiopatias estruturais valvares acompanha o progressivo envelhecimento da população e, dada a alta prevalência de febre reumática, com consequente acometimento de pacientes jovens, a demanda por intervenção valvar é diretamente impactada.\n\nDiante da necessidade de substituição valvar, especialmente na escolha de uma bioprótese, devemos estar atentos à ocorrência de sua degeneração estrutural, diagnóstico muitas vezes realizado de forma tardia, podendo levar à deterioração clínica e comprometimento da função ventricular.\n\nConforme orientações do American College of Cardiology (ACC), sugere-se controle ecocardiográfico transtorácico após troca valvar com 1, 3 e 12 meses após procedimento, e depois anualmente. Conforme a nova Atualização das Diretrizes Brasileiras de Valvopatias de 2020, há recomendação do controle ecocardiográfico periódico após troca valvar, porém periodicidade esta que não é especificada, ficando a critério do clínico assistente a regularidade da realização do ecocardiograma.\n\nDurante esse seguimento deve-se realizar busca ativa quanto à alteração de classe funcional e novos sintomas que possam indicar a disfunção da bioprótese implantada.\n\nEssas disfunções podem ser classificadas em estágios, inicialmente com identificação da disfunção valvar sem alterações hemodinâmicas, até estágios mais avançados, onde há a disfunção de prótese associada a alterações hemodinâmicas mais graves.\n\nPodem ser classificadas também em categorias: disfunção estrutural (calcificação ou rotura de seus folhetos) ou não-estrutural (leak paraprotético, pannus, trombos, endocardite e mismatch). Dos exames disponíveis para diagnóstico, tem-se o ecocardiograma (transtorácico ou transesofágico) como principal aliado.\n\nEm casos de dúvidas ou para melhorar a análise de possível trombose de bioprótese aórtica, pode-se recorrer a angiotomografia computadorizada. Achados como hipoatenuação com espessamento maior que 2 mm dos folhetos valvares e diminuição de sua mobilidade corroboram o diagnostico de trombose de prótese valvar.\n\nO objetivo das intervenções estruturais valvares é otimizar a carga hemodinâmica, diminuir os sintomas, melhorar a qualidade de vida e, possivelmente, prolongar a sobrevida. Nem toda disfunção de bioprótese terá como via final de tratamento a reintervenção, cabendo, muitas vezes, o manejo medicamentoso e de mudanças de hábito de vida.",
+        "link": "https://thevalveclub.com.br/when-the-goats-go-wrong/"
+      },
+      {
+        "id": "david-yacoub",
+        "titulo": "David e Yacoub",
+        "subtitulo": "Duelo para Domar Aneurismas de Aorta!",
+        "resumo": "Em 1900 o Dr Willian Osler já apontava uma verdade na medicina: 'não há doença mais propícia à humildade clínica do que aneurismas da aorta'. A afirmação de Osler é verídica, visto que até hoje, as doenças da aorta são um desafio clínico-cirúrgico.",
+        "conteudo": "Em 1900 o Dr Willian Osler já apontava uma verdade na medicina: 'não há doença mais propícia à humildade clínica do que aneurismas da aorta'. A afirmação de Osler é verídica, visto que até hoje, as doenças da aorta são um desafio clínico-cirúrgico para a área médica.\n\nVale lembrar que, em média, o diâmetro normal, ou estatisticamente mais comum, da aorta ascendente é de cerca de 30mm e dilatações acima de 50% deste valor já são consideradas fora do padrão da normalidade.\n\nVários são os fatores predisponentes para os aneurismas da aorta ascendente, tais como: tabagismo, hipertensão, desordens genéticas, como síndrome de Marfan e Ehlers-Danlos, infecciosas, como a sífilis e congênitas.\n\nA valva aórtica bivalvulada é a alteração congênita mais comum, presente em 1 a 2% da população mundial e está relacionada aos aneurismas de aorta torácica em 50% dos casos. O risco de um paciente com valva aórtica bicúspide desenvolver aneurisma de aorta torácica é de cerca de até 0,1% ao ano e corresponde a uma patologia de elevada mortalidade atingindo 60% se não tratada e, 10 a 20% após tratamento adequado.\n\nÉ estabelecido na literatura que os pacientes, em geral, com aneurisma da aorta ascendente com diâmetro ≥ 55mm necessitam de intervenção cirúrgica e que valores inferiores a esse já indicam intervenção na presença de alterações genéticas como Síndrome de Marfan, Ehlers-Danlos e Loyes-Ditetz.\n\nDentre as técnicas cirúrgicas atuais para aneurisma de aorta ascendente, a mais praticada é cirurgia de Bentall e De-Bono, que consiste na troca combinada da valva, raiz aórtica e aorta ascendente pelo implante de um tubo protético com prótese mecânica ou biológica. Contudo, serão pacientes que estarão sempre sujeitos à anticoagulação, no caso das próteses mecânicas, ou à deterioração das biopróteses.\n\nComo alternativa cirúrgica, existem duas técnicas que envolvem o conceito de 'valve sparing'. A técnica de Yacoub, criada em 1982, em que são confeccionados novos seios de Valsalva utilizando uma prótese tubular de poliéster, conhecido como tubo de Dacron, e a técnica de David, idealizada por Dr. Tirone David em 1992, em que o tubo de Dacron é implantado diretamente no anel valvar aórtico com reimplante dos óstios das artérias coronárias.\n\nUma revisão sistemática de literatura recente comparou a durabilidade e segurança dos procedimentos 'Valve Sparing' de David e Yacoub durante o acompanhamento a longo prazo em pacientes com valva aórtica bivalvulada. Nesse estudo foram incluídos 1159 pacientes (87,4% do sexo masculino, com idade média de 44,9 anos), sendo que 85% dos pacientes foram submetidos ao procedimento David e 15% dos pacientes submetidos à técnica de Yacoub.\n\nA mortalidade média foi de 1,7% em trinta dias. A estimativa de sobrevida Kaplan-Meier em 5, 10 e 15 anos foi de 96%, 90% e 87%, enquanto a estimativa de pacientes livres de reoperação secundária no mesmo período foi de 96%, 91% e 88%.\n\nMesmo em pacientes com valva aórtica bivalvulada, a preservação da valva aórtica nativa se mostra claramente mais vantajosa sobre a substituição da mesma, por apresentar hemodinâmica mais fisiológica, alívio da necessidade de anticoagulação e maior durabilidade em relação às substituições protéticas modernas.\n\nÉ importante ressaltar que a escolha entre as duas abordagens cirúrgicas deve ser baseada em uma avaliação abrangente das características individuais do paciente, incluindo a morfologia da valva aórtica, a extensão do aneurisma e outras condições médicas subjacentes.",
+        "link": "https://thevalveclub.com.br/david-e-yacoub/",
+        "imagem": "/images/david-yacoub-tecnicas.jpg"
+      },
+      {
+        "id": "tricuspide",
+        "titulo": "The Forgotten Valve",
+        "subtitulo": "A valvopatia tricúspide",
+        "resumo": "A intervenção na valvopatia tricúspide tem sua clara indicação quando ocorre concomitantemente à indicação de intervenção das valvopatias mitral e aórtica. Quando presente de maneira isolada, ainda é motivo de controvérsias.",
+        "conteudo": "A intervenção na valvopatia tricúspide tem sua clara indicação quando ocorre concomitantemente à indicação de intervenção das valvopatias mitral e aórtica. Quando presente de maneira isolada, a indicação de intervenção ainda é motivo de controvérsias entre cirurgiões e cardiologistas, com mais prevalência na presença da estenose valvar.\n\nÉ de senso comum que doenças da valva tricúspide levam a alterações hemodinâmicas no ciclo cardíaco que, a depender de sua gravidade, podem levar à insuficiência cardíaca direita, quadro clínico grave e com alta morbimortalidade. Conforme a mais recente diretriz da sociedade europeia de cardiologia, na presença de valvopatia tricúspide primária grave isolada, mesmo pacientes oligossintomáticos com dilatação ventricular ou declínio da função ventricular direita, a intervenção deve ser considerada.\n\nQuando comparada ao tratamento cirúrgico isolado das valvas aórtica e mitral, a intervenção isolada da valva tricúspide apresenta mortalidade operatória de 2 a 3 vezes maior, ficando em torno de 8 a 9%. Essa diferença de desfecho pode ser explicada pelas patologias que levam à valvopatia tricúspide isolada, como por exemplo fibrilação atrial, hipertensão pulmonar e endocardite infecciosa, patologias que sabidamente apresentam alta morbimortalidade.\n\nQuestões relevantes sobre a técnica cirúrgica tornam a intervenção valvar tricúspide ainda mais complexa, como sua relação anatômica com o nó atrioventricular e o posicionamento de seu ânulo fibroso, cerca de 2 mm abaixo da inserção de suas cúspides, local onde deve-se fixar os pontos durante a anuloplastia ou troca valvar.\n\nUma meta-análise recente com 15.069 pacientes submetidos à cirurgia da valva tricúspide isolada, comparou a plástica valvar com a troca valvar. Os resultados foram favoráveis à plástica valvar quando se tratava de desfechos no pós-operatório, como bloqueios atrioventriculares, necessidade de implante de marcapasso definitivo, mortalidade e menor incidência de insuficiência renal.\n\nOutras estratégias de tratamento estão sendo exploradas para aperfeiçoar os desfechos de pacientes com valvopatia tricúspide grave. A intervenção transcateter tem sido estudada como uma abordagem menos invasiva para tratar a regurgitação tricúspide funcional.\n\nEm uma recente metanálise comparando o tratamento farmacológico isolado em oposição ao medicamentoso associado à intervenção transcateter, o grupo de pacientes que foi submetido à intervenção apresentou melhores desfechos e menor taxa de reinternação por insuficiência cardíaca.\n\nPortanto, conhecer a fisiopatologia da valvopatia tricúspide e a correta indicação das intervenções transcateter ou cirúrgica continuam como temas de amplo debate e importância. Somente assim o codinome 'forgotten valve' estará resignado ao passado.",
+        "link": "https://thevalveclub.com.br/the-forgotten-valve/"
+      }
+    ]
+  },
+  "contato": {
+    "titulo": "Contato",
+    "descricao": "Entre em contato para agendar uma consulta ou tirar dúvidas.",
+    "agendamento": "Agendamento de Consultas",
+    "nome": "Nome",
+    "email": "E-mail",
+    "mensagem": "Mensagem",
+    "enviar": "Enviar Mensagem",
+    "telefone": "Telefone: (41) 3016-6622",
+    "hospital": "Hospital da Cruz Vermelha Brasileira - Paraná",
+    "endereco": "Endereço: Av. Vicente Machado, 1280, R. Cap. Souza Franco, 50 - Batel, Curitiba - PR, 80420-011",
+    "sucesso": "Mensagem enviada com sucesso! ✅",
+    "erro": "Erro ao enviar. Tente novamente. ❌"
+  },
+  "pacient": {
+    "titulo": "Área do Paciente",
+    "descricao": "Nesta área você encontrará informações úteis, orientações pré e pós-operatórias, e poderá acessar documentos importantes.",
+    "pre": "Instruções pré-operatórias",
+    "pos": "Cuidados pós-cirúrgicos",
+    "documentos": "Documentos para download (em breve)",
+    "preop": {
+      "titulo": "Instruções Pré-Operatórias",
+      "card1": {
+        "titulo": "Jejum",
+        "texto": "Mantenha jejum absoluto de 8 horas antes da cirurgia, incluindo água."
+      },
+      "card2": {
+        "titulo": "Medicamentos",
+        "texto": "Informe ao médico sobre todos os medicamentos em uso e alergias conhecidas."
+      },
+      "card3": {
+        "titulo": "Documentos Necessários",
+        "texto": "Leve documento com foto, exames recentes e autorização do convênio, se aplicável."
+      },
+      "card4": {
+        "titulo": "Higiene Pessoal",
+        "texto": "Tome banho com sabonete antisséptico na noite anterior e no dia da cirurgia."
+      }
+    },
+    "seguranca": {
+      "titulo": "Segurança do Paciente",
+      "card1": {
+        "titulo": "Identificação Correta",
+        "texto": "Confirme seu nome completo antes de exames ou procedimentos. Mantenha a pulseira de identificação até a alta."
+      },
+      "card2": {
+        "titulo": "Pagamentos e Segurança",
+        "texto": "Não forneça dados ou realize pagamentos por telefone. Dúvidas devem ser tratadas com a tesouraria do hospital."
+      }
+    },
+    "quedas": {
+      "titulo": "Prevenção de Quedas",
+      "card1": {
+        "titulo": "Evite Caminhar Sozinho",
+        "texto": "Mesmo se sentir bem, chame a equipe de enfermagem antes de levantar-se."
+      },
+      "card2": {
+        "titulo": "Objetos ao Alcance",
+        "texto": "Deixe objetos pessoais próximos e mantenha a campainha acessível."
+      }
+    },
+    "higiene": {
+      "titulo": "Higienização das Mãos",
+      "card1": {
+        "titulo": "Lave Sempre as Mãos",
+        "texto": "Após o banheiro, antes das refeições, ao chegar ou sair do hospital. Use álcool 70% se não houver sujidade visível."
+      },
+      "card2": {
+        "titulo": "Oriente Acompanhantes",
+        "texto": "Peça para que acompanhantes e visitantes também higienizem as mãos com frequência."
+      }
+    },
+    "internacaoMed": {
+      "titulo": "Internação e Medicações",
+      "card1": {
+        "titulo": "Suspensão de Anticoagulantes",
+        "texto": "AAS, Clopidogrel, Marevan, Marcoumar, Eliquis devem ser suspensos 5 dias antes da cirurgia. Rivaroxabana, 2 dias antes. Sempre siga orientação médica!"
+      },
+      "card2": {
+        "titulo": "Horário da Internação",
+        "texto": "Internar no dia anterior à cirurgia, às 14h. Levar documentos, exames, autorização e objetos de uso pessoal."
+      },
+      "card3": {
+        "titulo": "Remoção de Acessórios",
+        "texto": "Remova cílios postiços, unhas em gel, piercings, alargadores, extensões de cabelo e objetos de valor."
+      },
+      "card4": {
+        "titulo": "Central de Internação",
+        "texto": "Após autorização do plano de saúde, é necessário agendar avaliação pré-anestésica com antecedência."
+      }
+    },
+    "duvidas": {
+      "titulo": "Dúvidas Frequentes",
+      "card1": {
+        "titulo": "Posso ter um acompanhante?",
+        "texto": "Sim, é permitido um acompanhante maior de 18 anos durante a internação."
+      },
+      "card2": {
+        "titulo": "Posso levar alimentos?",
+        "texto": "Não é permitido trazer alimentos de fora sem autorização da equipe de nutrição."
+      },
+      "card3": {
+        "titulo": "Horários de visita",
+        "texto": "As visitas são permitidas das 14h às 20h. Menores de 16 anos não podem visitar UTIs."
+      },
+      "card4": {
+        "titulo": "Como falar com a equipe médica?",
+        "texto": "Informações clínicas são passadas pelo médico responsável ao responsável legal."
+      }
+    }
+  }
+}

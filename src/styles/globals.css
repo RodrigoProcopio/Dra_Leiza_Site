@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+html, body { height: 100%; }
+
+body {
+  background: #F7F7F5;
+  color: #0B1220;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:focus-visible {
+  outline: 2px solid #0B1B3A;
+  outline-offset: 3px;
+}
+
+html { scroll-behavior: smooth; }
+
+.ecg-draw {
+  /* Comprimento aproximado do path (não precisa ser exato) */
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
+  opacity: 0;
+  animation: ecgDrawErase 1.9s ease-in-out infinite;
+}
+
+@keyframes ecgDrawErase {
+  /* começa invisível */
+  0% {
+    stroke-dashoffset: 420;
+    opacity: 0;
+  }
+
+  /* aparece e começa a desenhar */
+  10% {
+    opacity: 1;
+  }
+
+  /* desenhou quase tudo */
+  55% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  /* começa a apagar/ir embora */
+  75% {
+    opacity: 0.35;
+  }
+
+  /* some e reinicia */
+  100% {
+    stroke-dashoffset: -420;
+    opacity: 0;
+  }
+}
+
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
