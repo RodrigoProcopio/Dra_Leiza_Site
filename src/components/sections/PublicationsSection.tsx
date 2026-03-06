@@ -1,22 +1,26 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Download, ExternalLink, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import Container from "../layout/Container";
 
 const easePremium: any = [0.2, 0.7, 0.2, 1];
 
 // =========================
-// Card de Artigo (padrão)
-// - Livro NÃO mostra download no fechado
+// Card de Artigo
 // =========================
 function ArticleCard({
   article,
   onClick,
+  valveClubText,
 }: {
   article: any;
   onClick: () => void;
+  valveClubText: string;
 }) {
+  const isBook = article?.id === "livro";
+  const isValveClub = article?.publisher === "the-valve-club";
+
   return (
     <motion.div
       whileHover={{ y: -2 }}
@@ -25,12 +29,12 @@ function ArticleCard({
       onClick={onClick}
     >
       <div className="p-6 md:p-8">
-        {/* Header com foto da autora (igual artigos) */}
         <div className="flex items-start justify-between gap-4 mb-4">
           <div className="flex-1">
             <h3 className="font-serif text-xl md:text-2xl text-ink tracking-[-0.015em] mb-2">
               {article.titulo}
             </h3>
+
             {article.subtitulo && (
               <p className="text-sm text-brand-navy/70 italic mb-2">
                 {article.subtitulo}
@@ -49,12 +53,23 @@ function ArticleCard({
           </div>
         </div>
 
-        {/* Resumo */}
         <p className="text-sm leading-relaxed text-slate-700 mb-4 line-clamp-3">
           {article.resumo}
         </p>
 
-        {/* Footer */}
+        {!isBook && isValveClub && (
+          <div className="mb-4 flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50/90 px-3 py-3">
+            <img
+              src="/images/logo-the-valve.png"
+              alt="The Valve Club"
+              className="h-8 w-auto object-contain shrink-0"
+            />
+            <p className="text-xs sm:text-sm leading-relaxed text-slate-600">
+              {valveClubText}
+            </p>
+          </div>
+        )}
+
         <div className="flex items-center justify-between pt-4 border-t border-slate-200">
           <span className="text-xs text-slate-500">Por Dra. Leiza Hollas</span>
 
@@ -71,9 +86,7 @@ function ArticleCard({
 }
 
 // =========================
-// Modal de Artigo (padrão)
-// - Livro: mostra capa + infos técnicas
-// - Download SOMENTE no aberto
+// Modal de Artigo
 // =========================
 function ArticleModal({
   article,
@@ -84,8 +97,8 @@ function ArticleModal({
 }) {
   const { t } = useTranslation();
   const isBook = article?.id === "livro";
+  const isValveClub = article?.publisher === "the-valve-club";
 
-  // Fallback robusto + busca no i18n quando for livro
   const downloadHref =
     article?.downloadLink ||
     article?.download ||
@@ -94,6 +107,7 @@ function ArticleModal({
 
   const paragraphs = String(article.conteudo || "")
     .split("\n\n")
+    .map((p) => p.trim())
     .filter(Boolean);
 
   return (
@@ -112,7 +126,6 @@ function ArticleModal({
         onClick={(e) => e.stopPropagation()}
         className="relative w-full max-w-4xl bg-white rounded-[32px] shadow-[0_32px_120px_-40px_rgba(15,23,42,0.40)] my-8"
       >
-        {/* Header */}
         <div className="sticky top-0 z-10 flex items-start justify-between gap-4 p-6 md:p-8 bg-white/95 backdrop-blur-sm border-b border-slate-100 rounded-t-[32px]">
           <div className="flex-1">
             <h1 className="font-serif text-2xl md:text-3xl lg:text-4xl text-ink tracking-[-0.015em] leading-tight">
@@ -141,9 +154,7 @@ function ArticleModal({
           </button>
         </div>
 
-        {/* Content */}
         <div className="p-6 md:p-8 lg:p-10">
-          {/* Autor */}
           <div className="flex items-center gap-3 mb-8 pb-6 border-b border-slate-200">
             <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-brand-navy/30">
               <img
@@ -160,7 +171,31 @@ function ArticleModal({
             </div>
           </div>
 
-          {/* Livro: capa + infos técnicas (só no modal) */}
+          {!isBook && isValveClub && (
+            <div className="mb-8 rounded-2xl border border-slate-200 bg-slate-50/90 p-5 md:p-6">
+              <div className="flex items-center gap-4">
+                <img
+                  src="/images/logo-the-valve.png"
+                  alt="The Valve Club"
+                  className="h-12 w-auto object-contain shrink-0"
+                />
+
+                <div>
+                  <p className="text-sm font-semibold text-slate-900">
+                    {t("publicacoes.theValveClub.titulo")}
+                  </p>
+                  <p className="text-xs text-slate-500 mt-1">
+                    {t("publicacoes.theValveClub.assinatura")}
+                  </p>
+                </div>
+              </div>
+
+              <p className="mt-4 text-sm leading-7 text-slate-600">
+                {t("publicacoes.theValveClub.descricao")}
+              </p>
+            </div>
+          )}
+
           {isBook && (
             <div className="mb-8">
               <div className="flex flex-col md:flex-row items-start gap-6">
@@ -174,8 +209,8 @@ function ArticleModal({
 
                 <div className="flex-1 rounded-2xl bg-slate-50 border border-slate-200 p-7">
                   <h3 className="font-serif text-lg text-brand-navy mb-3">
-  {t("publicacoes.informacoesTecnicas")}
-</h3>
+                    {t("publicacoes.informacoesTecnicas")}
+                  </h3>
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     {article.isbn && (
@@ -217,34 +252,32 @@ function ArticleModal({
                     )}
                   </div>
 
-                 {article.palavrasChave && (
-  <div className="mt-4 pt-4 border-t border-slate-200">
-    <p className="text-xs text-slate-600">
-      {article.palavrasChave}
-    </p>
+                  {article.palavrasChave && (
+                    <div className="mt-4 pt-4 border-t border-slate-200">
+                      <p className="text-xs text-slate-600">
+                        {article.palavrasChave}
+                      </p>
 
-    {/* Botão download no final das infos técnicas */}
-    {isBook && downloadHref && (
-      <div className="mt-4 flex justify-center">
-  <a
-    href={downloadHref}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center justify-center rounded-md bg-gray-800/80 px-6 py-3 text-sm font-medium text-white shadow transition-colors duration-200 hover:bg-gray-800"
-  >
-    <Download className="h-4 w-4 mr-2" />
-    <span>{t("publicacoes.downloadLivro")}</span>
-  </a>
-</div>
-    )}
-  </div>
-)}
+                      {isBook && downloadHref && (
+                        <div className="mt-4 flex justify-center">
+                          <a
+                            href={downloadHref}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center rounded-md bg-gray-800/80 px-6 py-3 text-sm font-medium text-white shadow transition-colors duration-200 hover:bg-gray-800"
+                          >
+                            <Download className="h-4 w-4 mr-2" />
+                            <span>{t("publicacoes.downloadLivro")}</span>
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
           )}
 
-          {/* Imagem do artigo se houver (artigos) */}
           {!isBook && article.imagem && (
             <div className="mb-8">
               <img
@@ -255,7 +288,6 @@ function ArticleModal({
             </div>
           )}
 
-          {/* Conteúdo */}
           <div className="prose prose-slate max-w-none">
             {paragraphs.map((p: string, idx: number) => (
               <p key={idx} className="text-slate-700 leading-relaxed mb-4">
@@ -264,7 +296,6 @@ function ArticleModal({
             ))}
           </div>
 
-          {/* Ações (somente artigos): link externo */}
           {!isBook && article.link && (
             <div className="mt-10 pt-8 border-t border-slate-100">
               <a
@@ -284,40 +315,29 @@ function ArticleModal({
   );
 }
 
-// =========================
-// PublicationsSection
-// - usa chaves já existentes
-// - trata o LIVRO como "artigo" (primeiro card)
-// - download só no modal
-// =========================
 export default function PublicationsSection() {
   const { t } = useTranslation();
 
   const titulo = t("publicacoes.titulo");
+  const valveClubText = t("publicacoes.theValveClub.curto");
 
-  // Artigos (já existem)
   const artigos =
     (t("publicacoes.artigos", {
       returnObjects: true,
     }) as any[]) || [];
 
-  // Livro (já existe) -> converter em "artigo"
   const livroRaw = t("publicacoes.livro", { returnObjects: true }) as any;
 
   const livroComoArtigo = livroRaw
     ? {
         id: "livro",
         titulo: livroRaw.titulo,
-        subtitulo: livroRaw.data, // cabeçalho igual artigo
+        subtitulo: livroRaw.data,
         resumo: livroRaw.resumo,
         conteudo: livroRaw.conteudo,
-
-        // download só no modal
         downloadLink: livroRaw.downloadLink,
-
-        // extras
         data: livroRaw.data,
-        imagem: livroRaw.imagem, // não usado pro livro (capa é fixa)
+        imagem: livroRaw.imagem,
         isbn: livroRaw.isbn,
         doi: livroRaw.doi,
         ano: livroRaw.ano,
@@ -326,7 +346,6 @@ export default function PublicationsSection() {
       }
     : null;
 
-  // Lista final: livro primeiro + artigos
   const listaFinal = livroComoArtigo ? [livroComoArtigo, ...artigos] : artigos;
 
   const [selectedArticle, setSelectedArticle] = useState<any | null>(null);
@@ -336,13 +355,11 @@ export default function PublicationsSection() {
       id="publicacoes"
       className="relative scroll-mt-24 overflow-hidden bg-white"
     >
-      {/* Backgrounds */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-[#F6F8FC] to-[#EEF3FF]" />
       <div className="pointer-events-none absolute -left-44 top-10 h-[520px] w-[520px] rounded-full bg-brand-navy/8 blur-3xl" />
       <div className="pointer-events-none absolute -right-56 -top-28 h-[640px] w-[640px] rounded-full bg-[#7AA6FF]/10 blur-3xl" />
 
       <Container className="relative py-16 md:py-24">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -357,7 +374,6 @@ export default function PublicationsSection() {
           <div className="mt-4 h-px w-32 bg-gradient-to-r from-brand-navy via-brand-teal to-transparent mx-auto" />
         </motion.div>
 
-        {/* Lista de cards: Livro (como artigo) + Artigos */}
         <div className="space-y-6">
           {listaFinal.map((art, idx) => (
             <motion.div
@@ -374,13 +390,13 @@ export default function PublicationsSection() {
               <ArticleCard
                 article={art}
                 onClick={() => setSelectedArticle(art)}
+                valveClubText={valveClubText}
               />
             </motion.div>
           ))}
         </div>
       </Container>
 
-      {/* Modal */}
       <AnimatePresence>
         {selectedArticle && (
           <ArticleModal
