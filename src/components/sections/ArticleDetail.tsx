@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { X, ExternalLink } from "lucide-react";
-import { useTranslation } from "react-i18next";
 
 const easePremium: any = [0.2, 0.7, 0.2, 1];
 
@@ -10,7 +9,6 @@ interface ArticleDetailProps {
 }
 
 export default function ArticleDetail({ article, onClose }: ArticleDetailProps) {
-  const { t } = useTranslation();
 
   // Split content into paragraphs
   const paragraphs: string[] = String(article.conteudo ?? "")
