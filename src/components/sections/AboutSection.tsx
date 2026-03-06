@@ -51,7 +51,7 @@ const { paragraphs } = useMemo(() => {
       <div className="pointer-events-none absolute inset-0 opacity-[0.05] mix-blend-multiply bg-[url('/images/grain.png')] bg-repeat" />
 
       <Container className="relative py-16 md:py-24">
-        <div className="grid items-stretch gap-10 md:grid-cols-[0.9fr_1.1fr] md:gap-14">
+        <div className="grid items-start gap-10 md:grid-cols-[0.9fr_1.1fr] md:gap-14">
           {/* ===== Foto (IGUAL ao print: object-cover, mais “perto”) ===== */}
           <motion.div
             initial={{ opacity: 0, y: 14 }}
@@ -69,14 +69,14 @@ const { paragraphs } = useMemo(() => {
               "
             >
               {/* Mantém proporção parecida com o print */}
-              <div className="relative w-full h-full min-h-[520px]">
+              <div className="relative w-full h-[560px] md:h-[720px] lg:h-[760px]">
                 {/* brilho topo */}
                 <div className="pointer-events-none absolute -top-1/2 left-1/2 z-10 h-[70%] w-[140%] -translate-x-1/2 rounded-full bg-white/30 blur-2xl" />
 
                 <img
                   src="/images/leiza.webp"
                   alt={t("sobre.altImagem")}
-                  className="h-full w-full object-cover object-[center_18%]"
+                  className="absolute inset-0 h-full w-full object-cover object-[center_18%]"
                   loading="lazy"
                   decoding="async"
                 />
