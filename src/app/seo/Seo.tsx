@@ -28,10 +28,10 @@ export default function Seo() {
       <link rel="canonical" href={canonical} />
 
       {/* hreflang — sinaliza ao Google as versões por idioma */}
-      <link rel="alternate" hreflang="pt-BR" href={BASE_URL + "/"} />
-      <link rel="alternate" hreflang="en" href={BASE_URL + "/"} />
-      <link rel="alternate" hreflang="es" href={BASE_URL + "/"} />
-      <link rel="alternate" hreflang="x-default" href={BASE_URL + "/"} />
+      <link rel="alternate" hrefLang="pt-BR" href={BASE_URL + "/"} />
+      <link rel="alternate" hrefLang="en" href={BASE_URL + "/"} />
+      <link rel="alternate" hrefLang="es" href={BASE_URL + "/"} />
+      <link rel="alternate" hrefLang="x-default" href={BASE_URL + "/"} />
 
       {/* Open Graph */}
       <meta property="og:type" content="website" />
