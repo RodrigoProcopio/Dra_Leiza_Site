@@ -23,16 +23,15 @@ export default function ContactSection() {
       setStatus("loading");
 
       await emailjs.sendForm(
-        "service_zy1sbxp",   // troque pelo seu service ID
-        "template_fgfvkyr",  // troque pelo seu template ID
+        "service_zy1sbxp",
+        "template_fgfvkyr",
         formRef.current,
-        "yfd2dXCxN8p1I_B5o"  // troque pela sua public key
+        "yfd2dXCxN8p1I_B5o"
       );
 
       setStatus("success");
       formRef.current.reset();
 
-      // opcional: limpar a mensagem depois de alguns segundos
       setTimeout(() => {
         setStatus("idle");
       }, 5000);
@@ -109,83 +108,83 @@ export default function ContactSection() {
           </motion.div>
 
           <motion.form
-  ref={formRef}
-  initial={{ opacity: 0, y: 14 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true, margin: "-15%" }}
-  transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1] }}
-  onSubmit={handleSubmit}
-  className="space-y-4"
->
-  <div>
-    <label
-      htmlFor="nome"
-      className="block text-sm font-medium text-slate-700"
-    >
-      {contact.nome}
-    </label>
-    <input
-      type="text"
-      id="nome"
-      name="from_name"
-      required
-      disabled={status === "loading"}
-      className="mt-1 block w-full rounded-md border border-slate-300 bg-white p-2 text-slate-800 shadow-sm focus:border-brand-navy focus:ring-brand-navy disabled:opacity-60"
-    />
-  </div>
+            ref={formRef}
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-15%" }}
+            transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1] }}
+            onSubmit={handleSubmit}
+            className="space-y-4"
+          >
+            <div>
+              <label
+                htmlFor="nome"
+                className="block text-sm font-medium text-slate-700"
+              >
+                {contact.nome}
+              </label>
+              <input
+                type="text"
+                id="nome"
+                name="from_name"
+                required
+                disabled={status === "loading"}
+                className="mt-1 block w-full rounded-md border border-slate-300 bg-white p-2 text-slate-800 shadow-sm focus:border-brand-navy focus:ring-brand-navy disabled:opacity-60"
+              />
+            </div>
 
-  <div>
-    <label
-      htmlFor="email"
-      className="block text-sm font-medium text-slate-700"
-    >
-      {contact.email}
-    </label>
-    <input
-      type="email"
-      id="email"
-      name="from_email"
-      required
-      disabled={status === "loading"}
-      className="mt-1 block w-full rounded-md border border-slate-300 bg-white p-2 text-slate-800 shadow-sm focus:border-brand-navy focus:ring-brand-navy disabled:opacity-60"
-    />
-  </div>
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-slate-700"
+              >
+                {contact.email}
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="from_email"
+                required
+                disabled={status === "loading"}
+                className="mt-1 block w-full rounded-md border border-slate-300 bg-white p-2 text-slate-800 shadow-sm focus:border-brand-navy focus:ring-brand-navy disabled:opacity-60"
+              />
+            </div>
 
-  <div>
-    <label
-      htmlFor="mensagem"
-      className="block text-sm font-medium text-slate-700"
-    >
-      {contact.mensagem}
-    </label>
-    <textarea
-      id="mensagem"
-      name="message"
-      rows={5}
-      required
-      disabled={status === "loading"}
-      className="mt-1 block w-full rounded-md border border-slate-300 bg-white p-2 text-slate-800 shadow-sm focus:border-brand-navy focus:ring-brand-navy disabled:opacity-60"
-    />
-  </div>
+            <div>
+              <label
+                htmlFor="mensagem"
+                className="block text-sm font-medium text-slate-700"
+              >
+                {contact.mensagem}
+              </label>
+              <textarea
+                id="mensagem"
+                name="message"
+                rows={5}
+                required
+                disabled={status === "loading"}
+                className="mt-1 block w-full rounded-md border border-slate-300 bg-white p-2 text-slate-800 shadow-sm focus:border-brand-navy focus:ring-brand-navy disabled:opacity-60"
+              />
+            </div>
 
-  <button
-    type="submit"
-    disabled={status === "loading"}
-    className="inline-flex items-center justify-center rounded-md bg-gray-800/80 px-6 py-3 text-sm font-medium text-white shadow transition-colors duration-200 hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-70"
-  >
-    {status === "loading" ? "Enviando..." : contact.enviar}
-  </button>
+            <button
+              type="submit"
+              disabled={status === "loading"}
+              className="inline-flex items-center justify-center rounded-md bg-gray-800/80 px-6 py-3 text-sm font-medium text-white shadow transition-colors duration-200 hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-70"
+            >
+              {/* ✅ CORRIGIDO: era hardcoded "Enviando..." */}
+              {status === "loading" ? t("contato.enviando") : contact.enviar}
+            </button>
 
-  {status === "success" && (
-    <p className="text-sm text-green-600">{contact.sucesso}</p>
-  )}
+            {status === "success" && (
+              <p className="text-sm text-green-600">{contact.sucesso}</p>
+            )}
 
-  {status === "error" && (
-    <p className="text-sm text-red-600">
-      Ocorreu um erro ao enviar sua mensagem. Tente novamente.
-    </p>
-  )}
-</motion.form>
+            {status === "error" && (
+              /* ✅ CORRIGIDO: era hardcoded em PT */
+              <p className="text-sm text-red-600">{contact.erro}</p>
+            )}
+          </motion.form>
         </div>
 
         <div className="mt-12 h-px w-2/3 bg-gradient-to-r from-brand-navy/20 via-brand-navy/10 to-transparent" />

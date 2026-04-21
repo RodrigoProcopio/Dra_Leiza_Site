@@ -6,19 +6,18 @@ import Container from "../layout/Container";
 
 const easePremium: any = [0.2, 0.7, 0.2, 1];
 
-// =========================
-// Card de Artigo
-// =========================
 function ArticleCard({
   article,
   onClick,
   valveClubText,
   bookFooterText,
+  leiaMaisText,
 }: {
   article: any;
   onClick: () => void;
   valveClubText: string;
   bookFooterText: string;
+  leiaMaisText: string;
 }) {
   const isBook = article?.id === "livro";
 
@@ -58,28 +57,26 @@ function ArticleCard({
           {article.resumo}
         </p>
 
-<div className="pt-4 border-t border-slate-200">
-  <div className="flex items-center justify-between gap-4">
-    <p className="text-xs sm:text-sm text-slate-600">
-      {isBook ? bookFooterText : valveClubText}
-    </p>
+        <div className="pt-4 border-t border-slate-200">
+          <div className="flex items-center justify-between gap-4">
+            <p className="text-xs sm:text-sm text-slate-600">
+              {isBook ? bookFooterText : valveClubText}
+            </p>
 
-    <span className="shrink-0 inline-flex items-center gap-1 text-sm font-medium text-brand-navy hover:text-brand-teal transition">
-      Leia mais
-      <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-navy/10">
-        →
-      </span>
-    </span>
-  </div>
-</div>
+            {/* ✅ CORRIGIDO: era hardcoded "Leia mais" */}
+            <span className="shrink-0 inline-flex items-center gap-1 text-sm font-medium text-brand-navy hover:text-brand-teal transition">
+              {leiaMaisText}
+              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-navy/10">
+                →
+              </span>
+            </span>
+          </div>
+        </div>
       </div>
     </motion.div>
   );
 }
 
-// =========================
-// Modal de Artigo
-// =========================
 function ArticleModal({
   article,
   onClose,
@@ -89,7 +86,7 @@ function ArticleModal({
 }) {
   const { t } = useTranslation();
   const isBook = article?.id === "livro";
-  const isValveClub = article?.publisher === "the-valve-club"; 
+  const isValveClub = article?.publisher === "the-valve-club";
 
   const downloadHref =
     article?.downloadLink ||
@@ -140,7 +137,8 @@ function ArticleModal({
           <button
             onClick={onClose}
             className="shrink-0 inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200/80 bg-white/70 backdrop-blur shadow-sm transition hover:bg-white hover:shadow-md"
-            aria-label="Fechar"
+            // ✅ CORRIGIDO: era hardcoded "Fechar"
+            aria-label={t("publicacoes.fechar")}
           >
             <X className="h-5 w-5 text-brand-navy" />
           </button>
@@ -151,15 +149,18 @@ function ArticleModal({
             <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-brand-navy/30">
               <img
                 src="/images/dra-leiza-publi.jpg"
-                alt="Dra. Leiza Hollas"
+                alt={t("publicacoes.autoraNome")}
                 className="w-full h-full object-cover"
               />
             </div>
             <div>
+              {/* ✅ CORRIGIDO: era hardcoded "Dra. Leiza Loiane Hollas" e "Cirurgiã Cardiovascular" */}
               <p className="font-medium text-slate-900">
-                Dra. Leiza Loiane Hollas
+                {t("publicacoes.autoraNome")}
               </p>
-              <p className="text-sm text-slate-600">Cirurgiã Cardiovascular</p>
+              <p className="text-sm text-slate-600">
+                {t("publicacoes.autoraEspecialidade")}
+              </p>
             </div>
           </div>
 
@@ -207,48 +208,37 @@ function ArticleModal({
                   <div className="grid sm:grid-cols-2 gap-4">
                     {article.isbn && (
                       <div>
-                        <p className="text-xs font-semibold text-slate-900 mb-1">
-                          ISBN
-                        </p>
+                        <p className="text-xs font-semibold text-slate-900 mb-1">ISBN</p>
                         <p className="text-sm text-slate-700">{article.isbn}</p>
                       </div>
                     )}
-
                     {article.doi && (
                       <div>
-                        <p className="text-xs font-semibold text-slate-900 mb-1">
-                          DOI
-                        </p>
+                        <p className="text-xs font-semibold text-slate-900 mb-1">DOI</p>
                         <p className="text-sm text-slate-700">{article.doi}</p>
                       </div>
                     )}
-
                     {article.ano && (
                       <div>
                         <p className="text-xs font-semibold text-slate-900 mb-1">
-                          Ano
+                          {t("publicacoes.ano", { defaultValue: "Ano" })}
                         </p>
                         <p className="text-sm text-slate-700">{article.ano}</p>
                       </div>
                     )}
-
                     {article.paginas && (
                       <div>
                         <p className="text-xs font-semibold text-slate-900 mb-1">
-                          Páginas
+                          {t("publicacoes.paginas", { defaultValue: "Páginas" })}
                         </p>
-                        <p className="text-sm text-slate-700">
-                          {article.paginas}
-                        </p>
+                        <p className="text-sm text-slate-700">{article.paginas}</p>
                       </div>
                     )}
                   </div>
 
                   {article.palavrasChave && (
                     <div className="mt-4 pt-4 border-t border-slate-200">
-                      <p className="text-xs text-slate-600">
-                        {article.palavrasChave}
-                      </p>
+                      <p className="text-xs text-slate-600">{article.palavrasChave}</p>
 
                       {isBook && downloadHref && (
                         <div className="mt-4 flex justify-center">
@@ -280,6 +270,16 @@ function ArticleModal({
             </div>
           )}
 
+          {/* ✅ CORRIGIDO: era hardcoded "Resumo" */}
+          {article.resumo && !isBook && (
+            <div className="mb-8 p-6 rounded-2xl bg-gradient-to-br from-brand-navy/5 via-brand-teal/5 to-transparent border border-brand-navy/10">
+              <h2 className="font-serif text-lg md:text-xl text-brand-navy mb-3">
+                {t("publicacoes.resumoLabel")}
+              </h2>
+              <p className="text-slate-700 leading-relaxed">{article.resumo}</p>
+            </div>
+          )}
+
           <div className="prose prose-slate max-w-none">
             {paragraphs.map((p: string, idx: number) => (
               <p key={idx} className="text-slate-700 leading-relaxed mb-4">
@@ -296,7 +296,8 @@ function ArticleModal({
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-brand-navy text-white font-medium text-sm transition hover:bg-brand-navy2 hover:shadow-lg hover:scale-[1.02]"
               >
-                <span>Ver artigo original</span>
+                {/* ✅ CORRIGIDO: era hardcoded "Ver artigo original" */}
+                <span>{t("publicacoes.verArtigo")}</span>
                 <ExternalLink className="h-4 w-4" />
               </a>
             </div>
@@ -313,11 +314,10 @@ export default function PublicationsSection() {
   const titulo = t("publicacoes.titulo");
   const valveClubText = t("publicacoes.theValveClub.curto");
   const bookFooterText = t("publicacoes.livroCard.rodape");
+  const leiaMaisText = t("publicacoes.leiaMais");
 
   const artigos =
-    (t("publicacoes.artigos", {
-      returnObjects: true,
-    }) as any[]) || [];
+    (t("publicacoes.artigos", { returnObjects: true }) as any[]) || [];
 
   const livroRaw = t("publicacoes.livro", { returnObjects: true }) as any;
 
@@ -385,6 +385,7 @@ export default function PublicationsSection() {
                 onClick={() => setSelectedArticle(art)}
                 valveClubText={valveClubText}
                 bookFooterText={bookFooterText}
+                leiaMaisText={leiaMaisText}
               />
             </motion.div>
           ))}

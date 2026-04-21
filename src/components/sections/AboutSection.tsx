@@ -111,8 +111,9 @@ export default function AboutSection() {
             transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1] }}
             className="flex flex-col justify-start"
           >
+            {/* ✅ CORRIGIDO: era hardcoded "Sobre a Dra. Leiza Hollas" */}
             <h2 className="font-serif text-3xl leading-tight tracking-[-0.01em] text-ink md:text-4xl">
-              Sobre a Dra. Leiza Hollas
+              {t("sobre.titulo")}
             </h2>
 
             <div className="mt-5 flex flex-wrap gap-2">

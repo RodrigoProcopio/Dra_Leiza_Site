@@ -1,16 +1,15 @@
 {
+  "seo": {
+    "title": "Dr. Leiza Hollas — Cardiovascular Surgeon",
+    "description": "Dr. Leiza Loiane Hollas, cardiovascular surgeon, member of SBCCV. Specialized in cardiac surgery, valve surgery, and surgical simulation. Based in Curitiba, PR."
+  },
   "nav": {
     "home": "Home",
     "about": "About",
-    "services": "Services",
+    "pacient": "Patient Area",
     "publications": "Publications",
-    "testimonials": "Testimonials",
-    "contact": "Contact"
-  },
-  "servicos": {
-    "titulo": "Specialties",
-    "cirurgia": "Cardiac Surgery",
-    "avaliacao": "Preoperative Assessment"
+    "contact": "Contact",
+    "menu": "Menu"
   },
   "hero": {
     "nome": "Dr. Leiza Loiane Hollas",
@@ -18,11 +17,11 @@
     "crm": "CRM-PR 40485",
     "rqe": "RQE 38188"
   },
-"sobre": {
-  "titulo": "About Dr. Leiza",
-  "texto": "Cardiovascular surgeon and member of the Brazilian Society of Cardiovascular Surgery (SBCCV), she focuses her practice on the surgical treatment of heart diseases, prioritizing safety, technical precision, and individualized care.\n\nShe completed her medical residency in Cardiovascular Surgery at the Brazilian Red Cross Hospital – Paraná (2024), consolidating specialized training in high-complexity procedures and integrated cardiovascular patient management.\n\nGraduated in Medicine from the Pontifical Catholic University of Paraná (2018), her practice is mainly focused on cardiovascular surgery, valve surgery, and surgical simulation, constantly seeking to combine innovation, scientific evidence, and excellence in patient care.\n\nIn addition to her clinical and surgical work, she maintains continuous scientific activity, with articles published in national and international journals. She is a member of The Valve Club, an initiative dedicated to disseminating medical knowledge through the discussion of studies related to valvular heart disease and structural heart disease — fields that are constantly evolving in modern cardiology.\n\nShe believes that cardiovascular surgery requires not only technical mastery but also attentive listening and responsibility in every decision. For this reason, her work is guided by building a relationship of trust with each patient, providing individualized care throughout every stage of treatment.",
-  "altImagem": "Photo of Dr. Leiza Loiane Hollas"
-},
+  "sobre": {
+    "titulo": "About Dr. Leiza Hollas",
+    "altImagem": "Photo of Dr. Leiza Loiane Hollas",
+    "texto": "Cardiovascular surgeon and member of the Brazilian Society of Cardiovascular Surgery (SBCCV), she focuses her practice on the surgical treatment of heart diseases, prioritizing safety, technical precision, and individualized care.\n\nShe completed her medical residency in Cardiovascular Surgery at the Brazilian Red Cross Hospital – Paraná (2024), consolidating specialized training in high-complexity procedures and integrated cardiovascular patient management.\n\nGraduated in Medicine from the Pontifical Catholic University of Paraná (2018), her practice is mainly focused on cardiovascular surgery, valve surgery, and surgical simulation, constantly seeking to combine innovation, scientific evidence, and excellence in patient care.\n\nIn addition to her clinical and surgical work, she maintains continuous scientific activity, with articles published in national and international journals. She is a member of The Valve Club, an initiative dedicated to disseminating medical knowledge through the discussion of studies related to valvular heart disease and structural heart disease — fields that are constantly evolving in modern cardiology.\n\nShe believes that cardiovascular surgery requires not only technical mastery but also attentive listening and responsibility in every decision. For this reason, her work is guided by building a relationship of trust with each patient, providing individualized care throughout every stage of treatment."
+  },
   "contato": {
     "titulo": "Contact",
     "descricao": "Get in touch to schedule an appointment or ask questions.",
@@ -31,172 +30,123 @@
     "email": "Email",
     "mensagem": "Message",
     "enviar": "Send Message",
+    "enviando": "Sending...",
     "telefone": "Phone: (41) 3016-6622",
-    "hospital": "Brazilian Red Cross Hospital - Paraná",
-    "endereco": "Address: Av. Vicente Machado, 1280, R. Cap. Souza Franco, 50 - Batel, Curitiba - PR, 80420-011",
+    "hospital": "Brazilian Red Cross Hospital – Paraná",
+    "endereco": "Address: Av. Vicente Machado, 1280, R. Cap. Souza Franco, 50 – Batel, Curitiba – PR, 80420-011",
     "sucesso": "Message sent successfully! ✅",
-    "erro": "Error sending. Please try again. ❌"
+    "erro": "An error occurred while sending your message. Please try again. ❌"
   },
   "paciente": {
     "titulo": "Patient Area",
     "preop": {
       "titulo": "Preoperative Instructions",
-      "card1": {
-        "titulo": "Fasting",
-        "texto": "Maintain absolute fasting for 8 hours before surgery, including water."
-      },
-      "card2": {
-        "titulo": "Medications",
-        "texto": "Inform your doctor about all medications used and known allergies."
-      },
-      "card3": {
-        "titulo": "Required Documents",
-        "texto": "Bring a photo ID, recent tests, and insurance authorization if applicable."
-      },
-      "card4": {
-        "titulo": "Personal Hygiene",
-        "texto": "Take a shower with antiseptic soap the night before and the day of surgery."
-      }
+      "card1": { "titulo": "Fasting", "texto": "Maintain absolute fasting for 8 hours before surgery, including water." },
+      "card2": { "titulo": "Medications", "texto": "Inform your doctor about all medications used and known allergies." },
+      "card3": { "titulo": "Required Documents", "texto": "Bring a photo ID, recent tests, and insurance authorization if applicable." },
+      "card4": { "titulo": "Personal Hygiene", "texto": "Take a shower with antiseptic soap the night before and the day of surgery." }
     },
     "seguranca": {
       "titulo": "Patient Safety",
-      "card1": {
-        "titulo": "Correct Identification",
-        "texto": "Confirm your full name before any exams or procedures. Keep the ID bracelet until discharge."
-      },
-      "card2": {
-        "titulo": "Payments and Security",
-        "texto": "Do not provide data or make payments over the phone. Contact the hospital’s cashier for questions."
-      }
+      "card1": { "titulo": "Correct Identification", "texto": "Confirm your full name before any exams or procedures. Keep the ID bracelet until discharge." },
+      "card2": { "titulo": "Payments and Security", "texto": "Do not provide data or make payments over the phone. Contact the hospital's cashier for questions." }
     },
     "quedas": {
       "titulo": "Fall Prevention",
-      "card1": {
-        "titulo": "Avoid Walking Alone",
-        "texto": "Even if you feel fine, call the nursing team before getting up."
-      },
-      "card2": {
-        "titulo": "Keep Items Nearby",
-        "texto": "Keep personal items within reach and the call button accessible."
-      }
+      "card1": { "titulo": "Avoid Walking Alone", "texto": "Even if you feel fine, call the nursing team before getting up." },
+      "card2": { "titulo": "Keep Items Nearby", "texto": "Keep personal items within reach and the call button accessible." }
     },
     "higiene": {
       "titulo": "Hand Hygiene",
-      "card1": {
-        "titulo": "Always Wash Your Hands",
-        "texto": "After using the bathroom, before meals, and when entering or leaving the hospital. Use 70% alcohol if not visibly dirty."
-      },
-      "card2": {
-        "titulo": "Guide Visitors",
-        "texto": "Ask companions and visitors to clean their hands frequently too."
-      }
+      "card1": { "titulo": "Always Wash Your Hands", "texto": "After using the bathroom, before meals, and when entering or leaving the hospital. Use 70% alcohol if not visibly dirty." },
+      "card2": { "titulo": "Guide Visitors", "texto": "Ask companions and visitors to clean their hands frequently too." }
     },
     "internacaoMed": {
       "titulo": "Hospitalization and Medications",
-      "card1": {
-        "titulo": "Anticoagulant Suspension",
-        "texto": "AAS, Clopidogrel, Marevan, Marcoumar, Eliquis must be suspended 5 days before surgery. Rivaroxaban, 2 days before. Always follow medical advice!"
-      },
-      "card2": {
-        "titulo": "Hospitalization Time",
-        "texto": "Hospitalize the day before surgery at 2 PM. Bring documents, exams, authorization, and personal items."
-      },
-      "card3": {
-        "titulo": "Accessory Removal",
-        "texto": "Remove false eyelashes, gel nails, piercings, spacers, hair extensions, and valuables."
-      },
-      "card4": {
-        "titulo": "Hospital Admission Center",
-        "texto": "After insurance approval, it is necessary to schedule the pre-anesthetic evaluation in advance."
-      }
+      "card1": { "titulo": "Anticoagulant Suspension", "texto": "AAS, Clopidogrel, Marevan, Marcoumar, Eliquis must be suspended 5 days before surgery. Rivaroxaban, 2 days before. Always follow medical advice!" },
+      "card2": { "titulo": "Hospitalization Time", "texto": "Check in the day before surgery at 2 PM. Bring documents, tests, authorization, and personal items." },
+      "card3": { "titulo": "Accessory Removal", "texto": "Remove false eyelashes, gel nails, piercings, spacers, hair extensions, and valuables." },
+      "card4": { "titulo": "Hospital Admission Center", "texto": "After insurance approval, schedule the pre-anesthetic evaluation in advance." }
     },
     "duvidas": {
       "titulo": "Frequently Asked Questions",
-      "card1": {
-        "titulo": "Can I have a companion?",
-        "texto": "Yes, one companion over 18 is allowed during hospitalization."
-      },
-      "card2": {
-        "titulo": "Can I bring food?",
-        "texto": "Bringing outside food is not allowed without permission from the nutrition team."
-      },
-      "card3": {
-        "titulo": "Visiting Hours",
-        "texto": "Visits are allowed from 2 PM to 8 PM. Under 16s are not allowed in ICUs."
-      },
-      "card4": {
-        "titulo": "How to speak with the medical team?",
-        "texto": "Medical information is given by the responsible doctor to the legal guardian."
-      }
+      "card1": { "titulo": "Can I have a companion?", "texto": "Yes, one companion over 18 is allowed during hospitalization." },
+      "card2": { "titulo": "Can I bring food?", "texto": "Bringing outside food is not allowed without permission from the nutrition team." },
+      "card3": { "titulo": "Visiting Hours", "texto": "Visits are allowed from 2 PM to 8 PM. Under 16s are not allowed in ICUs." },
+      "card4": { "titulo": "How to speak with the medical team?", "texto": "Medical information is given by the responsible doctor to the legal guardian." }
     }
   },
   "publicacoes": {
     "titulo": "Articles and Publications",
     "botao": "Read more",
-      "downloadLivro": "Download Book",
-  "informacoesTecnicas": "Technical Information",
+    "leiaMais": "Read more",
+    "verArtigo": "View original article",
+    "fechar": "Close",
+    "resumoLabel": "Summary",
+    "lerArtigoCompleto": "Read full article",
+    "downloadLivro": "Download Book",
+    "informacoesTecnicas": "Technical Information",
+    "autoraNome": "Dr. Leiza Loiane Hollas",
+    "autoraEspecialidade": "Cardiovascular Surgeon",
+    "livroCard": {
+      "rodape": "Book published by Dr. Leiza Hollas."
+    },
+    "theValveClub": {
+      "curto": "Article published by Dr. Leiza Hollas at The Valve Club.",
+      "titulo": "Published at The Valve Club",
+      "assinatura": "Article signed by Dr. Leiza Hollas",
+      "descricao": "The Valve Club platform aims to disseminate knowledge and science through articles related to valvular heart disease and structural heart disease — a growing area of interest in cardiology, as well as a subject that sparks curiosity in those who interact with patients affected by these conditions."
+    },
     "livro": {
-  "titulo": "Basic Manual of Thoracic and Cardiovascular Surgery from LACTCV",
-  "data": "Published on October 24, 2023",
-  "resumo": "The LACTCV Basic Manual of Thoracic and Cardiovascular Surgery introduces essential fundamentals of the specialty—from anatomy to the most common conditions—through a clear and accessible didactic approach.",
-  "conteudo": "The LACTCV Basic Manual of Thoracic and Cardiovascular Surgery was developed to introduce readers to the essential fundamentals of thoracic and cardiovascular surgery, covering topics from anatomical concepts to the most frequent pathologies in the specialty.\n\nThe purpose of this work is to provide didactic, objective, and accessible content, especially aimed at medical students and trainees, offering a solid foundation for understanding the field’s core principles.\n\nThroughout its pages, readers are guided through a learning journey that brings together technical knowledge, conceptual clarity, and practical application, serving as a starting point for continuous development in a specialty that demands precision, dedication, and constant growth.\n\nThis book is an invitation to study and to build a professional path grounded in excellence and commitment to healthcare.",
-  "doi": "10.22533/at.ed.389232310",
-  "isbn": "978-65-258-1938-9",
-  "palavrasChave": "1. Heart - Surgery. I. Hollas, Leiza Loiane (Organizer). II. Manoel, Agnes Zanotto (Organizer). III. Iwamoto, Aiko (Organizer). IV. Title.",
-  "ano": "2023",
-  "paginas": "144",
-  "downloadLink": "https://atenaeditora.com.br/catalogo/download-file/6577"
-},
+      "titulo": "Basic Manual of Thoracic and Cardiovascular Surgery from LACTCV",
+      "data": "Published on October 24, 2023",
+      "resumo": "The LACTCV Basic Manual of Thoracic and Cardiovascular Surgery introduces essential fundamentals of the specialty—from anatomy to the most common conditions—through a clear and accessible didactic approach.",
+      "conteudo": "The LACTCV Basic Manual of Thoracic and Cardiovascular Surgery was developed to introduce readers to the essential fundamentals of thoracic and cardiovascular surgery, covering topics from anatomical concepts to the most frequent pathologies in the specialty.\n\nThe purpose of this work is to provide didactic, objective, and accessible content, especially aimed at medical students and trainees, offering a solid foundation for understanding the field's core principles.\n\nThroughout its pages, readers are guided through a learning journey that brings together technical knowledge, conceptual clarity, and practical application, serving as a starting point for continuous development in a specialty that demands precision, dedication, and constant growth.\n\nThis book is an invitation to study and to build a professional path grounded in excellence and commitment to healthcare.",
+      "doi": "10.22533/at.ed.389232310",
+      "isbn": "978-65-258-1938-9",
+      "palavrasChave": "1. Heart – Surgery. I. Hollas, Leiza Loiane (Organizer). II. Manoel, Agnes Zanotto (Organizer). III. Iwamoto, Aiko (Organizer). IV. Title.",
+      "ano": "2023",
+      "paginas": "144",
+      "downloadLink": "https://atenaeditora.com.br/catalogo/download-file/6577"
+    },
     "artigos": [
       {
-        "id": "manual-basico",
-        "titulo": "Basic Manual of Thoracic and Cardiovascular Surgery from LACTCV",
-        "data": "Published on October 24, 2023",
-        "resumo": "The proposal is to bring basic knowledge of thoracic and cardiovascular surgery primarily for medical students in a didactic manner.",
-        "conteudo": "Dear reader, having found this digital book, you must be eager to begin your journey through the basic fundamentals of thoracic and cardiovascular surgery, learning and reviewing from anatomy to the most common pathologies.\n\nUnderstanding the purpose of the 'Basic Manual of Thoracic and Cardiovascular Surgery from LACTCV' will help you get the most out of this work. Our goal is to provide basic knowledge of thoracic and cardiovascular surgery primarily for medical students in a didactic manner.\n\nIn the following pages, you will begin a journey of deepening into the basic and essential principles of thoracic and cardiovascular surgery. We hope you enjoy this reading and consider this book as one of the first steps in the continuous pursuit of excellence that surgery demands through precision and dedication.\n\nThe manual contains chapters on: Thorax and heart anatomy, Coronary arteries, Coronary artery disease and myocardial revascularization, Aortic valvopathies and surgical approach, Mitral valvopathies, Aortic diseases, Cardiac catheterization, Angiotomography and cardiac resonance.",
-        "link": "https://atenaeditora.com.br/catalogo/ebook/manual-basico-de-cirurgia-toracica-e-cardiovascular-da-lactcv"
-      },
-      {
-        "id": "mitraclip-falha",
-        "titulo": "Conventional Surgical Approach After MitraClip Failure",
-        "data": "August 2023",
-        "resumo": "The increasing incidence of structural valvular heart disease accompanies the progressive aging of the population. In recent years, transcatheter technologies have gained prominence in treating symptomatic mitral valve insufficiency.",
-        "conteudo": "The increasing incidence of structural valvular heart disease accompanies the progressive aging of the population, and given the high prevalence, there is currently great medical interest in seeking interventional strategies – both conventional surgical and minimally invasive (transcatheter) – that can be indicated for patients with valvular heart disease.\n\nIn recent years, transcatheter technologies have gained prominence in treating symptomatic mitral valve insufficiency. According to the latest Brazilian Valvular Heart Disease Guideline (2020), the percutaneous method should be reserved for patients with moderate to severe or severe mitral insufficiency, of both primary and secondary etiologies, with refractory symptoms and high or prohibitive surgical risk.\n\nMitraClip® uses an approach similar to the Alfieri surgical procedure, created in 1991, but in a minimally invasive manner. During the procedure, the device is inserted through catheters in the femoral vein and guided to the mitral valve through a transseptal puncture.\n\nUsing data from the CUTTING-EDGE Registry, the study compared the outcome of mitral valve surgery after failure of percutaneous treatment with MitraClip® in patients with primary versus secondary MI. 330 patients were analyzed from July 2009 to July 2020. One-year mortality after surgery was 31.3% overall, being higher in patients with secondary MI (38.3% vs 23.2%).\n\nThese data show that we must seek satisfactory results after TEER, with the aim of avoiding future complications and ensuring the best quality of life for the patient. Understanding the risks involved highlights the importance of a multidisciplinary Heart Team approach.",
-        "link": "https://thevalveclub.com.br/intervencao-na-cardiopatia-estrutural/"
-      },
-      {
-        "id": "valva-mitral",
-        "titulo": "Relevant Publications on Mitral Valve Surgery",
-        "data": "December 2023",
-        "resumo": "The mitral valve has always aroused fascination in cardiac surgery. Its precise functionality and complex anatomy make it an area of significant interest in medical research and clinical practice.",
-        "conteudo": "The mitral valve has always aroused fascination in cardiac surgery. Its precise functionality and complex anatomy make it an area of significant interest in medical research and clinical practice.\n\nThe history of valvular pathology treatment began in 1923 at Peter Bent Brigham Hospital, where the first mitral valve surgical intervention was performed by surgeon Elliott Carr Cutler. The patient, only 12 years old, was in critical condition due to heart failure already installed due to rheumatic mitral stenosis and underwent an incision in the apex of the left ventricle associated with digital commissurotomy. The surgery was successful and represented a milestone in the history of cardiac surgery.\n\nIt is important to mention three guiding articles of current techniques: Carpentier with his 'french correction' technique of the mitral valve (1983), Mohr and colleagues showing the feasibility of mitral valve surgery by robotic technique (2001), and Webb and colleagues proving the safety of transcatheter mitral valve treatment (2010).\n\nA recent bibliographic review conducted by Allen and colleagues selected the 100 most cited articles specific to mitral valve surgery. The countries with the highest number of publications are the United States, Canada, and France. Among institutions, Mayo Clinic, Toronto General Hospital, and Cleveland Clinic stand out.\n\nWhat all the above shows us is: knowing where the gold mine of our research is, where high-impact articles are being discussed and published. Considering the boom of publications from the 2000s onwards, when we talk about mitral valve we were still taking short steps, and 100 years after the first commissurotomy this topic is still a rough diamond to be polished by us surgeons and cardiologists.",
-        "link": "https://thevalveclub.com.br/valva-mitral/"
+        "id": "mitraclip",
+        "titulo": "Intervention in Structural Heart Disease",
+        "subtitulo": "Is every procedure a little genius and a little madness?",
+        "resumo": "The increasing incidence of structural valvular heart disease accompanies the progressive aging of the population. Today there is great medical interest in seeking interventional strategies — both conventional surgical and minimally invasive (transcatheter).",
+        "conteudo": "The increasing incidence of structural valvular heart disease accompanies the progressive aging of the population and, given the high prevalence, there is currently great medical interest in seeking interventional strategies – both conventional surgical and minimally invasive (transcatheter) – that can be indicated for patients with valvular heart disease.\n\nIn recent years, transcatheter technologies have gained prominence in treating symptomatic mitral valve insufficiency. According to the latest Brazilian Valvular Heart Disease Guideline (2020), the percutaneous method should be reserved for patients with moderate to severe or severe mitral insufficiency, of both primary and secondary etiologies, with refractory symptoms and high or prohibitive surgical risk.\n\nMitraClip® uses an approach similar to the Alfieri surgical procedure, created in 1991, but in a minimally invasive manner. During the procedure, the device is inserted through catheters in the femoral vein and guided to the mitral valve through a transseptal puncture.\n\nUsing data from the CUTTING-EDGE Registry, the study compared the outcome of mitral valve surgery after failure of percutaneous treatment with MitraClip® in patients with primary versus secondary MI. 330 patients were analyzed from July 2009 to July 2020. One-year mortality after surgery was 31.3% overall, being higher in patients with secondary MI (38.3% vs 23.2%).\n\nThese data show that we must seek satisfactory results after TEER, with the aim of avoiding future complications and ensuring the best quality of life for the patient. Understanding the risks involved highlights the importance of a multidisciplinary Heart Team approach.",
+        "link": "https://thevalveclub.com.br/intervencao-na-cardiopatia-estrutural/",
+        "publisher": "the-valve-club"
       },
       {
         "id": "bioproteses",
-        "titulo": "The Surgeon's Perspective on Bioprosthetic Valve Dysfunction",
-        "data": "June 2023",
+        "titulo": "When the GOATs Go Wrong",
+        "subtitulo": "Identifying bioprosthetic valve dysfunction",
         "resumo": "The increasing incidence of structural valvular heart disease accompanies the progressive aging of the population. When valve replacement is necessary, we must be attentive to the occurrence of structural degeneration of bioprostheses.",
         "conteudo": "The increasing incidence of structural valvular heart disease accompanies the progressive aging of the population, and given the high prevalence of rheumatic fever, with consequent involvement of young patients, the demand for valve intervention is directly impacted.\n\nWhen valve replacement is necessary, especially when choosing a bioprosthesis, we must be attentive to the occurrence of its structural degeneration, a diagnosis often made late, which can lead to clinical deterioration and ventricular function impairment.\n\nAccording to American College of Cardiology (ACC) guidelines, transthoracic echocardiographic control after valve replacement is suggested at 1, 3, and 12 months after the procedure, and then annually. During this follow-up, active search should be conducted for functional class changes and new symptoms that may indicate bioprosthetic dysfunction.\n\nThese dysfunctions can be classified into stages, initially with identification of valve dysfunction without hemodynamic changes, up to more advanced stages, where there is prosthetic dysfunction associated with more severe hemodynamic changes. They can also be classified into categories: structural dysfunction (calcification or rupture of leaflets) or non-structural (paraprosthetic leak, pannus, thrombi, endocarditis, and mismatch).\n\nOf the available diagnostic exams, echocardiography (transthoracic or transesophageal) is the main ally. In cases of doubt or to improve analysis of possible aortic bioprosthetic thrombosis, computed tomography angiography can be used.\n\nThe objective of structural valve interventions is to optimize hemodynamic load, reduce symptoms, improve quality of life, and possibly prolong survival. Not every bioprosthetic dysfunction will have reintervention as final treatment, often requiring medical management and lifestyle changes.",
-        "link": "https://thevalveclub.com.br/when-the-goats-go-wrong/"
+        "link": "https://thevalveclub.com.br/when-the-goats-go-wrong/",
+        "publisher": "the-valve-club"
       },
       {
-        "id": "valve-sparing",
-        "titulo": "Valve-Sparing Techniques in Aortic Aneurysm",
-        "data": "October 2023",
+        "id": "david-yacoub",
+        "titulo": "David and Yacoub",
+        "subtitulo": "A duel to tame aortic aneurysms!",
         "resumo": "In 1900, Dr. William Osler already pointed out: 'there is no disease more conducive to clinical humility than aortic aneurysms'. To this day, aortic diseases are a clinical-surgical challenge.",
-        "conteudo": "In 1900, Dr. William Osler already pointed out a medical truth: 'there is no disease more conducive to clinical humility than aortic aneurysms'. Osler's statement is true, as to this day, aortic diseases are a clinical-surgical challenge for the medical field.\n\nIt is worth remembering that, on average, the normal diameter of the ascending aorta is about 30mm and dilations above 50% of this value are already considered outside the normal pattern. There are several predisposing factors: smoking, hypertension, genetic disorders (Marfan and Ehlers-Danlos syndrome), infectious (syphilis), and congenital.\n\nBicuspid aortic valve is the most common congenital alteration, present in 1 to 2% of the world population and is related to thoracic aortic aneurysms in 50% of cases. The risk of developing an aneurysm is up to 0.1% per year and corresponds to a pathology with high mortality.\n\nIt is established that patients with ascending aortic aneurysm with diameter ≥ 55mm require surgical intervention. The most practiced surgery is Bentall and De-Bono, which consists of combined replacement of the valve, aortic root, and ascending aorta. However, patients will always be subject to anticoagulation or bioprosthetic deterioration.\n\nAs a surgical alternative, there are two techniques involving the 'valve sparing' concept: the Yacoub technique, created in 1982, in which new sinuses of Valsalva are made using Dacron tube, and the David technique, idealized in 1992, in which the tube is implanted directly on the aortic valve annulus with reimplantation of the coronary artery ostia.\n\nA recent systematic review compared the durability and safety of David and Yacoub procedures in patients with bicuspid aortic valve. 1159 patients were included (87.4% male, mean age 44.9 years). Mean mortality was 1.7% at thirty days. Kaplan-Meier survival estimate at 5, 10, and 15 years was 96%, 90%, and 87%, while the estimate of patients free from reoperation in the same period was 96%, 91%, and 88%.\n\nEven in patients with bicuspid aortic valve, preservation of the native aortic valve proves to be clearly more advantageous over replacement, as it presents more physiological hemodynamics, relief from the need for anticoagulation, and greater durability. There seems to be a tendency to favor David's 'reimplantation' approach compared to Yacoub's 'remodeling' approach, probably due to annular stabilization provided by proximal anastomosis.",
-        "link": "https://thevalveclub.com.br/david-e-yacoub/"
+        "conteudo": "In 1900, Dr. William Osler already pointed out a medical truth: 'there is no disease more conducive to clinical humility than aortic aneurysms'. Osler's statement is true, as to this day, aortic diseases are a clinical-surgical challenge for the medical field.\n\nIt is worth remembering that, on average, the normal diameter of the ascending aorta is about 30mm and dilations above 50% of this value are already considered outside the normal pattern. There are several predisposing factors: smoking, hypertension, genetic disorders (Marfan and Ehlers-Danlos syndrome), infectious (syphilis), and congenital.\n\nBicuspid aortic valve is the most common congenital alteration, present in 1 to 2% of the world population and is related to thoracic aortic aneurysms in 50% of cases. The risk of developing an aneurysm is up to 0.1% per year and corresponds to a pathology with high mortality.\n\nIt is established that patients with ascending aortic aneurysm with diameter ≥ 55mm require surgical intervention. The most practiced surgery is Bentall and De-Bono, which consists of combined replacement of the valve, aortic root, and ascending aorta. However, patients will always be subject to anticoagulation or bioprosthetic deterioration.\n\nAs a surgical alternative, there are two techniques involving the 'valve sparing' concept: the Yacoub technique, created in 1982, in which new sinuses of Valsalva are made using Dacron tube, and the David technique, idealized in 1992, in which the tube is implanted directly on the aortic valve annulus with reimplantation of the coronary artery ostia.\n\nA recent systematic review compared the durability and safety of David and Yacoub procedures in patients with bicuspid aortic valve. 1159 patients were included (87.4% male, mean age 44.9 years). Mean mortality was 1.7% at thirty days. Kaplan-Meier survival estimate at 5, 10, and 15 years was 96%, 90%, and 87%, while the estimate of patients free from reoperation in the same period was 96%, 91%, and 88%.\n\nEven in patients with bicuspid aortic valve, preservation of the native aortic valve proves to be clearly more advantageous over replacement, as it presents more physiological hemodynamics, relief from the need for anticoagulation, and greater durability.",
+        "link": "https://thevalveclub.com.br/david-e-yacoub/",
+        "imagem": "/images/david-yacoub-tecnicas.jpg",
+        "publisher": "the-valve-club"
       },
       {
-        "id": "valvopatia-tricuspide",
-        "titulo": "The Surgeon's Perspective on Tricuspid Valvopathy",
-        "data": "April 2023",
+        "id": "tricuspide",
+        "titulo": "The Forgotten Valve",
+        "subtitulo": "Tricuspid valvopathy",
         "resumo": "Intervention in tricuspid valvopathy has clear indication when it occurs concomitantly with mitral and aortic valvopathy intervention. When present in isolation, intervention indication is still controversial.",
-        "conteudo": "Intervention in tricuspid valvopathy has clear indication when it occurs concomitantly with mitral and aortic valvopathy intervention. When present in isolation, intervention indication is still controversial among surgeons and cardiologists, with more prevalence in the presence of valvular stenosis.\n\nIt is common knowledge that tricuspid valve diseases lead to hemodynamic changes in the cardiac cycle that, depending on their severity, can lead to right heart failure, a severe clinical picture with high morbidity and mortality. According to the most recent European Society of Cardiology guideline, in the presence of severe isolated primary tricuspid valvopathy, even oligosymptomatic patients with ventricular dilation or right ventricular function decline, intervention should be considered.\n\nWhen compared to isolated surgical treatment of aortic and mitral valves, isolated tricuspid valve intervention presents operative mortality 2 to 3 times higher, around 8 to 9%. This outcome difference can be explained by the pathologies that lead to isolated tricuspid valvopathy, such as atrial fibrillation, pulmonary hypertension, and infectious endocarditis, pathologies known to have high morbidity and mortality.\n\nRelevant issues about surgical technique make tricuspid valve intervention even more complex, such as its anatomical relationship with the atrioventricular node and the positioning of its fibrous annulus, about 2 mm below the insertion of its leaflets, where points should be fixed during annuloplasty or valve replacement.\n\nA recent meta-analysis with 15,069 patients undergoing isolated tricuspid valve surgery compared valve repair with valve replacement. Results favored valve repair regarding postoperative outcomes, such as atrioventricular blocks, need for permanent pacemaker implantation, mortality, and lower incidence of renal insufficiency.\n\nOther treatment strategies are being explored. Transcatheter intervention has been studied as a less invasive approach to treat functional tricuspid regurgitation. In a recent meta-analysis, the group of patients who underwent intervention showed better outcomes and lower rate of rehospitalization for heart failure.\n\nTherefore, knowing the pathophysiology of tricuspid valvopathy and the correct indication for transcatheter or surgical interventions remain topics of broad debate and importance. Only then will the nickname 'forgotten valve' be resigned to the past.",
-        "link": "https://thevalveclub.com.br/the-forgotten-valve/"
+        "conteudo": "Intervention in tricuspid valvopathy has clear indication when it occurs concomitantly with mitral and aortic valvopathy intervention. When present in isolation, the indication for intervention is still controversial among surgeons and cardiologists, with more prevalence in the presence of valvular stenosis.\n\nIt is common knowledge that tricuspid valve diseases lead to hemodynamic changes in the cardiac cycle that, depending on their severity, can lead to right heart failure, a severe clinical picture with high morbidity and mortality.\n\nWhen compared to isolated surgical treatment of aortic and mitral valves, isolated tricuspid valve intervention presents operative mortality 2 to 3 times higher, around 8 to 9%.\n\nA recent meta-analysis with 15,069 patients undergoing isolated tricuspid valve surgery compared valve repair with valve replacement. Results favored valve repair regarding postoperative outcomes, such as atrioventricular blocks, need for permanent pacemaker implantation, mortality, and lower incidence of renal insufficiency.\n\nTherefore, knowing the pathophysiology of tricuspid valvopathy and the correct indication for transcatheter or surgical interventions remain topics of broad debate and importance. Only then will the nickname 'forgotten valve' be resigned to the past.",
+        "link": "https://thevalveclub.com.br/the-forgotten-valve/",
+        "publisher": "the-valve-club"
       }
-      
     ]
   }
 }
