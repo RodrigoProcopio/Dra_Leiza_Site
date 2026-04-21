@@ -140,6 +140,7 @@ export default function HeroSection() {
                 href="#contato"
                 onClick={scrollToContact}
                 className="
+                  btn-shimmer
                   inline-flex items-center gap-2
                   rounded-2xl border-2 border-brand-navy
                   px-7 py-3
