@@ -17,11 +17,11 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
 
           {/* Coluna 1 — Identidade */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 items-start">
             <img
               src="/images/logo-horizontal.png"
               alt="Dra. Leiza Hollas"
-              className="h-8 w-auto object-contain"
+              className="h-8 w-auto object-contain self-start"
               loading="lazy"
             />
             <p className="text-xs text-slate-500 leading-relaxed">
