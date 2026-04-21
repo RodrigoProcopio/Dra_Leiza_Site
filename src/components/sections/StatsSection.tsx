@@ -151,9 +151,9 @@ export default function TimelineSection() {
             onClick={() => setActiveFilter("all")}
             className="rounded-full border px-4 py-1.5 text-xs font-semibold transition-all"
             style={{
-              background: activeFilter === "all" ? "#0B1B3A" : "rgba(255,255,255,0.72)",
+              background: activeFilter === "all" ? "#2F5D7E" : "rgba(255,255,255,0.72)",
               color: activeFilter === "all" ? "#fff" : "#5A6475",
-              borderColor: activeFilter === "all" ? "#0B1B3A" : "rgba(139,115,85,0.2)",
+              borderColor: activeFilter === "all" ? "#2F5D7E" : "rgba(139,115,85,0.2)",
               backdropFilter: "blur(6px)",
             }}
           >
