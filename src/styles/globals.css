@@ -84,3 +84,13 @@ html { scroll-behavior: smooth; }
   transform: translateX(-100%) skewX(-15deg);
   animation: shimmer 2.5s ease-in-out infinite;
 }
+
+/* Transição suave ao trocar idioma */
+.lang-fade {
+  animation: langFadeIn 0.2s ease-out;
+}
+
+@keyframes langFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

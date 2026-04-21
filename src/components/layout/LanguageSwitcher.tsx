@@ -22,10 +22,18 @@ export default function LanguageSwitcher() {
   }, [i18n.language]);
 
   function setLang(code: string) {
-    i18n.changeLanguage(code);
-    localStorage.setItem("lang", code);
-    setOpen(false);
+  i18n.changeLanguage(code);
+  localStorage.setItem("lang", code);
+  setOpen(false);
+
+  // Fade suave no conteúdo
+  const root = document.getElementById("root");
+  if (root) {
+    root.classList.remove("lang-fade");
+    void root.offsetWidth; // força reflow
+    root.classList.add("lang-fade");
   }
+}
 
   const current = (i18n.language || "pt").split("-")[0];
 
