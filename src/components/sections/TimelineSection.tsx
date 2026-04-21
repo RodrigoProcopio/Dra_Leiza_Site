@@ -76,110 +76,131 @@ export default function TimelineSection() {
       <div className="pointer-events-none absolute inset-0 opacity-[0.07] bg-[url('/images/bg-texture.jpg')] bg-cover bg-center" />
 
       <Container className="relative py-14 md:py-20">
+        <div className="grid gap-10 md:grid-cols-[0.85fr_1.15fr] md:gap-14 items-start">
 
-        {/* Título */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-15%" }}
-          transition={{ duration: 0.55, ease: [0.2, 0.7, 0.2, 1] }}
-          className="mb-10 text-center"
-        >
-          <h2 className="font-serif text-3xl leading-tight tracking-[-0.01em] md:text-4xl" style={{ color: "#0B1220" }}>
-            {t("timeline.titulo", { defaultValue: "Trajetória" })}
-          </h2>
-          <div className="mt-4 mx-auto h-px w-16" style={{ background: "linear-gradient(90deg, transparent, #8B7355, transparent)" }} />
-        </motion.div>
+          {/* Coluna esquerda — foto sticky */}
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-15%" }}
+            transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1] }}
+            className="md:sticky md:top-28"
+          >
+            {/* Título acima da foto */}
+            <h2
+              className="font-serif text-3xl leading-tight tracking-[-0.01em] md:text-4xl mb-4"
+              style={{ color: "#0B1220" }}
+            >
+              {t("timeline.titulo", { defaultValue: "Trajetória" })}
+            </h2>
+            <div className="mb-6 h-px w-16" style={{ background: "linear-gradient(90deg, transparent, #8B7355, transparent)" }} />
 
-        {/* Filtros — estilo discreto, padrão do site */}
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.45, delay: 0.1 }}
-          className="mb-10 flex flex-wrap justify-center gap-2"
-        >
-          {(["all", ...ALL_CATEGORIES] as const).map((cat) => {
-            const isActive = activeFilter === cat;
-            const label = cat === "all"
-              ? t("timeline.todos", { defaultValue: "Todos" })
-              : CATEGORY_LABELS[cat];
-            return (
-              <button
-                key={cat}
-                onClick={() => setActiveFilter(cat)}
-                className="rounded-full px-4 py-1.5 text-xs font-semibold transition-all border"
-                style={{
-                  background: isActive ? "#0B1B3A" : "rgba(255,255,255,0.65)",
-                  color: isActive ? "#fff" : "#5A6475",
-                  borderColor: isActive ? "#0B1B3A" : "rgba(139,115,85,0.25)",
-                  backdropFilter: "blur(8px)",
-                }}
-              >
-                {label}
-              </button>
-            );
-          })}
-        </motion.div>
+            {/* Foto */}
+            <div
+              className="relative overflow-hidden rounded-[28px] border shadow-[0_18px_60px_-28px_rgba(15,23,42,0.35)]"
+              style={{ borderColor: "rgba(203,213,225,0.8)", background: "rgba(255,255,255,0.55)" }}
+            >
+              <img
+                src="/images/dra-leiza-secao.jpg"
+                alt={t("sobre.altImagem", { defaultValue: "Dra. Leiza Hollas" })}
+                className="w-full object-cover object-center"
+                style={{ maxHeight: "520px" }}
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/10 via-transparent to-white/10" />
+              <div className="pointer-events-none absolute inset-0 rounded-[28px] ring-1 ring-white/55" />
+            </div>
 
-        {/* Timeline */}
-        <div className="relative mx-auto max-w-3xl">
-          {/* Linha vertical dourada */}
-          <div
-            className="absolute left-[72px] top-0 bottom-0 w-px md:left-[120px]"
-            style={{ background: "linear-gradient(to bottom, transparent, #8B7355 5%, #8B7355 95%, transparent)" }}
-          />
-
-          <AnimatePresence mode="popLayout">
-            <div className="flex flex-col gap-4">
-              {filtered.map((m, idx) => (
-                <motion.div
-                  key={m.key}
-                  initial={{ opacity: 0, x: -16 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -16 }}
-                  transition={{ duration: 0.35, ease: [0.2, 0.7, 0.2, 1], delay: idx * 0.02 }}
-                  className="flex items-start gap-4"
-                >
-                  {/* Ano */}
-                  <div className="w-[68px] md:w-[116px] shrink-0 pt-3 text-right">
-                    <span className="text-[11px] font-semibold tabular-nums" style={{ color: "#8B7355" }}>
-                      {m.year}
-                    </span>
-                  </div>
-
-                  {/* Ponto dourado */}
-                  <div className="relative z-10 mt-[14px] shrink-0">
-                    <div
-                      className="h-2.5 w-2.5 rounded-full"
-                      style={{ backgroundColor: "#8B7355" }}
-                    />
-                  </div>
-
-                  {/* Card — estilo padrão do site */}
-                  <div
-                    className="flex-1 rounded-[20px] border px-4 py-3"
+            {/* Filtros abaixo da foto */}
+            <div className="mt-6 flex flex-wrap gap-2">
+              {(["all", ...ALL_CATEGORIES] as const).map((cat) => {
+                const isActive = activeFilter === cat;
+                const label = cat === "all"
+                  ? t("timeline.todos", { defaultValue: "Todos" })
+                  : CATEGORY_LABELS[cat];
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => setActiveFilter(cat)}
+                    className="rounded-full px-3 py-1 text-[11px] font-semibold transition-all border"
                     style={{
-                      background: "rgba(255,255,255,0.60)",
-                      borderColor: "rgba(139,115,85,0.18)",
+                      background: isActive ? "#0B1B3A" : "rgba(255,255,255,0.65)",
+                      color: isActive ? "#fff" : "#5A6475",
+                      borderColor: isActive ? "#0B1B3A" : "rgba(139,115,85,0.25)",
                       backdropFilter: "blur(8px)",
                     }}
                   >
-                    {/* Badge de categoria sutil */}
-                    <span
-                      className="mb-1 inline-block text-[10px] font-semibold uppercase tracking-wider"
-                      style={{ color: "#8B7355" }}
-                    >
-                      {CATEGORY_LABELS[m.category]}
-                    </span>
-                    <p className="text-sm leading-relaxed" style={{ color: "#0B1220" }}>
-                      {t(m.key, { defaultValue: m.key })}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
+                    {label}
+                  </button>
+                );
+              })}
             </div>
-          </AnimatePresence>
+          </motion.div>
+
+          {/* Coluna direita — timeline scrollável */}
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-15%" }}
+            transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1], delay: 0.1 }}
+          >
+            <div className="relative">
+              {/* Linha vertical dourada */}
+              <div
+                className="absolute left-[68px] top-0 bottom-0 w-px"
+                style={{ background: "linear-gradient(to bottom, transparent, #8B7355 3%, #8B7355 97%, transparent)" }}
+              />
+
+              <AnimatePresence mode="popLayout">
+                <div className="flex flex-col gap-4">
+                  {filtered.map((m, idx) => (
+                    <motion.div
+                      key={m.key}
+                      initial={{ opacity: 0, x: 16 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: 16 }}
+                      transition={{ duration: 0.3, ease: [0.2, 0.7, 0.2, 1], delay: idx * 0.02 }}
+                      className="flex items-start gap-4"
+                    >
+                      {/* Ano */}
+                      <div className="w-[64px] shrink-0 pt-3 text-right">
+                        <span className="text-[11px] font-semibold tabular-nums" style={{ color: "#8B7355" }}>
+                          {m.year}
+                        </span>
+                      </div>
+
+                      {/* Ponto */}
+                      <div className="relative z-10 mt-[14px] shrink-0">
+                        <div className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: "#8B7355" }} />
+                      </div>
+
+                      {/* Card */}
+                      <div
+                        className="flex-1 rounded-[18px] border px-4 py-3"
+                        style={{
+                          background: "rgba(255,255,255,0.60)",
+                          borderColor: "rgba(139,115,85,0.18)",
+                          backdropFilter: "blur(8px)",
+                        }}
+                      >
+                        <span
+                          className="mb-0.5 inline-block text-[10px] font-semibold uppercase tracking-wider"
+                          style={{ color: "#8B7355" }}
+                        >
+                          {CATEGORY_LABELS[m.category]}
+                        </span>
+                        <p className="text-sm leading-relaxed" style={{ color: "#0B1220" }}>
+                          {t(m.key, { defaultValue: m.key })}
+                        </p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </AnimatePresence>
+            </div>
+          </motion.div>
+
         </div>
       </Container>
     </section>
