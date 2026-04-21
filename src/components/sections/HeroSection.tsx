@@ -66,7 +66,7 @@ export default function HeroSection() {
             ">
               <div className="pointer-events-none absolute -top-1/2 left-1/2 h-[70%] w-[140%] -translate-x-1/2 rounded-full bg-white/35 blur-2xl" />
               <img
-                src="/images/dra-leiza.png"
+                src="/images/dra-leiza.webp"
                 alt="Dra. Leiza Loiane Hollas"
                 className="absolute inset-0 h-full w-full object-cover object-[center_15%]"
                 loading="eager"
