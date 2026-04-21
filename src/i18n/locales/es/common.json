@@ -35,7 +35,8 @@
     "hospital": "Hospital de la Cruz Roja Brasileña – Paraná",
     "endereco": "Dirección: Av. Vicente Machado, 1280, R. Cap. Souza Franco, 50 – Batel, Curitiba – PR, 80420-011",
     "sucesso": "¡Mensaje enviado con éxito! ✅",
-    "erro": "Ocurrió un error al enviar su mensaje. Inténtelo de nuevo. ❌"
+    "erro": "Ocurrió un error al enviar su mensaje. Inténtelo de nuevo. ❌",
+    "lgpd": "Sus datos se usan exclusivamente para responder su consulta, conforme a la LGPD."
   },
   "paciente": {
     "titulo": "Área del Paciente",

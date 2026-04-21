@@ -23,10 +23,10 @@ export default function ContactSection() {
       setStatus("loading");
 
       await emailjs.sendForm(
-        "service_zy1sbxp",
-        "template_fgfvkyr",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         formRef.current,
-        "yfd2dXCxN8p1I_B5o"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
       setStatus("success");
@@ -85,25 +85,35 @@ export default function ContactSection() {
             transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1] }}
             className="flex flex-col justify-center space-y-6"
           >
+            {/* Telefone clicável */}
             <div className="flex items-start gap-4">
-              <Phone className="h-6 w-6 text-brand-navy" />
-              <span className="font-medium text-slate-700">
+              <Phone className="h-6 w-6 shrink-0 text-brand-navy" />
+              <a
+                href="tel:+554130166622"
+                className="font-medium text-slate-700 hover:text-brand-navy transition-colors"
+              >
                 {contact.telefone}
-              </span>
+              </a>
             </div>
 
             <div className="flex items-start gap-4">
-              <Hospital className="h-6 w-6 text-brand-navy" />
+              <Hospital className="h-6 w-6 shrink-0 text-brand-navy" />
               <span className="font-medium text-slate-700">
                 {contact.hospital}
               </span>
             </div>
 
+            {/* Endereço clicável para Google Maps */}
             <div className="flex items-start gap-4">
-              <MapPin className="h-6 w-6 text-brand-navy" />
-              <span className="font-medium text-slate-700">
+              <MapPin className="h-6 w-6 shrink-0 text-brand-navy" />
+              <a
+                href="https://maps.google.com/?q=Av.+Vicente+Machado+1280+Batel+Curitiba+PR"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-slate-700 hover:text-brand-navy transition-colors"
+              >
                 {contact.endereco}
-              </span>
+              </a>
             </div>
           </motion.div>
 
@@ -167,12 +177,22 @@ export default function ContactSection() {
               />
             </div>
 
+            {/* Aviso LGPD */}
+            <p className="text-xs text-slate-500 leading-relaxed">
+              {t("contato.lgpd")}
+            </p>
+
             <button
               type="submit"
               disabled={status === "loading"}
-              className="inline-flex items-center justify-center rounded-md bg-gray-800/80 px-6 py-3 text-sm font-medium text-white shadow transition-colors duration-200 hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-70"
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-gray-800/80 px-6 py-3 text-sm font-medium text-white shadow transition-colors duration-200 hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-70"
             >
-              {/* ✅ CORRIGIDO: era hardcoded "Enviando..." */}
+              {status === "loading" && (
+                <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+                </svg>
+              )}
               {status === "loading" ? t("contato.enviando") : contact.enviar}
             </button>
 
@@ -181,7 +201,6 @@ export default function ContactSection() {
             )}
 
             {status === "error" && (
-              /* ✅ CORRIGIDO: era hardcoded em PT */
               <p className="text-sm text-red-600">{contact.erro}</p>
             )}
           </motion.form>

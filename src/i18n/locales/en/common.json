@@ -35,7 +35,8 @@
     "hospital": "Brazilian Red Cross Hospital – Paraná",
     "endereco": "Address: Av. Vicente Machado, 1280, R. Cap. Souza Franco, 50 – Batel, Curitiba – PR, 80420-011",
     "sucesso": "Message sent successfully! ✅",
-    "erro": "An error occurred while sending your message. Please try again. ❌"
+    "erro": "An error occurred while sending your message. Please try again. ❌",
+    "lgpd": "Your data is used exclusively for contact purposes, in accordance with LGPD."
   },
   "paciente": {
     "titulo": "Patient Area",

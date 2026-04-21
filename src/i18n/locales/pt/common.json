@@ -35,7 +35,8 @@
     "hospital": "Hospital da Cruz Vermelha Brasileira – Paraná",
     "endereco": "Endereço: Av. Vicente Machado, 1280, R. Cap. Souza Franco, 50 – Batel, Curitiba – PR, 80420-011",
     "sucesso": "Mensagem enviada com sucesso! ✅",
-    "erro": "Ocorreu um erro ao enviar sua mensagem. Tente novamente. ❌"
+    "erro": "Ocorreu um erro ao enviar sua mensagem. Tente novamente. ❌",
+    "lgpd": "Seus dados são usados exclusivamente para retorno de contato, conforme a LGPD."
   },
   "paciente": {
     "titulo": "Área do Paciente",
