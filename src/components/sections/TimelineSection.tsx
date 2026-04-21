@@ -12,193 +12,176 @@ interface Milestone {
 }
 
 const MILESTONES: Milestone[] = [
-  { year: "2007–2011", category: "formacao", key: "timeline.tecnico" },
-  { year: "2012–2018", category: "formacao", key: "timeline.medicina" },
-  { year: "2015–2016", category: "pesquisa", key: "timeline.erica1" },
-  { year: "2015–2016", category: "formacao", key: "timeline.liga_cardio" },
-  { year: "2015", category: "formacao", key: "timeline.liga_cardio2" },
-  { year: "2016", category: "pesquisa", key: "timeline.futebol" },
-  { year: "2016–2017", category: "pesquisa", key: "timeline.hdl" },
-  { year: "2016–2017", category: "pesquisa", key: "timeline.ecoca" },
-  { year: "2016", category: "congresso", key: "timeline.congresso2016" },
-  { year: "2017", category: "congresso", key: "timeline.congresso2017" },
-  { year: "2018", category: "publicacao", key: "timeline.sincope" },
-  { year: "2018", category: "congresso", key: "timeline.congresso2018" },
-  { year: "2019–2024", category: "formacao", key: "timeline.residencia" },
-  { year: "2019–2020", category: "pesquisa", key: "timeline.rmmi" },
-  { year: "2019–2020", category: "pesquisa", key: "timeline.plastia" },
-  { year: "2019–2020", category: "pesquisa", key: "timeline.tronco" },
-  { year: "2019", category: "atuacao", key: "timeline.atuacao_cvb" },
-  { year: "2020", category: "pesquisa", key: "timeline.simulacao" },
-  { year: "2020", category: "publicacao", key: "timeline.pub_simulacao" },
-  { year: "2020", category: "formacao", key: "timeline.curso_cardio" },
-  { year: "2020", category: "congresso", key: "timeline.congresso2020" },
-  { year: "2021", category: "formacao", key: "timeline.curso_fios" },
-  { year: "2021", category: "congresso", key: "timeline.congresso2021" },
-  { year: "2022", category: "congresso", key: "timeline.congresso2022" },
-  { year: "2022–2024", category: "pesquisa", key: "timeline.revascular" },
-  { year: "2023", category: "publicacao", key: "timeline.livro" },
-  { year: "2023", category: "publicacao", key: "timeline.valve_club" },
-  { year: "2023", category: "congresso", key: "timeline.congresso2023" },
-  { year: "2024", category: "formacao", key: "timeline.jackson" },
-  { year: "2024", category: "congresso", key: "timeline.congresso2024" },
-  { year: "2024–2025", category: "pesquisa", key: "timeline.erica2" },
-  { year: "2025", category: "publicacao", key: "timeline.pub_erica" },
-  { year: "2025", category: "formacao", key: "timeline.titulo_sbccv" },
+  { year: "2007–2011", category: "formacao",    key: "timeline.tecnico"        },
+  { year: "2012–2018", category: "formacao",    key: "timeline.medicina"       },
+  { year: "2015–2016", category: "pesquisa",    key: "timeline.erica1"         },
+  { year: "2015–2016", category: "formacao",    key: "timeline.liga_cardio"    },
+  { year: "2015",      category: "formacao",    key: "timeline.liga_cardio2"   },
+  { year: "2016",      category: "pesquisa",    key: "timeline.futebol"        },
+  { year: "2016–2017", category: "pesquisa",    key: "timeline.hdl"            },
+  { year: "2016–2017", category: "pesquisa",    key: "timeline.ecoca"          },
+  { year: "2016",      category: "congresso",   key: "timeline.congresso2016"  },
+  { year: "2017",      category: "congresso",   key: "timeline.congresso2017"  },
+  { year: "2018",      category: "publicacao",  key: "timeline.sincope"        },
+  { year: "2018",      category: "congresso",   key: "timeline.congresso2018"  },
+  { year: "2019–2024", category: "formacao",    key: "timeline.residencia"     },
+  { year: "2019–2020", category: "pesquisa",    key: "timeline.rmmi"           },
+  { year: "2019–2020", category: "pesquisa",    key: "timeline.plastia"        },
+  { year: "2019–2020", category: "pesquisa",    key: "timeline.tronco"         },
+  { year: "2019",      category: "atuacao",     key: "timeline.atuacao_cvb"    },
+  { year: "2020",      category: "pesquisa",    key: "timeline.simulacao"      },
+  { year: "2020",      category: "publicacao",  key: "timeline.pub_simulacao"  },
+  { year: "2020",      category: "formacao",    key: "timeline.curso_cardio"   },
+  { year: "2020",      category: "congresso",   key: "timeline.congresso2020"  },
+  { year: "2021",      category: "formacao",    key: "timeline.curso_fios"     },
+  { year: "2021",      category: "congresso",   key: "timeline.congresso2021"  },
+  { year: "2022",      category: "congresso",   key: "timeline.congresso2022"  },
+  { year: "2022–2024", category: "pesquisa",    key: "timeline.revascular"     },
+  { year: "2023",      category: "publicacao",  key: "timeline.livro"          },
+  { year: "2023",      category: "publicacao",  key: "timeline.valve_club"     },
+  { year: "2023",      category: "congresso",   key: "timeline.congresso2023"  },
+  { year: "2024",      category: "formacao",    key: "timeline.jackson"        },
+  { year: "2024",      category: "congresso",   key: "timeline.congresso2024"  },
+  { year: "2024–2025", category: "pesquisa",    key: "timeline.erica2"         },
+  { year: "2025",      category: "publicacao",  key: "timeline.pub_erica"      },
+  { year: "2025",      category: "formacao",    key: "timeline.titulo_sbccv"   },
 ];
 
-/**
- * 🔥 NOVO PADRÃO VISUAL (AZUL + NEUTRO)
- * Sem cores gritantes → mais elegante e profissional
- */
-const CATEGORY_COLORS: Record<
-  Category,
-  { bg: string; border: string; dot: string; label: string }
-> = {
-  formacao: {
-    bg: "#EDF4FF",
-    border: "#3A6EA5",
-    dot: "#1E3A5F",
-    label: "Formação",
-  },
-  pesquisa: {
-    bg: "#F5F7FA",
-    border: "#C9D6E2",
-    dot: "#3A6EA5",
-    label: "Pesquisa",
-  },
-  publicacao: {
-    bg: "#F0F5FA",
-    border: "#B8CDE3",
-    dot: "#2F5D8C",
-    label: "Publicação",
-  },
-  congresso: {
-    bg: "#FAFBFC",
-    border: "#DDE5EE",
-    dot: "#4A6FA5",
-    label: "Congresso",
-  },
-  atuacao: {
-    bg: "#EEF3FF",
-    border: "#9BB7D4",
-    dot: "#1E3A5F",
-    label: "Atuação",
-  },
+const CATEGORY_COLORS: Record<Category, { bg: string; border: string; dot: string; label: string }> = {
+  formacao:   { bg: "#EEF3FF", border: "#7AA6FF", dot: "#185FA5", label: "Formação"    },
+  pesquisa:   { bg: "#EAF3DE", border: "#97C459", dot: "#3B6D11", label: "Pesquisa"    },
+  publicacao: { bg: "#FAEEDA", border: "#EF9F27", dot: "#854F0B", label: "Publicação"  },
+  congresso:  { bg: "#F1EFE8", border: "#8B7355", dot: "#5F5E5A", label: "Congresso"   },
+  atuacao:    { bg: "#FCEBEB", border: "#F09595", dot: "#A32D2D", label: "Atuação"     },
 };
 
-const ALL_CATEGORIES: Category[] = [
-  "formacao",
-  "pesquisa",
-  "publicacao",
-  "congresso",
-  "atuacao",
-];
+const ALL_CATEGORIES: Category[] = ["formacao", "pesquisa", "publicacao", "congresso", "atuacao"];
 
 export default function TimelineSection() {
   const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = useState<Category | "all">("all");
 
-  const filtered =
-    activeFilter === "all"
-      ? MILESTONES
-      : MILESTONES.filter((m) => m.category === activeFilter);
+  const filtered = activeFilter === "all"
+    ? MILESTONES
+    : MILESTONES.filter((m) => m.category === activeFilter);
 
   return (
     <section className="relative overflow-hidden bg-white">
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-[#F6F8FC] to-[#EEF3FF]" />
+      <div className="pointer-events-none absolute -left-44 top-10 h-[520px] w-[520px] rounded-full bg-[#0B1B3A]/8 blur-3xl" />
+      <div className="pointer-events-none absolute -right-56 -top-28 h-[640px] w-[640px] rounded-full bg-[#7AA6FF]/10 blur-3xl" />
+      <div className="pointer-events-none absolute inset-0 opacity-60">
+        <div className="absolute -left-1/3 top-0 h-full w-[70%] rotate-[12deg] bg-gradient-to-r from-white/0 via-white/50 to-white/0" />
+      </div>
+      <div className="pointer-events-none absolute inset-0 opacity-[0.07] bg-[url('/images/bg-texture.jpg')] bg-cover bg-center" />
+
       <Container className="relative py-14 md:py-20">
 
         {/* Título */}
-        <div className="mb-10 text-center">
-          <h2 className="font-serif text-3xl md:text-4xl text-[#1E3A5F]">
-            {t("timeline.titulo")}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-15%" }}
+          transition={{ duration: 0.55, ease: [0.2, 0.7, 0.2, 1] }}
+          className="mb-10 text-center"
+        >
+          <h2 className="font-serif text-3xl leading-tight tracking-[-0.01em] md:text-4xl" style={{ color: "#0B1220" }}>
+            {t("timeline.titulo", { defaultValue: "Trajetória" })}
           </h2>
-        </div>
+          <div className="mt-4 mx-auto h-px w-16" style={{ background: "linear-gradient(90deg, transparent, #8B7355, transparent)" }} />
+        </motion.div>
 
         {/* Filtros */}
-        <div className="mb-10 flex flex-wrap justify-center gap-2">
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.45, delay: 0.1 }}
+          className="mb-10 flex flex-wrap justify-center gap-2"
+        >
           <button
             onClick={() => setActiveFilter("all")}
-            className="rounded-full px-4 py-1.5 text-xs font-semibold border transition"
+            className="rounded-full px-4 py-1.5 text-xs font-semibold transition-all border"
             style={{
-              background: activeFilter === "all" ? "#1E3A5F" : "#fff",
-              color: activeFilter === "all" ? "#fff" : "#1E3A5F",
-              borderColor: "#1E3A5F",
+              background: activeFilter === "all" ? "#0B1B3A" : "rgba(255,255,255,0.7)",
+              color: activeFilter === "all" ? "#fff" : "#5A6475",
+              borderColor: activeFilter === "all" ? "#0B1B3A" : "rgba(139,115,85,0.2)",
             }}
           >
-            {t("timeline.todos")}
+            {t("timeline.todos", { defaultValue: "Todos" })}
           </button>
-
           {ALL_CATEGORIES.map((cat) => {
             const c = CATEGORY_COLORS[cat];
             const isActive = activeFilter === cat;
-
             return (
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className="rounded-full px-4 py-1.5 text-xs font-semibold border transition"
+                className="rounded-full px-4 py-1.5 text-xs font-semibold transition-all border"
                 style={{
-                  background: isActive ? "#3A6EA5" : "#fff",
-                  color: isActive ? "#fff" : "#3A6EA5",
-                  borderColor: "#3A6EA5",
+                  background: isActive ? c.dot : "rgba(255,255,255,0.7)",
+                  color: isActive ? "#fff" : c.dot,
+                  borderColor: isActive ? c.dot : c.border,
                 }}
               >
                 {c.label}
               </button>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Timeline */}
         <div className="relative mx-auto max-w-3xl">
-          <div className="absolute left-[72px] top-0 bottom-0 w-px md:left-[120px] bg-[#E4E9F0]" />
+          {/* Linha vertical */}
+          <div
+            className="absolute left-[72px] top-0 bottom-0 w-px md:left-[120px]"
+            style={{ background: "linear-gradient(to bottom, transparent, #8B7355 5%, #8B7355 95%, transparent)" }}
+          />
 
-          <AnimatePresence>
+          <AnimatePresence mode="popLayout">
             <div className="flex flex-col gap-5">
               {filtered.map((m, idx) => {
                 const c = CATEGORY_COLORS[m.category];
-
                 return (
                   <motion.div
                     key={m.key}
                     initial={{ opacity: 0, x: -16 }}
                     animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ delay: idx * 0.03 }}
+                    exit={{ opacity: 0, x: -16 }}
+                    transition={{ duration: 0.35, ease: [0.2, 0.7, 0.2, 1], delay: idx * 0.03 }}
                     className="flex items-start gap-4"
                   >
                     {/* Ano */}
-                    <div className="w-[68px] md:w-[116px] text-right text-xs font-semibold text-[#8A97A8]">
-                      {m.year}
+                    <div className="w-[68px] md:w-[116px] shrink-0 pt-2.5 text-right">
+                      <span className="text-[11px] font-semibold tabular-nums" style={{ color: "#8B7355" }}>
+                        {m.year}
+                      </span>
                     </div>
 
-                    {/* Dot */}
-                    <div className="mt-2">
+                    {/* Ponto */}
+                    <div className="relative z-10 mt-3 shrink-0">
                       <div
-                        className="h-3 w-3 rounded-full"
-                        style={{ background: c.dot }}
+                        className="h-3 w-3 rounded-full border-2"
+                        style={{ backgroundColor: c.dot, borderColor: "#F6F8FC" }}
                       />
                     </div>
 
                     {/* Card */}
                     <div
-                      className="flex-1 rounded-xl border px-4 py-3 text-sm"
+                      className="flex-1 rounded-2xl border px-4 py-3 text-sm leading-relaxed"
                       style={{
                         background: c.bg,
-                        borderColor: c.border,
+                        borderColor: c.border + "55",
+                        color: "#0B1220",
                       }}
                     >
                       <span
-                        className="text-[10px] font-semibold uppercase tracking-wide"
-                        style={{ color: c.dot }}
+                        className="mb-1 inline-block rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider"
+                        style={{ background: c.border + "33", color: c.dot }}
                       >
                         {c.label}
                       </span>
-
-                      <p className="mt-1 text-[#2C2C2C]">
-                        {t(m.key)}
-                      </p>
+                      <p className="mt-0.5">{t(m.key, { defaultValue: m.key })}</p>
                     </div>
                   </motion.div>
                 );
