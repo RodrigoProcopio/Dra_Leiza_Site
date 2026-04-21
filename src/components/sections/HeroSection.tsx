@@ -5,35 +5,28 @@ import { useTranslation } from "react-i18next";
 export default function HeroSection() {
   const { t } = useTranslation();
 
+  function scrollToContact(e: React.MouseEvent<HTMLAnchorElement>) {
+    e.preventDefault();
+    const el = document.getElementById("contato");
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   return (
     <section
       id="home"
-      className="
-        relative overflow-hidden
-        bg-[#F7FAFF]
-      "
+      className="relative overflow-hidden bg-[#F7FAFF]"
     >
-      {/* ===== Fundo premium em camadas (TEXTURA + GRADIENT + MESH + GRAIN) ===== */}
-      {/* 1) Base: gradient suave (ar “clínica premium”) */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-[#F6F8FC] to-[#EEF3FF]" />
-
-      {/* 2) Mesh/glows (profundidade elegante, sem competir com o conteúdo) */}
       <div className="pointer-events-none absolute -left-40 -top-44 h-[520px] w-[520px] rounded-full bg-brand-navy/10 blur-3xl" />
       <div className="pointer-events-none absolute -right-44 -top-24 h-[520px] w-[520px] rounded-full bg-[#7AA6FF]/12 blur-3xl" />
       <div className="pointer-events-none absolute right-[-180px] bottom-[-220px] h-[620px] w-[620px] rounded-full bg-[#B8E2FF]/14 blur-3xl" />
 
-      {/* 3) “Sheen” diagonal (efeito premium tipo vidro) */}
       <div className="pointer-events-none absolute inset-0 opacity-70">
         <div className="absolute -left-1/3 top-0 h-full w-[70%] rotate-[12deg] bg-gradient-to-r from-white/0 via-white/50 to-white/0" />
       </div>
-
-      {/* 4) Textura opcional (use uma imagem bem sutil, ex: /images/bg-texture.jpg) */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.08] bg-[url('/images/bg-texture.jpg')] bg-cover bg-center" />
-
-      {/* 5) Grain/noise (use um PNG pequeno e repetível, ex: /images/grain.png) */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.05] mix-blend-multiply bg-[url('/images/grain.png')] bg-repeat" />
 
-      {/* 6) Ornamento SVG discreto (linha/grade “clinic couture”) */}
       <svg
         className="pointer-events-none absolute left-0 top-0 h-full w-full opacity-[0.10]"
         viewBox="0 0 1440 900"
@@ -46,30 +39,15 @@ export default function HeroSection() {
             <stop offset="1" stopColor="rgba(10, 37, 64, 0)" />
           </linearGradient>
         </defs>
-        {/* Linhas suaves */}
-        <path
-          d="M0 200 C 360 120, 720 260, 1440 140"
-          fill="none"
-          stroke="url(#gridFade)"
-          strokeWidth="1.2"
-        />
-        <path
-          d="M0 380 C 420 300, 780 480, 1440 320"
-          fill="none"
-          stroke="url(#gridFade)"
-          strokeWidth="1.2"
-        />
-        <path
-          d="M0 560 C 420 480, 780 660, 1440 500"
-          fill="none"
-          stroke="url(#gridFade)"
-          strokeWidth="1.2"
-        />
+        <path d="M0 200 C 360 120, 720 260, 1440 140" fill="none" stroke="url(#gridFade)" strokeWidth="1.2" />
+        <path d="M0 380 C 420 300, 780 480, 1440 320" fill="none" stroke="url(#gridFade)" strokeWidth="1.2" />
+        <path d="M0 560 C 420 480, 780 660, 1440 500" fill="none" stroke="url(#gridFade)" strokeWidth="1.2" />
       </svg>
 
       <Container className="relative pt-28 pb-24 md:pt-36 md:pb-32">
         <div className="grid items-center gap-10 md:grid-cols-[1.1fr_0.9fr]">
-          {/* Coluna da imagem (esquerda no desktop) */}
+
+          {/* Coluna da imagem */}
           <motion.div
             initial={{ opacity: 0, scale: 0.985 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -81,17 +59,12 @@ export default function HeroSection() {
               md:min-h-[520px] lg:min-h-[600px]
             "
           >
-            {/* Card premium (borda + brilho + sombra suave) */}
-            <div
-              className="
-                relative h-full overflow-hidden rounded-[28px]
-                border border-slate-200/80 bg-white/55 backdrop-blur
-                shadow-[0_18px_60px_-28px_rgba(15,23,42,0.35)]
-              "
-            >
-              {/* brilho no topo (efeito “glass highlight”) */}
+            <div className="
+              relative h-full overflow-hidden rounded-[28px]
+              border border-slate-200/80 bg-white/55 backdrop-blur
+              shadow-[0_18px_60px_-28px_rgba(15,23,42,0.35)]
+            ">
               <div className="pointer-events-none absolute -top-1/2 left-1/2 h-[70%] w-[140%] -translate-x-1/2 rounded-full bg-white/35 blur-2xl" />
-
               <img
                 src="/images/dra-leiza.png"
                 alt="Dra. Leiza Loiane Hollas"
@@ -99,25 +72,18 @@ export default function HeroSection() {
                 loading="eager"
                 decoding="async"
               />
-
-              {/* vinheta sutil p/ dar profundidade e destacar rosto */}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/10 via-transparent to-white/10" />
-
-              {/* contorno interno (cara de “produto caro”) */}
               <div className="pointer-events-none absolute inset-0 rounded-[28px] ring-1 ring-white/55" />
             </div>
 
-            {/* detalhe decorativo com logo (vidro premium) */}
-            <div
-              className="
-                pointer-events-none absolute -bottom-6 -right-6
-                h-24 w-24 overflow-hidden rounded-3xl
-                border border-slate-200/70
-                bg-white/30 
-                shadow-[0_18px_60px_-35px_rgba(15,23,42,0.45)]
-                md:block
-              "
-            >
+            <div className="
+              pointer-events-none absolute -bottom-6 -right-6
+              h-24 w-24 overflow-hidden rounded-3xl
+              border border-slate-200/70
+              bg-white/30
+              shadow-[0_18px_60px_-35px_rgba(15,23,42,0.45)]
+              md:block
+            ">
               <div className="absolute inset-0 bg-gradient-to-br from-white/70 via-white/40 to-white/20" />
               <img
                 src="/images/logo-horizontal.png"
@@ -131,7 +97,7 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Coluna do texto (direita no desktop) */}
+          {/* Coluna do texto */}
           <motion.div
             className="order-1 md:order-2 flex flex-col justify-center h-full max-w-xl space-y-6"
             initial={{ opacity: 0, y: 14 }}
@@ -139,44 +105,56 @@ export default function HeroSection() {
             viewport={{ once: true, margin: "-20%" }}
             transition={{ duration: 0.55, ease: [0.2, 0.7, 0.2, 1] }}
           >
-            {/* “chip” premium para especialidade */}
             <div className="flex items-center gap-3">
-              <span
-                className="
-                  inline-flex items-center rounded-full
-                  border border-slate-200/80 bg-white/65 backdrop-blur
-                  px-4 py-2 text-[11px] md:text-xs
-                  font-semibold tracking-[0.22em] uppercase
-                  text-brand-navy/80
-                  shadow-[0_18px_60px_-35px_rgba(15,23,42,0.30)]
-                "
-              >
+              <span className="
+                inline-flex items-center rounded-full
+                border border-slate-200/80 bg-white/65 backdrop-blur
+                px-4 py-2 text-[11px] md:text-xs
+                font-semibold tracking-[0.22em] uppercase
+                text-brand-navy/80
+                shadow-[0_18px_60px_-35px_rgba(15,23,42,0.30)]
+              ">
                 {t("hero.especialidade")}
               </span>
-
-              {/* linha decorativa fina */}
               <span className="h-px flex-1 bg-gradient-to-r from-brand-navy/25 via-brand-navy/10 to-transparent" />
             </div>
 
-            {/* Título premium (serif + contraste + tracking sutil) */}
-            <h1
-              className="
-                font-serif font-medium
-                text-5xl leading-[1.04] tracking-[-0.02em]
-                text-ink
-                md:text-7xl
-              "
-            >
+            <h1 className="
+              font-serif font-medium
+              text-5xl leading-[1.04] tracking-[-0.02em]
+              text-ink
+              md:text-7xl
+            ">
               {t("hero.nome")}
             </h1>
 
-            {/* Texto secundário com “luxo silencioso” */}
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-  {t("hero.crm")} • {t("hero.rqe")}
-</p>
+              {t("hero.crm")} • {t("hero.rqe")}
+            </p>
 
-            {/* Detalhe final: micro-gradiente sob o texto (muito sutil) */}
             <div className="h-px w-2/3 bg-gradient-to-r from-brand-navy/20 via-brand-navy/10 to-transparent" />
+
+            {/* CTA */}
+            <div>
+              <a
+                href="#contato"
+                onClick={scrollToContact}
+                className="
+                  inline-flex items-center gap-2
+                  rounded-2xl border-2 border-brand-navy
+                  px-7 py-3
+                  text-sm font-semibold text-brand-navy
+                  transition-all duration-300
+                  hover:bg-brand-navy hover:text-white
+                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-navy focus-visible:ring-offset-2
+                "
+              >
+                {t("hero.cta", { defaultValue: "Agendar Consulta" })}
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+            </div>
           </motion.div>
         </div>
       </Container>
