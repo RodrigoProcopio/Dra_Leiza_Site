@@ -8,6 +8,8 @@ import PacientArea from "../components/sections/PacientArea";
 import PublicationsSection from "../components/sections/PublicationsSection";
 import ContactSection from "../components/sections/ContactSection";
 import Seo from "./seo/Seo";
+import TimelineSection from "../components/sections/TimelineSection";
+
 
 export default function App() {
   return (
@@ -18,6 +20,7 @@ export default function App() {
         <HeroSection />
         <AboutSection />
         <StatsSection />
+        <TimelineSection /> 
         <PacientArea />
         <PublicationsSection />
         <ContactSection />

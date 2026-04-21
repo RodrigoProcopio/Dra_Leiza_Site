@@ -31,6 +31,16 @@
   "congressos": "National congresses",
   "membro": "Member of SBCCV"
 },
+"timeline": {
+  "titulo": "Career Timeline",
+  "medicina": "Medical degree at PUC-PR",
+  "liga": "Academic Cardiology League at PUC-PR (LIAC)",
+  "simulacao": "Research coordinator in mitral valve surgical simulation",
+  "revascular": "Research in myocardial revascularization — 10 years of experience",
+  "livro": "Publication of the LACTCV Manual book + articles at The Valve Club",
+  "residencia": "Residency in Cardiovascular Surgery — Brazilian Red Cross Hospital PR",
+  "congresso": "50th Congress of the Brazilian Society of Cardiovascular Surgery"
+},
   "sobre": {
     "titulo": "About Dr. Leiza Hollas",
     "altImagem": "Photo of Dr. Leiza Loiane Hollas",

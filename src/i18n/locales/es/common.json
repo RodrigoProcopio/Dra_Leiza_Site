@@ -36,6 +36,16 @@
   "congressos": "Congresos nacionales",
   "membro": "Miembro de la SBCCV"
 },
+"timeline": {
+  "titulo": "Trayectoria",
+  "medicina": "Graduación en Medicina por la PUC-PR",
+  "liga": "Liga Académica de Cardiología de la PUC-PR (LIAC)",
+  "simulacao": "Coordinadora de investigación en simulación quirúrgica valvular mitral",
+  "revascular": "Investigación en revascularización miocárdica — 10 años de experiencia",
+  "livro": "Publicación del libro Manual LACTCV + artículos en The Valve Club",
+  "residencia": "Residencia en Cirugía Cardiovascular — Hospital Cruz Roja Brasileña PR",
+  "congresso": "50° Congreso de la Sociedad Brasileña de Cirugía Cardiovascular"
+},
   "contato": {
     "titulo": "Contacto",
     "descricao": "Póngase en contacto para agendar una consulta o resolver dudas.",
