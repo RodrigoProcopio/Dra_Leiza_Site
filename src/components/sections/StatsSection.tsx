@@ -62,7 +62,7 @@ export default function StatsSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative overflow-hidden bg-brand-navy py-14 md:py-20">
+    <section className="relative overflow-hidden py-14 md:py-20" style={{ backgroundColor: "#0B1B3A" }}>
       {/* Glow decorativo */}
       <div className="pointer-events-none absolute -left-32 top-0 h-[400px] w-[400px] rounded-full bg-[#7AA6FF]/10 blur-3xl" />
       <div className="pointer-events-none absolute -right-32 bottom-0 h-[400px] w-[400px] rounded-full bg-[#02C39A]/10 blur-3xl" />
