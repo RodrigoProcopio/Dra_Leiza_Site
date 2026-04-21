@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import Container from "../layout/Container";
@@ -47,13 +47,12 @@ const MILESTONES: Milestone[] = [
   { year: "2025",      category: "formacao",    key: "timeline.titulo_sbccv"   },
 ];
 
-// Cores sutis por categoria — tons do site
-const CATEGORY_STYLES: Record<Category, { dot: string; badge: string; badgeText: string; cardBorder: string; cardBg: string; label: string }> = {
-  formacao:   { dot: "#185FA5", badge: "rgba(55,138,221,0.12)", badgeText: "#185FA5", cardBorder: "rgba(55,138,221,0.18)", cardBg: "rgba(230,241,251,0.45)", label: "Formação"   },
-  pesquisa:   { dot: "#3B6D11", badge: "rgba(99,153,34,0.12)",  badgeText: "#3B6D11", cardBorder: "rgba(99,153,34,0.18)",  cardBg: "rgba(234,243,222,0.45)", label: "Pesquisa"   },
-  publicacao: { dot: "#854F0B", badge: "rgba(186,117,23,0.12)", badgeText: "#854F0B", cardBorder: "rgba(139,115,85,0.25)", cardBg: "rgba(250,238,218,0.45)", label: "Publicação" },
-  congresso:  { dot: "#5F5E5A", badge: "rgba(136,135,128,0.12)",badgeText: "#5F5E5A", cardBorder: "rgba(136,135,128,0.2)", cardBg: "rgba(241,239,232,0.45)", label: "Congresso"  },
-  atuacao:    { dot: "#993556", badge: "rgba(212,83,126,0.12)", badgeText: "#993556", cardBorder: "rgba(212,83,126,0.18)", cardBg: "rgba(251,234,240,0.45)", label: "Atuação"    },
+const CATEGORY_LABELS: Record<Category, string> = {
+  formacao:   "Formação",
+  pesquisa:   "Pesquisa",
+  publicacao: "Publicação",
+  congresso:  "Congresso",
+  atuacao:    "Atuação",
 };
 
 const ALL_CATEGORIES: Category[] = ["formacao", "pesquisa", "publicacao", "congresso", "atuacao"];
@@ -61,7 +60,6 @@ const ALL_CATEGORIES: Category[] = ["formacao", "pesquisa", "publicacao", "congr
 export default function TimelineSection() {
   const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = useState<Category | "all">("all");
-  const scrollRef = useRef<HTMLDivElement>(null);
 
   const filtered = activeFilter === "all"
     ? MILESTONES
@@ -79,13 +77,13 @@ export default function TimelineSection() {
 
       <Container className="relative py-14 md:py-20">
 
-        {/* Título centralizado */}
+        {/* Título */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-15%" }}
           transition={{ duration: 0.55, ease: [0.2, 0.7, 0.2, 1] }}
-          className="mb-8 text-center"
+          className="mb-10 text-center"
         >
           <h2 className="font-serif text-3xl leading-tight tracking-[-0.01em] md:text-4xl" style={{ color: "#0B1220" }}>
             {t("timeline.titulo", { defaultValue: "Trajetória" })}
@@ -93,141 +91,95 @@ export default function TimelineSection() {
           <div className="mt-4 mx-auto h-px w-16" style={{ background: "linear-gradient(90deg, transparent, #8B7355, transparent)" }} />
         </motion.div>
 
-        {/* Filtros centralizados */}
+        {/* Filtros — estilo discreto, padrão do site */}
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.45, delay: 0.1 }}
-          className="mb-8 flex flex-wrap justify-center gap-2"
+          className="mb-10 flex flex-wrap justify-center gap-2"
         >
-          <button
-            onClick={() => setActiveFilter("all")}
-            className="rounded-full px-4 py-1.5 text-xs font-semibold transition-all border"
-            style={{
-              background: activeFilter === "all" ? "#0B1B3A" : "rgba(255,255,255,0.75)",
-              color: activeFilter === "all" ? "#fff" : "#5A6475",
-              borderColor: activeFilter === "all" ? "#0B1B3A" : "rgba(139,115,85,0.25)",
-            }}
-          >
-            {t("timeline.todos", { defaultValue: "Todos" })}
-          </button>
-          {ALL_CATEGORIES.map((cat) => {
-            const s = CATEGORY_STYLES[cat];
+          {(["all", ...ALL_CATEGORIES] as const).map((cat) => {
             const isActive = activeFilter === cat;
+            const label = cat === "all"
+              ? t("timeline.todos", { defaultValue: "Todos" })
+              : CATEGORY_LABELS[cat];
             return (
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
                 className="rounded-full px-4 py-1.5 text-xs font-semibold transition-all border"
                 style={{
-                  background: isActive ? s.dot : "rgba(255,255,255,0.75)",
-                  color: isActive ? "#fff" : s.badgeText,
-                  borderColor: isActive ? s.dot : s.cardBorder,
+                  background: isActive ? "#0B1B3A" : "rgba(255,255,255,0.65)",
+                  color: isActive ? "#fff" : "#5A6475",
+                  borderColor: isActive ? "#0B1B3A" : "rgba(139,115,85,0.25)",
+                  backdropFilter: "blur(8px)",
                 }}
               >
-                {s.label}
+                {label}
               </button>
             );
           })}
         </motion.div>
 
-        {/* Layout: timeline à esquerda, foto à direita */}
-        <div className="grid gap-8 md:grid-cols-[1fr_340px] md:gap-12 items-start">
-
-          {/* Timeline scrollável — altura fixa igual ao card da foto */}
+        {/* Timeline */}
+        <div className="relative mx-auto max-w-3xl">
+          {/* Linha vertical dourada */}
           <div
-            ref={scrollRef}
-            className="relative overflow-y-auto pr-2"
-            style={{ maxHeight: "580px", scrollbarWidth: "thin", scrollbarColor: "#8B7355 transparent" }}
-          >
-            {/* Linha vertical */}
-            <div
-              className="absolute left-[68px] top-0 bottom-0 w-px"
-              style={{ background: "linear-gradient(to bottom, transparent, #8B7355 3%, #8B7355 97%, transparent)" }}
-            />
+            className="absolute left-[72px] top-0 bottom-0 w-px md:left-[120px]"
+            style={{ background: "linear-gradient(to bottom, transparent, #8B7355 5%, #8B7355 95%, transparent)" }}
+          />
 
-            <AnimatePresence mode="popLayout">
-              <div className="flex flex-col gap-3 pb-4">
-                {filtered.map((m, idx) => {
-                  const s = CATEGORY_STYLES[m.category];
-                  return (
-                    <motion.div
-                      key={m.key}
-                      initial={{ opacity: 0, x: -14 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -14 }}
-                      transition={{ duration: 0.28, ease: [0.2, 0.7, 0.2, 1], delay: idx * 0.02 }}
-                      className="flex items-start gap-3"
+          <AnimatePresence mode="popLayout">
+            <div className="flex flex-col gap-4">
+              {filtered.map((m, idx) => (
+                <motion.div
+                  key={m.key}
+                  initial={{ opacity: 0, x: -16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -16 }}
+                  transition={{ duration: 0.35, ease: [0.2, 0.7, 0.2, 1], delay: idx * 0.02 }}
+                  className="flex items-start gap-4"
+                >
+                  {/* Ano */}
+                  <div className="w-[68px] md:w-[116px] shrink-0 pt-3 text-right">
+                    <span className="text-[11px] font-semibold tabular-nums" style={{ color: "#8B7355" }}>
+                      {m.year}
+                    </span>
+                  </div>
+
+                  {/* Ponto dourado */}
+                  <div className="relative z-10 mt-[14px] shrink-0">
+                    <div
+                      className="h-2.5 w-2.5 rounded-full"
+                      style={{ backgroundColor: "#8B7355" }}
+                    />
+                  </div>
+
+                  {/* Card — estilo padrão do site */}
+                  <div
+                    className="flex-1 rounded-[20px] border px-4 py-3"
+                    style={{
+                      background: "rgba(255,255,255,0.60)",
+                      borderColor: "rgba(139,115,85,0.18)",
+                      backdropFilter: "blur(8px)",
+                    }}
+                  >
+                    {/* Badge de categoria sutil */}
+                    <span
+                      className="mb-1 inline-block text-[10px] font-semibold uppercase tracking-wider"
+                      style={{ color: "#8B7355" }}
                     >
-                      {/* Ano */}
-                      <div className="w-[64px] shrink-0 pt-2.5 text-right">
-                        <span className="text-[10px] font-semibold tabular-nums" style={{ color: "#8B7355" }}>
-                          {m.year}
-                        </span>
-                      </div>
-
-                      {/* Ponto colorido por categoria */}
-                      <div className="relative z-10 mt-[10px] shrink-0">
-                        <div className="h-2.5 w-2.5 rounded-full border-2" style={{ backgroundColor: s.dot, borderColor: "rgba(246,248,252,0.9)" }} />
-                      </div>
-
-                      {/* Card colorido por categoria */}
-                      <div
-                        className="flex-1 rounded-2xl border px-3 py-2.5"
-                        style={{ background: s.cardBg, borderColor: s.cardBorder, backdropFilter: "blur(10px)" }}
-                      >
-                        <span
-                          className="mb-0.5 inline-block rounded-full px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider"
-                          style={{ background: s.badge, color: s.badgeText }}
-                        >
-                          {s.label}
-                        </span>
-                        <p className="text-[13px] leading-snug" style={{ color: "#0B1220" }}>
-                          {t(m.key, { defaultValue: m.key })}
-                        </p>
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </AnimatePresence>
-          </div>
-
-          {/* Foto à direita — card premium sticky */}
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-15%" }}
-            transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1], delay: 0.15 }}
-            className="md:sticky md:top-28 hidden md:block"
-          >
-            <div
-              className="relative overflow-hidden rounded-[28px] border shadow-[0_18px_60px_-28px_rgba(15,23,42,0.35)]"
-              style={{ borderColor: "rgba(203,213,225,0.8)", background: "rgba(255,255,255,0.55)", height: "580px" }}
-            >
-              <div className="pointer-events-none absolute -top-1/2 left-1/2 h-[70%] w-[140%] -translate-x-1/2 rounded-full bg-white/30 blur-2xl z-10" />
-              <img
-                src="/images/dra-leiza-secao.jpg"
-                alt={t("sobre.altImagem", { defaultValue: "Dra. Leiza Hollas" })}
-                className="absolute inset-0 h-full w-full object-cover object-top"
-                loading="lazy"
-                decoding="async"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/15 via-transparent to-white/10" />
-              <div className="pointer-events-none absolute inset-0 rounded-[28px] ring-1 ring-white/55" />
-
-              {/* Badge no canto inferior */}
-              <div
-                className="absolute bottom-4 left-4 right-4 rounded-2xl px-4 py-3 backdrop-blur-md border z-10"
-                style={{ background: "rgba(255,255,255,0.80)", borderColor: "rgba(139,115,85,0.20)" }}
-              >
-                <p className="font-serif text-sm" style={{ color: "#0B1220" }}>Dra. Leiza Loiane Hollas</p>
-                <p className="text-xs mt-0.5" style={{ color: "#8B7355" }}>Cirurgiã Cardiovascular · SBCCV</p>
-              </div>
+                      {CATEGORY_LABELS[m.category]}
+                    </span>
+                    <p className="text-sm leading-relaxed" style={{ color: "#0B1220" }}>
+                      {t(m.key, { defaultValue: m.key })}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
-          </motion.div>
-
+          </AnimatePresence>
         </div>
       </Container>
     </section>
