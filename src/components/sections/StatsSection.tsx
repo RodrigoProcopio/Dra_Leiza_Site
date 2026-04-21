@@ -17,7 +17,7 @@ const STATS: StatItem[] = [
 ];
 
 function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
-  const [display, setDisplay] = useState(0);
+  const [display, setDisplay] = useState(value);
   const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
@@ -25,11 +25,10 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
     if (!el) return;
 
     function runAnimation() {
-      setDisplay(0);
-      const duration = 1400;
-      const steps = 40;
-      const increment = value / steps;
       let current = 0;
+      const duration = 1800;
+      const steps = 50;
+      const increment = value / steps;
       const interval = setInterval(() => {
         current += increment;
         if (current >= value) {
@@ -42,14 +41,12 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
     }
 
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) runAnimation();
-      },
+      ([entry]) => { if (entry.isIntersecting) runAnimation(); },
       { threshold: 0.3 }
     );
-
     observer.observe(el);
-    const loop = setInterval(runAnimation, 4000);
+
+    const loop = setInterval(runAnimation, 6000);
 
     return () => {
       observer.disconnect();
@@ -64,14 +61,17 @@ export default function StatsSection() {
   const { t } = useTranslation();
 
   return (
-    <section
-      className="relative overflow-hidden py-14 md:py-20"
-      style={{ backgroundColor: "#0B1B3A" }}
-    >
-      <div className="pointer-events-none absolute -left-32 top-0 h-[400px] w-[400px] rounded-full blur-3xl" style={{ background: "rgba(122,166,255,0.10)" }} />
-      <div className="pointer-events-none absolute -right-32 bottom-0 h-[400px] w-[400px] rounded-full blur-3xl" style={{ background: "rgba(2,195,154,0.10)" }} />
+    <section className="relative overflow-hidden bg-white">
+      {/* Fundo padrão do site */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-[#F6F8FC] to-[#EEF3FF]" />
+      <div className="pointer-events-none absolute -left-44 top-10 h-[520px] w-[520px] rounded-full bg-[#0B1B3A]/8 blur-3xl" />
+      <div className="pointer-events-none absolute -right-56 -top-28 h-[640px] w-[640px] rounded-full bg-[#7AA6FF]/10 blur-3xl" />
+      <div className="pointer-events-none absolute inset-0 opacity-60">
+        <div className="absolute -left-1/3 top-0 h-full w-[70%] rotate-[12deg] bg-gradient-to-r from-white/0 via-white/50 to-white/0" />
+      </div>
+      <div className="pointer-events-none absolute inset-0 opacity-[0.07] bg-[url('/images/bg-texture.jpg')] bg-cover bg-center" />
 
-      <Container className="relative">
+      <Container className="relative py-14 md:py-20">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -86,30 +86,50 @@ export default function StatsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-15%" }}
               transition={{ duration: 0.5, ease: [0.2, 0.7, 0.2, 1], delay: idx * 0.08 }}
-              className="flex flex-col items-center gap-2 text-center"
+              className="flex flex-col items-center gap-3 text-center"
             >
-              <span className="font-serif text-5xl font-medium md:text-6xl" style={{ color: "#FFFFFF" }}>
-                <AnimatedNumber value={stat.value} suffix={stat.suffix} />
+              {/* Número em navy com acento dourado */}
+              <span
+                className="font-serif text-5xl font-medium md:text-6xl"
+                style={{ color: "#0B1B3A" }}
+              >
+                <AnimatedNumber value={stat.value} suffix="" />
+                <span style={{ color: "#8B7355" }}>{stat.suffix}</span>
               </span>
-              <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.6)" }}>
+
+              {/* Divisor dourado */}
+              <div
+                className="h-px w-10"
+                style={{ background: "linear-gradient(90deg, transparent, #8B7355, transparent)" }}
+              />
+
+              {/* Label em navy/muted */}
+              <span
+                className="text-xs font-semibold uppercase tracking-widest"
+                style={{ color: "#5A6475" }}
+              >
                 {t(stat.labelKey, { defaultValue: stat.labelKey })}
               </span>
             </motion.div>
           ))}
         </motion.div>
 
+        {/* Linha SBCCV */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-10 flex items-center justify-center gap-3"
+          className="mt-12 flex items-center justify-center gap-3"
         >
-          <div className="h-px w-16" style={{ background: "linear-gradient(to right, transparent, rgba(255,255,255,0.2))" }} />
-          <span className="text-xs tracking-widest uppercase" style={{ color: "rgba(255,255,255,0.4)" }}>
+          <div className="h-px w-16" style={{ background: "linear-gradient(to right, transparent, #8B7355)" }} />
+          <span
+            className="text-xs tracking-widest uppercase font-semibold"
+            style={{ color: "#8B7355" }}
+          >
             {t("stats.membro", { defaultValue: "Membro da SBCCV" })}
           </span>
-          <div className="h-px w-16" style={{ background: "linear-gradient(to left, transparent, rgba(255,255,255,0.2))" }} />
+          <div className="h-px w-16" style={{ background: "linear-gradient(to left, transparent, #8B7355)" }} />
         </motion.div>
       </Container>
     </section>
