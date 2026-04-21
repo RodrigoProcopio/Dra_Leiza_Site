@@ -18,6 +18,12 @@
     "rqe": "RQE 38188",
     "cta": "Agendar Consulta"
   },
+  "footer": {
+  "navegacao": "Navegación",
+  "links": "Enlaces",
+  "direitos": "Todos los derechos reservados.",
+  "lgpd": "Este sitio no recopila datos sensibles. La información de contacto se usa exclusivamente para responder consultas, conforme a la LGPD."
+},
   "sobre": {
     "titulo": "Sobre la Dra. Leiza Hollas",
     "altImagem": "Foto de la Dra. Leiza Loiane Hollas",

@@ -18,6 +18,12 @@
     "rqe": "RQE 38188",
     "cta": "Schedule Appointment"
   },
+  "footer": {
+  "navegacao": "Navigation",
+  "links": "Links",
+  "direitos": "All rights reserved.",
+  "lgpd": "This site does not collect sensitive data. Contact information is used exclusively for response purposes, in accordance with LGPD."
+},
   "sobre": {
     "titulo": "About Dr. Leiza Hollas",
     "altImagem": "Photo of Dr. Leiza Loiane Hollas",

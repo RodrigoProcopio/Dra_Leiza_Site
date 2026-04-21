@@ -10,7 +10,9 @@
     "publications": "Publicações",
     "contact": "Contato",
     "menu": "Menu"
+  
   },
+  
   "hero": {
     "nome": "Dra. Leiza Loiane Hollas",
     "especialidade": "Cirurgia Cardiovascular",
@@ -18,6 +20,12 @@
     "rqe": "RQE 38188",
     "cta": "Agendar Consulta"
   },
+  "footer": {
+  "navegacao": "Navegação",
+  "links": "Links",
+  "direitos": "Todos os direitos reservados.",
+  "lgpd": "Este site não coleta dados sensíveis. As informações de contato são usadas exclusivamente para retorno, conforme a LGPD."
+},
   "sobre": {
     "titulo": "Sobre a Dra. Leiza Hollas",
     "altImagem": "Foto da Dra. Leiza Loiane Hollas",
