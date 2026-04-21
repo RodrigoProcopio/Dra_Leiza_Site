@@ -48,11 +48,11 @@ const MILESTONES: Milestone[] = [
 ];
 
 const CATEGORY_STYLES: Record<Category, { dot: string; badge: string; badgeText: string; cardBorder: string; cardBg: string; label: string }> = {
-  formacao:   { dot: "#185FA5", badge: "rgba(55,138,221,0.12)",  badgeText: "#185FA5", cardBorder: "rgba(55,138,221,0.20)",  cardBg: "rgba(230,241,251,0.55)", label: "Formação"   },
-  pesquisa:   { dot: "#3B6D11", badge: "rgba(99,153,34,0.12)",   badgeText: "#3B6D11", cardBorder: "rgba(99,153,34,0.20)",   cardBg: "rgba(234,243,222,0.55)", label: "Pesquisa"   },
-  publicacao: { dot: "#854F0B", badge: "rgba(186,117,23,0.12)",  badgeText: "#854F0B", cardBorder: "rgba(139,115,85,0.28)",  cardBg: "rgba(250,238,218,0.55)", label: "Publicação" },
-  congresso:  { dot: "#5F5E5A", badge: "rgba(136,135,128,0.12)", badgeText: "#5F5E5A", cardBorder: "rgba(136,135,128,0.22)", cardBg: "rgba(241,239,232,0.55)", label: "Congresso"  },
-  atuacao:    { dot: "#993556", badge: "rgba(212,83,126,0.12)",  badgeText: "#993556", cardBorder: "rgba(212,83,126,0.20)",  cardBg: "rgba(251,234,240,0.55)", label: "Atuação"    },
+  formacao:   { dot: "#0B1B3A", badge: "rgba(11,27,58,0.08)",   badgeText: "#0B1B3A", cardBorder: "rgba(11,27,58,0.14)",  cardBg: "rgba(11,27,58,0.04)",   label: "Formação"   },
+  pesquisa:   { dot: "#185FA5", badge: "rgba(24,95,165,0.10)",  badgeText: "#185FA5", cardBorder: "rgba(24,95,165,0.18)", cardBg: "rgba(24,95,165,0.05)",  label: "Pesquisa"   },
+  publicacao: { dot: "#8B7355", badge: "rgba(139,115,85,0.12)", badgeText: "#7A6040", cardBorder: "rgba(139,115,85,0.22)",cardBg: "rgba(139,115,85,0.06)", label: "Publicação" },
+  congresso:  { dot: "#6B4F2A", badge: "rgba(107,79,42,0.10)",  badgeText: "#6B4F2A", cardBorder: "rgba(107,79,42,0.18)", cardBg: "rgba(107,79,42,0.05)",  label: "Congresso"  },
+  atuacao:    { dot: "#C4993A", badge: "rgba(196,153,58,0.12)", badgeText: "#9A7520", cardBorder: "rgba(196,153,58,0.22)",cardBg: "rgba(196,153,58,0.06)", label: "Atuação"    },
 };
 
 const ALL_CATEGORIES: Category[] = ["formacao", "pesquisa", "publicacao", "congresso", "atuacao"];
