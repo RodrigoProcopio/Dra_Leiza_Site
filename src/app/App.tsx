@@ -1,12 +1,13 @@
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
+import ScrollToTop from "../components/layout/ScrollToTop";
 import HeroSection from "../components/sections/HeroSection";
 import AboutSection from "../components/sections/AboutSection";
+import StatsSection from "../components/sections/StatsSection";
 import PacientArea from "../components/sections/PacientArea";
 import PublicationsSection from "../components/sections/PublicationsSection";
 import ContactSection from "../components/sections/ContactSection";
 import Seo from "./seo/Seo";
-import ScrollToTop from "../components/layout/ScrollToTop";
 
 export default function App() {
   return (
@@ -16,12 +17,13 @@ export default function App() {
       <main className="pt-16 md:pt-20">
         <HeroSection />
         <AboutSection />
+        <StatsSection />
         <PacientArea />
         <PublicationsSection />
         <ContactSection />
       </main>
       <Footer />
-      <ScrollToTop /> 
+      <ScrollToTop />
     </div>
   );
 }

@@ -24,6 +24,13 @@
   "direitos": "All rights reserved.",
   "lgpd": "This site does not collect sensitive data. Contact information is used exclusively for response purposes, in accordance with LGPD."
 },
+"stats": {
+  "experiencia": "Years of experience",
+  "pesquisas": "Scientific research",
+  "artigos": "Published articles",
+  "congressos": "National congresses",
+  "membro": "Member of SBCCV"
+},
   "sobre": {
     "titulo": "About Dr. Leiza Hollas",
     "altImagem": "Photo of Dr. Leiza Loiane Hollas",

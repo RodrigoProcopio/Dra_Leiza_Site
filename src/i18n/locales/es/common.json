@@ -29,6 +29,13 @@
     "altImagem": "Foto de la Dra. Leiza Loiane Hollas",
     "texto": "Cirujana cardiovascular y miembro de la Sociedad Brasileña de Cirugía Cardiovascular (SBCCV), dedica su práctica al tratamiento quirúrgico de las enfermedades del corazón, con enfoque en la seguridad, la precisión técnica y la atención individualizada.\n\nConcluyó su residencia médica en Cirugía Cardiovascular en el Hospital de la Cruz Roja Brasileña – Paraná (2024), consolidando una formación especializada en procedimientos de alta complejidad y en el manejo integral del paciente cardiovascular.\n\nGraduada en Medicina por la Pontificia Universidad Católica de Paraná (2018), orienta su práctica principalmente hacia la cirugía cardiovascular, la cirugía valvular y la simulación quirúrgica, buscando constantemente integrar innovación, evidencia científica y excelencia asistencial.\n\nAdemás de su actividad clínica y quirúrgica, desarrolla una actividad científica continua, con artículos publicados en revistas y periódicos nacionales e internacionales. Integra The Valve Club, iniciativa dedicada a la difusión del conocimiento médico mediante la discusión de estudios relacionados con las valvulopatías y la cardiopatía estructural — áreas en constante evolución en la cardiología moderna.\n\nCree que la cirugía cardiovascular exige no solo dominio técnico, sino también escucha atenta y responsabilidad en cada decisión. Por ello, su trabajo se basa en la construcción de una relación de confianza con el paciente, ofreciendo atención individualizada en todas las etapas del tratamiento."
   },
+  "stats": {
+  "experiencia": "Años de experiencia",
+  "pesquisas": "Investigaciones científicas",
+  "artigos": "Artículos publicados",
+  "congressos": "Congresos nacionales",
+  "membro": "Miembro de la SBCCV"
+},
   "contato": {
     "titulo": "Contacto",
     "descricao": "Póngase en contacto para agendar una consulta o resolver dudas.",
