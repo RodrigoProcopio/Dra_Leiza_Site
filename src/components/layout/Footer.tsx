@@ -1,11 +1,11 @@
 import { useTranslation } from "react-i18next";
 
 const LINKS = [
-  { href: "#home", key: "nav.home" },
-  { href: "#sobre", key: "nav.about" },
-  { href: "#paciente", key: "nav.pacient" },
+  { href: "#home",        key: "nav.home"         },
+  { href: "#sobre",       key: "nav.about"        },
   { href: "#publicacoes", key: "nav.publications" },
-  { href: "#contato", key: "nav.contact" },
+  { href: "#paciente",    key: "nav.pacient"      },
+  { href: "#contato",     key: "nav.contact"      },
 ];
 
 export default function Footer() {
@@ -16,18 +16,21 @@ export default function Footer() {
       <div className="mx-auto w-full max-w-6xl px-4 md:px-6 py-10 md:py-14">
         <div className="grid gap-10 md:grid-cols-3">
 
-          {/* Coluna 1 — Identidade */}
-          <div className="flex flex-col gap-4 items-start">
+          {/* Coluna 1 — Identidade centralizada */}
+          <div className="flex flex-col gap-3 items-center text-center">
             <img
               src="/images/logo-horizontal.png"
               alt="Dra. Leiza Hollas"
-              className="h-8 w-auto object-contain self-start"
+              className="h-8 w-auto object-contain"
               loading="lazy"
             />
+            <p className="text-sm font-semibold text-slate-700">
+              Dra. Leiza Loiane Hollas
+            </p>
             <p className="text-xs text-slate-500 leading-relaxed">
               {t("hero.especialidade")}
             </p>
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-1 items-center">
               <span className="text-xs text-slate-400">{t("hero.crm")}</span>
               <span className="text-xs text-slate-400">{t("hero.rqe")}</span>
             </div>
@@ -105,14 +108,14 @@ export default function Footer() {
         <div className="mt-10 h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
         {/* Bottom bar */}
-        <div className="mt-6 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <p className="text-xs text-slate-400">
-            © {new Date().getFullYear()} Dra. Leiza Hollas. {t("footer.direitos", { defaultValue: "Todos os direitos reservados." })}
-          </p>
-          <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
-            {t("footer.lgpd", { defaultValue: "Este site não coleta dados sensíveis. As informações de contato são usadas exclusivamente para retorno, conforme a LGPD." })}
-          </p>
-        </div>
+<div className="mt-6 flex flex-col items-center gap-2 text-center">
+  <p className="text-sm text-slate-500">
+    © {new Date().getFullYear()} Dra. Leiza Hollas. {t("footer.direitos", { defaultValue: "Todos os direitos reservados." })}
+  </p>
+  <p className="text-xs text-slate-400">
+    {t("footer.lgpd", { defaultValue: "Este site não coleta dados sensíveis. As informações de contato são usadas exclusivamente para retorno, conforme a LGPD." })}
+  </p>
+</div>
       </div>
     </footer>
   );
