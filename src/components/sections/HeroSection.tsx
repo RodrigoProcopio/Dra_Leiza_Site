@@ -85,7 +85,7 @@ export default function HeroSection() {
             ">
               <div className="absolute inset-0 bg-gradient-to-br from-white/70 via-white/40 to-white/20" />
               <img
-                src="/images/logo-horizontal.png"
+                src="/images/logo-horizontal.webp"
                 alt=""
                 aria-hidden="true"
                 className="absolute left-1/2 top-1/2 w-16 -translate-x-1/2 -translate-y-1/2 opacity-90"
