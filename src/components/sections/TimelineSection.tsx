@@ -47,12 +47,13 @@ const MILESTONES: Milestone[] = [
   { year: "2025",      category: "formacao",    key: "timeline.titulo_sbccv"   },
 ];
 
-const CATEGORY_STYLES: Record<Category, { dot: string; badge: string; badgeText: string; cardBorder: string; cardBg: string; label: string }> = {
-  formacao:   { dot: "#0B1B3A", badge: "rgba(11,27,58,0.08)",   badgeText: "#0B1B3A", cardBorder: "rgba(11,27,58,0.14)",  cardBg: "rgba(11,27,58,0.04)",   label: "Formação"   },
-  pesquisa:   { dot: "#185FA5", badge: "rgba(24,95,165,0.10)",  badgeText: "#185FA5", cardBorder: "rgba(24,95,165,0.18)", cardBg: "rgba(24,95,165,0.05)",  label: "Pesquisa"   },
-  publicacao: { dot: "#8B7355", badge: "rgba(139,115,85,0.12)", badgeText: "#7A6040", cardBorder: "rgba(139,115,85,0.22)",cardBg: "rgba(139,115,85,0.06)", label: "Publicação" },
-  congresso:  { dot: "#6B4F2A", badge: "rgba(107,79,42,0.10)",  badgeText: "#6B4F2A", cardBorder: "rgba(107,79,42,0.18)", cardBg: "rgba(107,79,42,0.05)",  label: "Congresso"  },
-  atuacao:    { dot: "#C4993A", badge: "rgba(196,153,58,0.12)", badgeText: "#9A7520", cardBorder: "rgba(196,153,58,0.22)",cardBg: "rgba(196,153,58,0.06)", label: "Atuação"    },
+// Estilos visuais por categoria — sem label hardcoded
+const CATEGORY_BASE: Record<Category, { dot: string; badge: string; badgeText: string; cardBorder: string; cardBg: string }> = {
+  formacao:   { dot: "#0B1B3A", badge: "rgba(11,27,58,0.08)",   badgeText: "#0B1B3A", cardBorder: "rgba(11,27,58,0.14)",   cardBg: "rgba(11,27,58,0.04)"   },
+  pesquisa:   { dot: "#185FA5", badge: "rgba(24,95,165,0.10)",  badgeText: "#185FA5", cardBorder: "rgba(24,95,165,0.18)",  cardBg: "rgba(24,95,165,0.05)"  },
+  publicacao: { dot: "#8B7355", badge: "rgba(139,115,85,0.12)", badgeText: "#7A6040", cardBorder: "rgba(139,115,85,0.22)", cardBg: "rgba(139,115,85,0.06)" },
+  congresso:  { dot: "#6B4F2A", badge: "rgba(107,79,42,0.10)",  badgeText: "#6B4F2A", cardBorder: "rgba(107,79,42,0.18)",  cardBg: "rgba(107,79,42,0.05)"  },
+  atuacao:    { dot: "#C4993A", badge: "rgba(196,153,58,0.12)", badgeText: "#9A7520", cardBorder: "rgba(196,153,58,0.22)", cardBg: "rgba(196,153,58,0.06)" },
 };
 
 const ALL_CATEGORIES: Category[] = ["formacao", "pesquisa", "publicacao", "congresso", "atuacao"];
@@ -61,13 +62,18 @@ export default function TimelineSection() {
   const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = useState<Category | "all">("all");
 
+  // Labels traduzidos dinamicamente
+  const categoryLabels: Record<Category, string> = {
+    formacao:   t("timeline.categorias.formacao",   { defaultValue: "Formação"   }),
+    pesquisa:   t("timeline.categorias.pesquisa",   { defaultValue: "Pesquisa"   }),
+    publicacao: t("timeline.categorias.publicacao", { defaultValue: "Publicação" }),
+    congresso:  t("timeline.categorias.congresso",  { defaultValue: "Congresso"  }),
+    atuacao:    t("timeline.categorias.atuacao",    { defaultValue: "Atuação"    }),
+  };
+
   const filtered = activeFilter === "all"
     ? MILESTONES
     : MILESTONES.filter((m) => m.category === activeFilter);
-
-  function setFilter(cat: Category | "all") {
-    setActiveFilter(cat);
-  }
 
   return (
     <section className="relative overflow-hidden bg-white">
@@ -103,7 +109,7 @@ export default function TimelineSection() {
           className="mb-10 flex flex-wrap justify-center gap-2"
         >
           <button
-            onClick={() => setFilter("all")}
+            onClick={() => setActiveFilter("all")}
             className="rounded-full px-4 py-1.5 text-xs font-semibold transition-all border"
             style={{
               background: activeFilter === "all" ? "#0B1B3A" : "rgba(255,255,255,0.75)",
@@ -114,12 +120,12 @@ export default function TimelineSection() {
             {t("timeline.todos", { defaultValue: "Todos" })}
           </button>
           {ALL_CATEGORIES.map((cat) => {
-            const s = CATEGORY_STYLES[cat];
+            const s = CATEGORY_BASE[cat];
             const isActive = activeFilter === cat;
             return (
               <button
                 key={cat}
-                onClick={() => setFilter(cat)}
+                onClick={() => setActiveFilter(cat)}
                 className="rounded-full px-4 py-1.5 text-xs font-semibold transition-all border"
                 style={{
                   background: isActive ? s.dot : "rgba(255,255,255,0.75)",
@@ -127,7 +133,7 @@ export default function TimelineSection() {
                   borderColor: isActive ? s.dot : s.cardBorder,
                 }}
               >
-                {s.label}
+                {categoryLabels[cat]}
               </button>
             );
           })}
@@ -135,7 +141,6 @@ export default function TimelineSection() {
 
         {/* Timeline coluna única */}
         <div className="relative mx-auto max-w-3xl">
-          {/* Linha vertical contínua */}
           <div
             className="absolute left-[68px] top-0 bottom-0 w-px md:left-[116px]"
             style={{ background: "linear-gradient(to bottom, transparent, #8B7355 3%, #8B7355 97%, transparent)" }}
@@ -144,7 +149,8 @@ export default function TimelineSection() {
           <AnimatePresence mode="popLayout">
             <div className="flex flex-col gap-4">
               {filtered.map((m, idx) => {
-                const s = CATEGORY_STYLES[m.category];
+                const s = CATEGORY_BASE[m.category];
+                const label = categoryLabels[m.category];
                 return (
                   <motion.div
                     key={m.key}
@@ -154,14 +160,12 @@ export default function TimelineSection() {
                     transition={{ duration: 0.3, ease: [0.2, 0.7, 0.2, 1], delay: idx * 0.02 }}
                     className="flex items-start gap-4"
                   >
-                    {/* Ano */}
                     <div className="w-[64px] md:w-[112px] shrink-0 pt-3 text-right">
                       <span className="text-[11px] font-semibold tabular-nums" style={{ color: "#8B7355" }}>
                         {m.year}
                       </span>
                     </div>
 
-                    {/* Ponto */}
                     <div className="relative z-10 mt-[14px] shrink-0">
                       <div
                         className="h-2.5 w-2.5 rounded-full border-2"
@@ -169,7 +173,6 @@ export default function TimelineSection() {
                       />
                     </div>
 
-                    {/* Card */}
                     <div
                       className="flex-1 rounded-2xl border px-4 py-3"
                       style={{ background: s.cardBg, borderColor: s.cardBorder, backdropFilter: "blur(10px)" }}
@@ -178,7 +181,7 @@ export default function TimelineSection() {
                         className="mb-0.5 inline-block rounded-full px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider"
                         style={{ background: s.badge, color: s.badgeText }}
                       >
-                        {s.label}
+                        {label}
                       </span>
                       <p className="text-sm leading-relaxed" style={{ color: "#0B1220" }}>
                         {t(m.key, { defaultValue: m.key })}

@@ -73,7 +73,14 @@
   "congresso2024": "50° Congresso da Sociedade Brasileira de Cirurgia Cardiovascular",
   "erica2": "Pesquisa: Rastreamento em Cascata — Estudo ERICA Curitiba (2024–2025)",
   "pub_erica": "Publicação: Arquivos Brasileiros de Cardiologia — Hipercolesterolemia Familiar (1 citação)",
-  "titulo_sbccv": "Título de Especialista em Cirurgia Cardiovascular — SBCCV"
+  "titulo_sbccv": "Título de Especialista em Cirurgia Cardiovascular — SBCCV",
+    "categorias": {
+      "formacao": "Formação",
+      "pesquisa": "Pesquisa",
+      "publicacao": "Publicação",
+       "congresso": "Congresso",
+       "atuacao": "Atuação"
+}
 },
   "contato": {
     "titulo": "Contato",

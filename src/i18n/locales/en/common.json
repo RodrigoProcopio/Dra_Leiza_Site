@@ -66,7 +66,14 @@
   "congresso2024": "50th Congress of the Brazilian Society of Cardiovascular Surgery",
   "erica2": "Research: Cascade Screening — ERICA Study Curitiba (2024–2025)",
   "pub_erica": "Publication: Arquivos Brasileiros de Cardiologia — Familial Hypercholesterolemia (1 citation)",
-  "titulo_sbccv": "Board Certification in Cardiovascular Surgery — SBCCV"
+  "titulo_sbccv": "Board Certification in Cardiovascular Surgery — SBCCV",
+  "categorias": {
+      "formacao": "Education",
+      "pesquisa": "Research",
+      "publicacao": "Publication",
+      "congresso": "Congress",
+      "atuacao": "Practice"
+}
 },
   "sobre": {
     "titulo": "About Dr. Leiza Hollas",
