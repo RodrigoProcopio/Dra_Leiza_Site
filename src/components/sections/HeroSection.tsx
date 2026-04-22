@@ -69,6 +69,7 @@ export default function HeroSection() {
                 className="absolute inset-0 h-full w-full object-cover object-[center_15%]"
                 loading="eager"
                 decoding="async"
+                fetchPriority="high"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/10 via-transparent to-white/10" />
               <div className="pointer-events-none absolute inset-0 rounded-[28px] ring-1 ring-white/55" />
@@ -90,6 +91,7 @@ export default function HeroSection() {
                 className="absolute left-1/2 top-1/2 w-16 -translate-x-1/2 -translate-y-1/2 opacity-90"
                 loading="lazy"
                 decoding="async"
+                fetchPriority="high"
               />
               <div className="pointer-events-none absolute inset-0 ring-1 ring-white/55" />
             </div>
