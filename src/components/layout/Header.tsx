@@ -108,7 +108,7 @@ export default function Header() {
               aria-label="Dra. Leiza Hollas — Início"
             >
               <img
-                src="/images/logo-horizontal.png"
+                src="/images/logo-horizontal.webp"
                 alt="Dra. Leiza Hollas"
                 className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />

@@ -19,7 +19,7 @@ export default function Footer() {
           {/* Coluna 1 — Identidade centralizada */}
           <div className="flex flex-col gap-3 items-center text-center">
             <img
-              src="/images/logo-horizontal.png"
+              src="/images/logo-horizontal.webp"
               alt="Dra. Leiza Hollas"
               className="h-8 w-auto object-contain"
               loading="lazy"
