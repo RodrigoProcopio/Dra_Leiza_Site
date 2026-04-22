@@ -1,4 +1,3 @@
-cat > tailwind.config.ts <<'EOF'
 import type { Config } from "tailwindcss";
 
 export default {
@@ -34,7 +33,7 @@ export default {
         brand: {
           navy: "#0B1B3A",
           navy2: "#0F2A5A",
-          teal: "#1E6B64"
+          teal: "#1E6B64",
         },
         ring: {
           DEFAULT: "#0B1B3A",
@@ -52,4 +51,3 @@ export default {
   },
   plugins: [],
 } satisfies Config;
-EOF
