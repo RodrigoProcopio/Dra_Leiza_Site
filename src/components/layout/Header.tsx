@@ -9,8 +9,8 @@ type SectionKey = "home" | "about" | "pacient" | "publications" | "contact";
 const SECTION_IDS: Record<SectionKey, string> = {
   home: "home",
   about: "sobre",
-  pacient: "paciente",
   publications: "publicacoes",
+  pacient: "paciente",
   contact: "contato",
 };
 

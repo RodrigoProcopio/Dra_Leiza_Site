@@ -21,8 +21,8 @@ export default function App() {
         <AboutSection />
         <StatsSection />
         <TimelineSection /> 
-        <PacientArea />
         <PublicationsSection />
+        <PacientArea />
         <ContactSection />
       </main>
       <Footer />

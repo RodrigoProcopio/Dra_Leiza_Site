@@ -77,7 +77,6 @@ export default function TimelineSection() {
       <div className="pointer-events-none absolute inset-0 opacity-60">
         <div className="absolute -left-1/3 top-0 h-full w-[70%] rotate-[12deg] bg-gradient-to-r from-white/0 via-white/50 to-white/0" />
       </div>
-      <div className="pointer-events-none absolute inset-0 opacity-[0.07] bg-[url('/images/bg-texture.jpg')] bg-cover bg-center" />
 
       <Container className="relative py-14 md:py-20">
 

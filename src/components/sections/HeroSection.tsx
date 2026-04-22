@@ -24,8 +24,6 @@ export default function HeroSection() {
       <div className="pointer-events-none absolute inset-0 opacity-70">
         <div className="absolute -left-1/3 top-0 h-full w-[70%] rotate-[12deg] bg-gradient-to-r from-white/0 via-white/50 to-white/0" />
       </div>
-      <div className="pointer-events-none absolute inset-0 opacity-[0.08] bg-[url('/images/bg-texture.jpg')] bg-cover bg-center" />
-      <div className="pointer-events-none absolute inset-0 opacity-[0.05] mix-blend-multiply bg-[url('/images/grain.png')] bg-repeat" />
 
       <svg
         className="pointer-events-none absolute left-0 top-0 h-full w-full opacity-[0.10]"

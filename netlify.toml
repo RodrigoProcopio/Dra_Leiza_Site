@@ -1,11 +1,7 @@
+cat > netlify.toml << 'EOF'
 [build]
   command = "npm run build"
   publish = "dist"
-
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
 
 [[redirects]]
   from = "/*"
@@ -24,3 +20,4 @@
   [headers.values]
     Cache-Control = "public, max-age=86400"
     Access-Control-Allow-Origin = "*"
+EOF
