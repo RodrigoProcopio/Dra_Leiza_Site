@@ -7,20 +7,32 @@ import { Phone, Hospital, MapPin } from "lucide-react";
 
 type SubmitStatus = "idle" | "loading" | "success" | "error";
 
+const THROTTLE_MS = 30000; // 30 segundos entre envios
+
 export default function ContactSection() {
   const { t } = useTranslation();
   const contact = t("contato", { returnObjects: true }) as Record<string, string>;
 
   const formRef = useRef<HTMLFormElement | null>(null);
   const [status, setStatus] = useState<SubmitStatus>("idle");
+  const lastSubmitRef = useRef<number>(0);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     if (!formRef.current) return;
 
+    // Honeypot — se o campo oculto estiver preenchido, é bot
+    const honeypot = formRef.current.querySelector<HTMLInputElement>('input[name="_honeypot"]');
+    if (honeypot?.value) return;
+
+    // Throttle — evita envio duplo ou spam
+    const now = Date.now();
+    if (now - lastSubmitRef.current < THROTTLE_MS) return;
+
     try {
       setStatus("loading");
+      lastSubmitRef.current = now;
 
       await emailjs.sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -32,9 +44,7 @@ export default function ContactSection() {
       setStatus("success");
       formRef.current.reset();
 
-      setTimeout(() => {
-        setStatus("idle");
-      }, 5000);
+      setTimeout(() => setStatus("idle"), 5000);
     } catch (error) {
       console.error("Erro ao enviar formulário:", error);
       setStatus("error");
@@ -42,10 +52,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section
-      id="contato"
-      className="relative scroll-mt-24 overflow-hidden bg-white"
-    >
+    <section id="contato" className="relative scroll-mt-24 overflow-hidden bg-white">
       <div className="absolute inset-0 bg-gradient-to-br from-white via-[#F6F8FC] to-[#EEF3FF]" />
       <div className="pointer-events-none absolute -left-40 -top-32 h-[520px] w-[520px] rounded-full bg-brand-navy/10 blur-3xl" />
       <div className="pointer-events-none absolute -right-44 -top-20 h-[520px] w-[520px] rounded-full bg-[#7AA6FF]/12 blur-3xl" />
@@ -83,7 +90,6 @@ export default function ContactSection() {
             transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1] }}
             className="flex flex-col justify-center space-y-6"
           >
-            {/* Telefone clicável */}
             <div className="flex items-start gap-4">
               <Phone className="h-6 w-6 shrink-0 text-brand-navy" />
               <a
@@ -96,12 +102,9 @@ export default function ContactSection() {
 
             <div className="flex items-start gap-4">
               <Hospital className="h-6 w-6 shrink-0 text-brand-navy" />
-              <span className="font-medium text-slate-700">
-                {contact.hospital}
-              </span>
+              <span className="font-medium text-slate-700">{contact.hospital}</span>
             </div>
 
-            {/* Endereço clicável para Google Maps */}
             <div className="flex items-start gap-4">
               <MapPin className="h-6 w-6 shrink-0 text-brand-navy" />
               <a
@@ -124,11 +127,19 @@ export default function ContactSection() {
             onSubmit={handleSubmit}
             className="space-y-4"
           >
+            {/* Honeypot — invisível para humanos, bots preenchem */}
+            <input
+              type="text"
+              name="_honeypot"
+              defaultValue=""
+              autoComplete="off"
+              tabIndex={-1}
+              aria-hidden="true"
+              style={{ display: "none" }}
+            />
+
             <div>
-              <label
-                htmlFor="nome"
-                className="block text-sm font-medium text-slate-700"
-              >
+              <label htmlFor="nome" className="block text-sm font-medium text-slate-700">
                 {contact.nome}
               </label>
               <input
@@ -142,10 +153,7 @@ export default function ContactSection() {
             </div>
 
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-slate-700"
-              >
+              <label htmlFor="email" className="block text-sm font-medium text-slate-700">
                 {contact.email}
               </label>
               <input
@@ -159,10 +167,7 @@ export default function ContactSection() {
             </div>
 
             <div>
-              <label
-                htmlFor="mensagem"
-                className="block text-sm font-medium text-slate-700"
-              >
+              <label htmlFor="mensagem" className="block text-sm font-medium text-slate-700">
                 {contact.mensagem}
               </label>
               <textarea
@@ -175,7 +180,6 @@ export default function ContactSection() {
               />
             </div>
 
-            {/* Aviso LGPD */}
             <p className="text-xs text-slate-500 leading-relaxed">
               {t("contato.lgpd")}
             </p>
@@ -197,7 +201,6 @@ export default function ContactSection() {
             {status === "success" && (
               <p className="text-sm text-green-600">{contact.sucesso}</p>
             )}
-
             {status === "error" && (
               <p className="text-sm text-red-600">{contact.erro}</p>
             )}
