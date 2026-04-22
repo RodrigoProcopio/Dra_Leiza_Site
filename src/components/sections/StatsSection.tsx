@@ -19,6 +19,7 @@ const STATS: StatItem[] = [
 function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
   const [display, setDisplay] = useState(value);
   const ref = useRef<HTMLSpanElement>(null);
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
     const el = ref.current;
@@ -41,17 +42,20 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
     }
 
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) runAnimation(); },
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          runAnimation();
+        } else if (!entry.isIntersecting) {
+          // Reseta quando sai da tela — anima de novo na próxima visita
+          hasAnimated.current = false;
+        }
+      },
       { threshold: 0.3 }
     );
+
     observer.observe(el);
-
-    const loop = setInterval(runAnimation, 10000);
-
-    return () => {
-      observer.disconnect();
-      clearInterval(loop);
-    };
+    return () => observer.disconnect();
   }, [value]);
 
   return <span ref={ref}>{display}{suffix}</span>;
