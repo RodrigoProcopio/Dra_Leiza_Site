@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const LANGS = [
@@ -16,30 +16,68 @@ function langToHtmlLang(code: string) {
 export default function LanguageSwitcher() {
   const { i18n, t } = useTranslation();
   const [open, setOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.documentElement.lang = langToHtmlLang(i18n.language || "pt");
   }, [i18n.language]);
 
-  function setLang(code: string) {
-  i18n.changeLanguage(code);
-  localStorage.setItem("lang", code);
-  setOpen(false);
+  // Fecha com Escape e gerencia foco
+  useEffect(() => {
+    if (!open) return;
 
-  // Fade suave no conteúdo
-  const root = document.getElementById("root");
-  if (root) {
-    root.classList.remove("lang-fade");
-    void root.offsetWidth; // força reflow
-    root.classList.add("lang-fade");
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setOpen(false);
+        triggerRef.current?.focus();
+      }
+      // Tab trap dentro do menu
+      if (e.key === "Tab") {
+        const items = menuRef.current?.querySelectorAll<HTMLElement>("button");
+        if (!items || items.length === 0) return;
+        const first = items[0];
+        const last = items[items.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    }
+
+    document.addEventListener("keydown", onKeyDown);
+    // Move foco para o primeiro item ao abrir
+    setTimeout(() => {
+      menuRef.current?.querySelector<HTMLElement>("button")?.focus();
+    }, 50);
+
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
+  function setLang(code: string) {
+    i18n.changeLanguage(code);
+    localStorage.setItem("lang", code);
+    setOpen(false);
+    triggerRef.current?.focus();
+
+    // Fade suave no conteúdo
+    const root = document.getElementById("root");
+    if (root) {
+      root.classList.remove("lang-fade");
+      void root.offsetWidth;
+      root.classList.add("lang-fade");
+    }
   }
-}
 
   const current = (i18n.language || "pt").split("-")[0];
 
   return (
     <div className="relative">
       <button
+        ref={triggerRef}
         type="button"
         onClick={() => setOpen((v) => !v)}
         className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white/70 px-3 py-2 text-xs font-semibold text-slate-900 shadow-sm backdrop-blur transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-navy"
@@ -56,12 +94,13 @@ export default function LanguageSwitcher() {
           <button
             type="button"
             className="fixed inset-0 cursor-default"
-            onClick={() => setOpen(false)}
+            onClick={() => { setOpen(false); triggerRef.current?.focus(); }}
             aria-label={t("acessibilidade.fecharIdioma", { defaultValue: "Fechar menu de idiomas" })}
             tabIndex={-1}
           />
 
           <div
+            ref={menuRef}
             role="menu"
             aria-label={t("acessibilidade.selecionarIdioma", { defaultValue: "Selecionar idioma" })}
             className="absolute right-0 mt-2 w-28 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg"
