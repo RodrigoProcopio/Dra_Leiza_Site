@@ -1,15 +1,17 @@
+import { Suspense, lazy } from "react";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import ScrollToTop from "../components/layout/ScrollToTop";
 import HeroSection from "../components/sections/HeroSection";
 import AboutSection from "../components/sections/AboutSection";
 import StatsSection from "../components/sections/StatsSection";
-import PacientArea from "../components/sections/PacientArea";
-import PublicationsSection from "../components/sections/PublicationsSection";
-import ContactSection from "../components/sections/ContactSection";
 import Seo from "./seo/Seo";
-import TimelineSection from "../components/sections/TimelineSection";
 
+// Lazy load das seções mais pesadas
+const TimelineSection     = lazy(() => import("../components/sections/TimelineSection"));
+const PublicationsSection = lazy(() => import("../components/sections/PublicationsSection"));
+const PacientArea         = lazy(() => import("../components/sections/PacientArea"));
+const ContactSection      = lazy(() => import("../components/sections/ContactSection"));
 
 export default function App() {
   return (
@@ -20,13 +22,21 @@ export default function App() {
         <HeroSection />
         <AboutSection />
         <StatsSection />
-        <TimelineSection /> 
-        <PublicationsSection />
-        <PacientArea />
-        <ContactSection />
+        <Suspense fallback={<div className="h-96" />}>
+          <TimelineSection />
+        </Suspense>
+        <Suspense fallback={<div className="h-96" />}>
+          <PublicationsSection />
+        </Suspense>
+        <Suspense fallback={<div className="h-96" />}>
+          <PacientArea />
+        </Suspense>
+        <Suspense fallback={<div className="h-96" />}>
+          <ContactSection />
+        </Suspense>
       </main>
       <Footer />
       <ScrollToTop />
     </div>
   );
-}
+}}
