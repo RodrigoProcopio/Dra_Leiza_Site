@@ -3,9 +3,9 @@ import { useTranslation } from "react-i18next";
 import { Download, ExternalLink, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Container from "../layout/Container";
-import { easePremium, type Article } from "../../types";
+import { easePremium } from "../../types";
+import type { Article } from "../../types";
 
-const easePremium: [number, number, number, number] = [0.2, 0.7, 0.2, 1];
 
 function ArticleCard({
   article,
@@ -14,7 +14,7 @@ function ArticleCard({
   bookFooterText,
   leiaMaisText,
 }: {
-  article: any;
+  article: Article;
   onClick: () => void;
   valveClubText: string;
   bookFooterText: string;
@@ -82,7 +82,7 @@ function ArticleModal({
   article,
   onClose,
 }: {
-  article: any;
+  article: Article;
   onClose: () => void;
 }) {
   const { t } = useTranslation();
@@ -318,9 +318,9 @@ export default function PublicationsSection() {
   const leiaMaisText = t("publicacoes.leiaMais");
 
   const artigos =
-    (t("publicacoes.artigos", { returnObjects: true }) as any[]) || [];
+    (t("publicacoes.artigos", { returnObjects: true }) as Article[]) || [];
 
-  const livroRaw = t("publicacoes.livro", { returnObjects: true }) as any;
+  const livroRaw = t("publicacoes.livro", { returnObjects: true }) as Article;
 
   const livroComoArtigo = livroRaw
     ? {
@@ -342,7 +342,7 @@ export default function PublicationsSection() {
 
   const listaFinal = livroComoArtigo ? [livroComoArtigo, ...artigos] : artigos;
 
-  const [selectedArticle, setSelectedArticle] = useState<any | null>(null);
+  const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
 
   return (
     <section
