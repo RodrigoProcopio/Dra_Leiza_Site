@@ -31,14 +31,14 @@ export default function Footer() {
               {t("hero.especialidade")}
             </p>
             <div className="flex flex-col gap-1 items-center">
-              <span className="text-xs text-slate-400">{t("hero.crm")}</span>
-              <span className="text-xs text-slate-400">{t("hero.rqe")}</span>
+              <span className="text-xs text-slate-500">{t("hero.crm")}</span>
+              <span className="text-xs text-slate-500">{t("hero.rqe")}</span>
             </div>
           </div>
 
           {/* Coluna 2 — Navegação */}
           <div className="flex flex-col gap-3">
-            <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+            <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">
               {t("footer.navegacao", { defaultValue: "Navegação" })}
             </p>
             <nav aria-label="Rodapé">
@@ -59,7 +59,7 @@ export default function Footer() {
 
           {/* Coluna 3 — Redes e contato */}
           <div className="flex flex-col gap-3">
-            <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+            <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">
               {t("footer.links", { defaultValue: "Links" })}
             </p>
             <ul className="flex flex-col gap-2">
@@ -108,14 +108,14 @@ export default function Footer() {
         <div className="mt-10 h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
         {/* Bottom bar */}
-<div className="mt-6 flex flex-col items-center gap-2 text-center">
-  <p className="text-sm text-slate-500">
-    © {new Date().getFullYear()} Dra. Leiza Hollas. {t("footer.direitos", { defaultValue: "Todos os direitos reservados." })}
-  </p>
-  <p className="text-xs text-slate-400">
-    {t("footer.lgpd", { defaultValue: "Este site não coleta dados sensíveis. As informações de contato são usadas exclusivamente para retorno, conforme a LGPD." })}
-  </p>
-</div>
+        <div className="mt-6 flex flex-col items-center gap-2 text-center">
+          <p className="text-sm text-slate-500">
+            © {new Date().getFullYear()} Dra. Leiza Hollas. {t("footer.direitos", { defaultValue: "Todos os direitos reservados." })}
+          </p>
+          <p className="text-xs text-slate-500">
+            {t("footer.lgpd", { defaultValue: "Este site não coleta dados sensíveis. As informações de contato são usadas exclusivamente para retorno, conforme a LGPD." })}
+          </p>
+        </div>
       </div>
     </footer>
   );
