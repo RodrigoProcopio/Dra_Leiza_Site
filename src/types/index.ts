@@ -9,6 +9,7 @@ export interface Article {
   data?: string;
   link?: string;
   imagem?: string;
+  imagens?: string[];
   publisher?: string;
   downloadLink?: string;
   download?: string;

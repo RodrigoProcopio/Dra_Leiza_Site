@@ -97,21 +97,13 @@ function ArticleModal({
     .map((p) => p.trim())
     .filter(Boolean);
 
-  // Escape + scroll lock + foco no botão fechar
   useEffect(() => {
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-
-    // Foca no botão fechar ao abrir
     setTimeout(() => closeButtonRef.current?.focus(), 50);
 
     function onKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape") {
-        onClose();
-        return;
-      }
-
-      // Focus trap — mantém foco dentro do modal
+      if (e.key === "Escape") { onClose(); return; }
       if (e.key === "Tab" && modalRef.current) {
         const focusable = modalRef.current.querySelectorAll<HTMLElement>(
           'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
@@ -119,18 +111,12 @@ function ArticleModal({
         if (!focusable.length) return;
         const first = focusable[0];
         const last = focusable[focusable.length - 1];
-        if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
       }
     }
 
     document.addEventListener("keydown", onKeyDown);
-
     return () => {
       document.body.style.overflow = prevOverflow;
       document.removeEventListener("keydown", onKeyDown);
@@ -163,17 +149,12 @@ function ArticleModal({
               {article.titulo}
             </h1>
             {article.subtitulo && (
-              <p className="mt-2 text-lg text-brand-navy/70 italic">
-                {article.subtitulo}
-              </p>
+              <p className="mt-2 text-lg text-brand-navy/70 italic">{article.subtitulo}</p>
             )}
             {article.data && (
-              <p className="mt-2 text-sm text-brand-teal font-medium">
-                {article.data}
-              </p>
+              <p className="mt-2 text-sm text-brand-teal font-medium">{article.data}</p>
             )}
           </div>
-
           <button
             ref={closeButtonRef}
             onClick={onClose}
@@ -187,42 +168,24 @@ function ArticleModal({
         <div className="p-6 md:p-8 lg:p-10">
           <div className="flex items-center gap-3 mb-8 pb-6 border-b border-slate-200">
             <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-brand-navy/30">
-              <img
-                src="/images/dra-leiza-publi.jpg"
-                alt={t("publicacoes.autoraNome")}
-                className="w-full h-full object-cover"
-              />
+              <img src="/images/dra-leiza-publi.jpg" alt={t("publicacoes.autoraNome")} className="w-full h-full object-cover" />
             </div>
             <div>
-              <p className="font-medium text-slate-900">
-                {t("publicacoes.autoraNome")}
-              </p>
-              <p className="text-sm text-slate-600">
-                {t("publicacoes.autoraEspecialidade")}
-              </p>
+              <p className="font-medium text-slate-900">{t("publicacoes.autoraNome")}</p>
+              <p className="text-sm text-slate-600">{t("publicacoes.autoraEspecialidade")}</p>
             </div>
           </div>
 
           {!isBook && isValveClub && (
             <div className="mb-8 rounded-2xl border border-slate-200 bg-slate-50/90 p-5 md:p-6">
               <div className="flex items-center gap-4">
-                <img
-                  src="/images/logo-the-valve.png"
-                  alt="The Valve Club"
-                  className="h-12 w-auto object-contain shrink-0"
-                />
+                <img src="/images/logo-the-valve.png" alt="The Valve Club" className="h-12 w-auto object-contain shrink-0" />
                 <div>
-                  <p className="text-sm font-semibold text-slate-900">
-                    {t("publicacoes.theValveClub.titulo")}
-                  </p>
-                  <p className="text-xs text-slate-500 mt-1">
-                    {t("publicacoes.theValveClub.assinatura")}
-                  </p>
+                  <p className="text-sm font-semibold text-slate-900">{t("publicacoes.theValveClub.titulo")}</p>
+                  <p className="text-xs text-slate-500 mt-1">{t("publicacoes.theValveClub.assinatura")}</p>
                 </div>
               </div>
-              <p className="mt-4 text-sm leading-7 text-slate-600">
-                {t("publicacoes.theValveClub.descricao")}
-              </p>
+              <p className="mt-4 text-sm leading-7 text-slate-600">{t("publicacoes.theValveClub.descricao")}</p>
             </div>
           )}
 
@@ -230,57 +193,22 @@ function ArticleModal({
             <div className="mb-8">
               <div className="flex flex-col md:flex-row items-start gap-6">
                 <div className="md:w-56 shrink-0">
-                  <img
-                    src="/images/livro-dra-leiza.png"
-                    alt={article.titulo}
-                    className="w-full rounded-2xl shadow-lg border border-slate-200"
-                  />
+                  <img src="/images/livro-dra-leiza.png" alt={article.titulo} className="w-full rounded-2xl shadow-lg border border-slate-200" />
                 </div>
                 <div className="flex-1 rounded-2xl bg-slate-50 border border-slate-200 p-7">
-                  <h3 className="font-serif text-lg text-brand-navy mb-3">
-                    {t("publicacoes.informacoesTecnicas")}
-                  </h3>
+                  <h3 className="font-serif text-lg text-brand-navy mb-3">{t("publicacoes.informacoesTecnicas")}</h3>
                   <div className="grid sm:grid-cols-2 gap-4">
-                    {article.isbn && (
-                      <div>
-                        <p className="text-xs font-semibold text-slate-900 mb-1">ISBN</p>
-                        <p className="text-sm text-slate-700">{article.isbn}</p>
-                      </div>
-                    )}
-                    {article.doi && (
-                      <div>
-                        <p className="text-xs font-semibold text-slate-900 mb-1">DOI</p>
-                        <p className="text-sm text-slate-700">{article.doi}</p>
-                      </div>
-                    )}
-                    {article.ano && (
-                      <div>
-                        <p className="text-xs font-semibold text-slate-900 mb-1">
-                          {t("publicacoes.ano", { defaultValue: "Ano" })}
-                        </p>
-                        <p className="text-sm text-slate-700">{article.ano}</p>
-                      </div>
-                    )}
-                    {article.paginas && (
-                      <div>
-                        <p className="text-xs font-semibold text-slate-900 mb-1">
-                          {t("publicacoes.paginas", { defaultValue: "Páginas" })}
-                        </p>
-                        <p className="text-sm text-slate-700">{article.paginas}</p>
-                      </div>
-                    )}
+                    {article.isbn && (<div><p className="text-xs font-semibold text-slate-900 mb-1">ISBN</p><p className="text-sm text-slate-700">{article.isbn}</p></div>)}
+                    {article.doi && (<div><p className="text-xs font-semibold text-slate-900 mb-1">DOI</p><p className="text-sm text-slate-700">{article.doi}</p></div>)}
+                    {article.ano && (<div><p className="text-xs font-semibold text-slate-900 mb-1">{t("publicacoes.ano", { defaultValue: "Ano" })}</p><p className="text-sm text-slate-700">{article.ano}</p></div>)}
+                    {article.paginas && (<div><p className="text-xs font-semibold text-slate-900 mb-1">{t("publicacoes.paginas", { defaultValue: "Páginas" })}</p><p className="text-sm text-slate-700">{article.paginas}</p></div>)}
                   </div>
                   {article.palavrasChave && (
                     <div className="mt-4 pt-4 border-t border-slate-200">
                       <p className="text-xs text-slate-600">{article.palavrasChave}</p>
                       {isBook && downloadHref && (
                         <div className="mt-4 flex justify-center">
-                          <a
-                            href={downloadHref}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center rounded-md bg-gray-800/80 px-6 py-3 text-sm font-medium text-white shadow transition-colors duration-200 hover:bg-gray-800"
-                          >
+                          <a href={downloadHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-md bg-gray-800/80 px-6 py-3 text-sm font-medium text-white shadow transition-colors duration-200 hover:bg-gray-800">
                             <Download className="h-4 w-4 mr-2" />
                             <span>{t("publicacoes.downloadLivro")}</span>
                           </a>
@@ -295,29 +223,41 @@ function ArticleModal({
 
           {!isBook && article.imagem && (
             <div className="mb-8">
-              <img
-                src={article.imagem}
-                alt={article.titulo}
-                className="w-full rounded-2xl shadow-lg"
-              />
+              <img src={article.imagem} alt={article.titulo} className="w-full rounded-2xl shadow-lg" />
             </div>
           )}
 
           {article.resumo && !isBook && (
             <div className="mb-8 p-6 rounded-2xl bg-gradient-to-br from-brand-navy/5 via-brand-teal/5 to-transparent border border-brand-navy/10">
-              <h2 className="font-serif text-lg md:text-xl text-brand-navy mb-3">
-                {t("publicacoes.resumoLabel")}
-              </h2>
+              <h2 className="font-serif text-lg md:text-xl text-brand-navy mb-3">{t("publicacoes.resumoLabel")}</h2>
               <p className="text-slate-700 leading-relaxed">{article.resumo}</p>
             </div>
           )}
 
           <div className="prose prose-slate max-w-none">
-            {paragraphs.map((p: string, idx: number) => (
-              <p key={idx} className="text-slate-700 leading-relaxed mb-4">
-                {p}
-              </p>
-            ))}
+            {paragraphs.map((p: string, idx: number) => {
+              // Detecta marcadores de imagem [[imagem1]], [[imagem2]], etc.
+              const match = p.match(/^\[\[imagem(\d+)\]\]$/);
+              if (match) {
+                const imgIndex = parseInt(match[1]) - 1;
+                const src = article.imagens?.[imgIndex];
+                if (!src) return null;
+                return (
+                  <div key={idx} className="my-6">
+                    <img
+                      src={src}
+                      alt={`${article.titulo} — figura ${imgIndex + 1}`}
+                      className="w-full rounded-2xl shadow-lg border border-slate-100"
+                    />
+                  </div>
+                );
+              }
+              return (
+                <p key={idx} className="text-slate-700 leading-relaxed mb-4">
+                  {p}
+                </p>
+              );
+            })}
           </div>
 
           {!isBook && article.link && (
