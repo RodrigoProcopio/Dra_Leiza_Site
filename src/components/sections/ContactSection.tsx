@@ -9,7 +9,7 @@ type SubmitStatus = "idle" | "loading" | "success" | "error";
 
 export default function ContactSection() {
   const { t } = useTranslation();
-  const contact = t("contato", { returnObjects: true }) as Record<string, any>;
+  const contact = t("contato", { returnObjects: true }) as Record<string, string>;
 
   const formRef = useRef<HTMLFormElement | null>(null);
   const [status, setStatus] = useState<SubmitStatus>("idle");

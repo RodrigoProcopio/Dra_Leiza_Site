@@ -9,7 +9,7 @@ type CardData = { titulo: string; texto: string };
 
 // Removed unused Badge component to satisfy the TypeScript noUnusedLocals rule.
 
-const easePremium: any = [0.2, 0.7, 0.2, 1];
+const easePremium: [number, number, number, number] = [0.2, 0.7, 0.2, 1];
 
 function SectionCard({
   title,

@@ -3,8 +3,9 @@ import { useTranslation } from "react-i18next";
 import { Download, ExternalLink, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Container from "../layout/Container";
+import { easePremium, type Article } from "../../types";
 
-const easePremium: any = [0.2, 0.7, 0.2, 1];
+const easePremium: [number, number, number, number] = [0.2, 0.7, 0.2, 1];
 
 function ArticleCard({
   article,
