@@ -99,7 +99,7 @@ function SectionCard({
         </div>
 
         {/* divider mais elegante */}
-        <div className="mt-2/3 h-px w-2/3 bg-gradient-to-r from-transparent via-brand-navy/18 to-transparent" />
+        <div className="mt-4 h-px w-2/3 bg-gradient-to-r from-transparent via-brand-navy/18 to-transparent" />
       </button>
 
       <AnimatePresence initial={false}>
