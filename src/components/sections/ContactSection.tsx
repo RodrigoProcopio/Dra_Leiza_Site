@@ -7,7 +7,7 @@ import { Phone, Hospital, MapPin } from "lucide-react";
 
 type SubmitStatus = "idle" | "loading" | "success" | "error";
 
-const THROTTLE_MS = 30000; // 30 segundos entre envios
+const THROTTLE_MS = 30000;
 
 export default function ContactSection() {
   const { t } = useTranslation();
@@ -19,14 +19,11 @@ export default function ContactSection() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-
     if (!formRef.current) return;
 
-    // Honeypot — se o campo oculto estiver preenchido, é bot
     const honeypot = formRef.current.querySelector<HTMLInputElement>('input[name="_honeypot"]');
     if (honeypot?.value) return;
 
-    // Throttle — evita envio duplo ou spam
     const now = Date.now();
     if (now - lastSubmitRef.current < THROTTLE_MS) return;
 
@@ -43,7 +40,6 @@ export default function ContactSection() {
 
       setStatus("success");
       formRef.current.reset();
-
       setTimeout(() => setStatus("idle"), 5000);
     } catch (error) {
       console.error("Erro ao enviar formulário:", error);
@@ -127,7 +123,7 @@ export default function ContactSection() {
             onSubmit={handleSubmit}
             className="space-y-4"
           >
-            {/* Honeypot — invisível para humanos, bots preenchem */}
+            {/* Honeypot */}
             <input
               type="text"
               name="_honeypot"
@@ -180,9 +176,20 @@ export default function ContactSection() {
               />
             </div>
 
-            <p className="text-xs text-slate-500 leading-relaxed">
-              {t("contato.lgpd")}
-            </p>
+            {/* Consentimento LGPD obrigatório */}
+            <div className="flex items-start gap-3">
+              <input
+                type="checkbox"
+                id="lgpd"
+                name="lgpd"
+                required
+                disabled={status === "loading"}
+                className="mt-0.5 h-4 w-4 shrink-0 rounded border-slate-300 accent-slate-800 cursor-pointer disabled:opacity-60"
+              />
+              <label htmlFor="lgpd" className="text-xs text-slate-500 leading-relaxed cursor-pointer">
+                {t("contato.lgpd")}
+              </label>
+            </div>
 
             <button
               type="submit"
